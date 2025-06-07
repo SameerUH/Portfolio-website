@@ -24,13 +24,17 @@ TODO LIST:
     }
     </script>
 
-
-    <button>PROJECTS</button>
-    <button>CERTIFICATES</button>
-    <div id='SAMEERHAQ'></div>
-    <button>CONTACT ME</button>
-    <button>RESUME</button>
-
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li> <a href="projects.php">PROJECTS</a></li>
+                <li> <a href="certificates.php">CERTIFICATES</a></li>
+                <div id='SAMEERHAQ'></div>
+                <li> <a href="contact.php">CONTACT ME</a></li>
+                <li> <a href="resume.php">RESUME</a></li>
+            </ul>
+        </nav>
+    </div>
     <script type="module" src="./js/project.js"></script>
 </body>
 </html>

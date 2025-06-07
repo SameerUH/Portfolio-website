@@ -116,7 +116,7 @@ textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
     textGroup.position.sub(center); // Center the text around (0, 0, 0)
 
     controls.target.set(0, 0, 0);
-    camera.position.set(0, 0, 4);
+    camera.position.set(0, 0, 2);
     camera.lookAt(controls.target); // <- KEY LINE
     controls.update(); // ensure it takes effect
 });
