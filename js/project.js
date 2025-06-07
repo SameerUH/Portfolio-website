@@ -9,7 +9,6 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xe0f7fa);
 
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth /container.clientHeight, 0.1, 1000);
-camera.position.z = 5;
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(container.clientWidth, container.clientHeight);
@@ -96,6 +95,7 @@ videoTexture.format = THREE.RGBAFormat;
 
 
 textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
+    const textGroup = new THREE.Group();
     [...text].forEach((char, i) => {
         const textgeometry = new TextGeometry(char, {
             font: font, size: 0.5, height: 0.2, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.02, bevelSegments: 5, 
@@ -105,10 +105,21 @@ textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
         const textMesh = new THREE.Mesh(textgeometry, textmaterial);
         textMesh.position.x = i * letterSpacing;
         textMesh.castShadow = true;
-        scene.add(textMesh);
+        textGroup.add(textMesh);
     });
-});
 
+    scene.add(textGroup);
+
+    // Center the group
+    const box = new THREE.Box3().setFromObject(textGroup);
+    const center = box.getCenter(new THREE.Vector3());
+    textGroup.position.sub(center); // Center the text around (0, 0, 0)
+
+    controls.target.set(0, 0, 0);
+    camera.position.set(0, 0, 4);
+    camera.lookAt(controls.target); // <- KEY LINE
+    controls.update(); // ensure it takes effect
+});
 
 function animate() {
     requestAnimationFrame(animate);
