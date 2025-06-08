@@ -74,51 +74,49 @@ spotlight.distance = 10; //How far the light reached.
 
 scene.add(spotlight);
 
-const spotlightHelper = new THREE.SpotLightHelper(spotlight); //Shows a grid which displays the cone.
-//scene.add(spotlightHelper)
 
 //Text
 const textloader = new FontLoader();
 const letterSpacing = 0.47;
-const text = "SAMEER HAQ";
+const text = "SAMEER HAQ"; //Text that wil be displayed.
 
-const video = document.createElement('video');
+const video = document.createElement('video'); //Creates a video element in the PHP.
 video.src = './assets/thumbnails/lettertexture.mp4';
 video.loop = true;
-video.muted = true;
+video.muted = true; //REQUIRED TO ADD THE TEXT WITHOUT HAVING CONSOLE ERRORS.
 video.play();
 
-const videoTexture = new THREE.VideoTexture(video);
-videoTexture.minFilter = THREE.LinearFilter;
-videoTexture.magFilter = THREE.LinearFilter;
-videoTexture.format = THREE.RGBAFormat;
+const videoTexture = new THREE.VideoTexture(video); //Converts the video into a texture.
+videoTexture.minFilter = THREE.LinearFilter; //Determines how the texture is sampled when scaled down.
+videoTexture.magFilter = THREE.LinearFilter; //Determines how the texture is sampled when scaled up.
+videoTexture.format = THREE.RGBAFormat; //Interpretation of the pixels in the texture i.e. How they're arranged.
 
 
 textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
-    const textGroup = new THREE.Group();
+    const textGroup = new THREE.Group(); //Creates a group to hold all characters.
     [...text].forEach((char, i) => {
         const textgeometry = new TextGeometry(char, {
-            font: font, size: 0.5, height: 0.2, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.02, bevelSegments: 5, 
+            font: font, size: 0.5, height: 0.2, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.02, bevelSegments: 5, //This feels like CSS for the text.
         });
 
         const textmaterial = new THREE.MeshStandardMaterial({map: videoTexture});
         const textMesh = new THREE.Mesh(textgeometry, textmaterial);
-        textMesh.position.x = i * letterSpacing;
+        textMesh.position.x = i * letterSpacing; //Adds spacing to the lettering, without it will cause all letters to be in the same position (jumbled up).
         textMesh.castShadow = true;
-        textGroup.add(textMesh);
+        textGroup.add(textMesh); //Adds each letter to text group.
     });
 
-    scene.add(textGroup);
+    scene.add(textGroup); //Adds the entire textured phrase to the screen.
 
     // Center the group
-    const box = new THREE.Box3().setFromObject(textGroup);
+    const box = new THREE.Box3().setFromObject(textGroup); //Creates a box around the lettering which is then used to modify the size and position of the phrase.
     const center = box.getCenter(new THREE.Vector3());
     textGroup.position.sub(center); // Center the text around (0, 0, 0)
 
-    controls.target.set(0, 0, 0);
-    camera.position.set(0, 0, 2);
-    camera.lookAt(controls.target); // <- KEY LINE
-    controls.update(); // ensure it takes effect
+    controls.target.set(0, 0, 0); //Looks at the center of the text.
+    camera.position.set(0, 0, 2); //Moves the camera back by the Z-axis to see the full text.
+    camera.lookAt(controls.target); //Have the camera look at the target.
+    controls.update(); //Apply the changes by updating it.
 });
 
 function animate() {

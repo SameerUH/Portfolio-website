@@ -35,6 +35,29 @@ TODO LIST:
             </ul>
         </nav>
     </div>
+
+    <div id="keywords">
+        <p>CYBER SECURITY ENTHUSIAST | CCNA | PENTESTING | PROGRAMMING</p>
+    </div><br>
+
+    <div id="aboutme">
+        <p>ABOUT ME + MOTIVATION AND INTERESTS</p>
+    </div>
+
+    <div id="pinned">
+        <p>PINNED ACHIEVEMENTS</p>
+        <p>PINNED ACHIEVEMENTS</p>
+        <p>PINNED ACHIEVEMENTS</p>
+    </div>
+
+    <div id="timeline">
+        <p>TIMELINE</p>
+    </div><br>
+
+    <footer>
+        <p>FOOTER</p>
+    </footer>
+
     <script type="module" src="./js/project.js"></script>
 </body>
 </html>

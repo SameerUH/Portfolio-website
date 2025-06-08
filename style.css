@@ -1,7 +1,12 @@
+body {
+    background-color: #e0f7fa;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .navbar nav ul {
@@ -14,4 +19,54 @@
 #SAMEERHAQ {
     width: 60vh;
     height: 30vh;
+    border-color: black;
+    border-style: solid;
+}
+
+#keywords {
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#aboutme {
+    border-style: solid;
+    border-color: black;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: center;
+    height: 300px;
+}
+
+#pinned {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+#pinned p {
+    border-style: solid;
+    border-color: black;
+    width: 200px;
+    height: 200px;
+}
+
+#timeline {
+    border-style: solid;
+    border-color: black;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: center;
+    height: 200px;
+}
+
+footer {
+    border-style: solid;
+    border-color: black;
+    margin: 0 auto;
+    justify-content: center;
+    height: 100px;
 }
