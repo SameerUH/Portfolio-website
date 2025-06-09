@@ -29,12 +29,14 @@ TODO LIST:
             <ul>
                 <li> <a href="projects.php">PROJECTS</a></li>
                 <li> <a href="certificates.php">CERTIFICATES</a></li>
-                <div id='SAMEERHAQ'></div>
+                <div id='SAMEERHAQ'>
+                    <div id = "tooltip"></div>
+                </div>
                 <li> <a href="contact.php">CONTACT ME</a></li>
                 <li> <a href="resume.php">RESUME</a></li>
             </ul>
         </nav>
-    </div>
+    </div><br>
 
     <div id="keywords">
         <p>CYBER SECURITY ENTHUSIAST | CCNA | PENTESTING | PROGRAMMING</p>

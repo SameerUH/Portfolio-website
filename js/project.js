@@ -8,7 +8,7 @@ const container = document.getElementById('SAMEERHAQ');
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xe0f7fa);
 
-const camera = new THREE.PerspectiveCamera(75, container.clientWidth /container.clientHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(40, container.clientWidth /container.clientHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(container.clientWidth, container.clientHeight);
@@ -18,6 +18,9 @@ renderer.shadowMap.type = THREE.PCFShadowMap; //Softer edges.
 
 
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.mouseButtons = {
+    LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: null
+};
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 
@@ -27,7 +30,7 @@ scene.add(ambient);
 
 //Directional Light: Like sunlight.
 const directional = new THREE.DirectionalLight(0xffffff, 1);
-directional.position.set(5, 10, 5); //Light direction.
+directional.position.set(5, 6, 5); //Light direction.
 scene.add(directional);
 
 //Point Light: Like a light bulb.
@@ -59,7 +62,7 @@ scene.add(floor);
 
 //Spotlight:
 const spotlight = new THREE.SpotLight(0xffddaa, 1); //colour, intensity.
-spotlight.position.set(3, 6, 3); //Places it above and to the side.
+spotlight.position.set(4, 4, 10); //Places it above and to the side.
 spotlight.target.position.set(0, 0, 0); //Aims the spotlight and adds it to the scene..
 scene.add(spotlight.target);
 
@@ -73,7 +76,6 @@ spotlight.decay = 2; //Light fade-off.
 spotlight.distance = 10; //How far the light reached.
 
 scene.add(spotlight);
-
 
 //Text
 const textloader = new FontLoader();
@@ -106,6 +108,7 @@ textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
         textGroup.add(textMesh); //Adds each letter to text group.
     });
 
+    textGroup.userData = {url:"https://w23002216.nuwebspace.co.uk/PORTFOLIO/index.php"}; //Adds the link to the text.
     scene.add(textGroup); //Adds the entire textured phrase to the screen.
 
     // Center the group
@@ -117,6 +120,71 @@ textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
     camera.position.set(0, 0, 2); //Moves the camera back by the Z-axis to see the full text.
     camera.lookAt(controls.target); //Have the camera look at the target.
     controls.update(); //Apply the changes by updating it.
+});
+
+const raycaster = new THREE.Raycaster(); //Invisible beam from a point in a space.
+const mouse = new THREE.Vector2();
+let hovered = null;
+
+window.addEventListener('mousemove', (event) => {
+    const bounds = container.getBoundingClientRect();
+    mouse.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1; //Gets mouse coordinates and maps them into scene.
+    mouse.y = - ((event.clientY - bounds.top) / bounds.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera); //Shoots ray through the mouse position.
+    const intersects = raycaster.intersectObjects(scene.children, true); //Finds hits.
+
+    if (intersects.length > 0) { //Checks if hovered.
+        let hovered = intersects[0].object;
+
+        while (hovered && !hovered.userData.url && hovered.parent) {
+            hovered = hovered.parent; //Checks if the hovered object is correct if not then move to the next one.
+        }
+
+        if (hovered && hovered.userData.url) { //If it is then modify the CSS to make the tooltip display.
+            tooltip.textContent = 'Left-click to open | Left-click and hold to rotate | Scroll to zoom';
+            tooltip.style.display = 'block';
+            tooltip.style.left = `${event.clientX + 10}px`;
+            tooltip.style.top = `${event.clientY + 10}px`;
+        } else {
+            tooltip.style.display = 'none'; //If it's wrong then remove the tooltip.
+        }
+    } else {
+        tooltip.style.display = 'none'; //If not hovering over an object then remove the tooltip.
+    }
+});
+
+
+
+//Instead of using 'click' as an event listener I used 'mouseup' and 'mousedown' to help separate single clicks and hold/drags.
+let mouse_down = 0;
+renderer.domElement.addEventListener('mousedown', () => {
+    mouse_down = Date.now(); //If left click is down then store the time of it.
+});
+
+renderer.domElement.addEventListener('mouseup', (event) => {
+    const duration = Date.now() - mouse_down; //Check if it's a single click by seeing if it was a short amount of time that the button was held.
+    if (duration < 150) {
+        const bounds = container.getBoundingClientRect();
+        mouse.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1; //Get the mouse position and map it to THREE.JS.
+        mouse.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        if (intersects.length > 0) { //Checks if hovered.
+            let hovered = intersects[0].object;
+            
+
+            while (hovered && !hovered.userData.url && hovered.parent) { //Checks if the hovered object is correct if not then move to the next one.
+                hovered = hovered.parent;
+            }
+
+            if (hovered && hovered.userData.url) { //If it's the right object then open the link stored in a new tab.
+                window.open(hovered.userData.url, '_blank');
+            }
+        }
+    }
 });
 
 function animate() {
