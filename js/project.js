@@ -6,7 +6,7 @@ import { TextGeometry } from 'https://unpkg.com/three@0.160.0/examples/jsm/geome
 const container = document.getElementById('SAMEERHAQ');
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xe0f7fa);
+scene.background = new THREE.Color(0xF7F7F7);
 
 const camera = new THREE.PerspectiveCamera(40, container.clientWidth /container.clientHeight, 0.1, 1000);
 

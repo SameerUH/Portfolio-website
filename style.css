@@ -1,5 +1,5 @@
 body {
-    background-color: #e0f7fa;
+    background-color: #C7C7C7;
 }
 
 .navbar {
@@ -8,6 +8,8 @@ body {
     align-items: center;
     justify-content: center;
     border-style: solid;
+    margin: 0 auto;
+    background-color: #3A506B;
     border-color: black;
 }
 
@@ -16,14 +18,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 100px;
 }
 
 #SAMEERHAQ {
     width: 80vh;
     height: 20vh;
-    border-color: black;
-    border-style: solid;
+    border-radius: 50px;
+    overflow: hidden;
 }
 
 #SAMEERHAQ #tooltip {
