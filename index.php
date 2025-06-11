@@ -26,6 +26,13 @@ xxxx Implement the 3D aspect of three.js.
     }
     </script>
 
+    <div class="video-background">
+        <video autoplay muted loop playsinline id = "myVideo">
+            <source src="./assets/thumbnails/PotentialBackground4.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
     <div class="navbar">
         <nav>
             <ul>

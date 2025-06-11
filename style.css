@@ -1,6 +1,44 @@
 body {
     background-color: #1b1b1b;
     color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: #1b1b1b;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 .navbar {
@@ -19,7 +57,18 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
+}
+
+.navbar nav ul li{
+    border-color:black;
+    border-style: solid;
+    background-color: white;
+    width: 150px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
 }
 
 #SAMEERHAQ {
@@ -48,6 +97,9 @@ body {
     border-color: #ffffff;
     width: 50%;
     margin: 0 auto;
+    background-color: #ffffff;
+    color: black;
+    height: 80px;
 }
 
 #aboutme {
@@ -57,6 +109,8 @@ body {
     margin: 0 auto;
     justify-content: center;
     height: 300px;
+    background-color: #ffffff;
+    color: black;
 }
 
 #pinned {
@@ -71,6 +125,8 @@ body {
     border-color: #ffffff;
     width: 200px;
     height: 200px;
+    background-color: #ffffff;
+    color: black;
 }
 
 #timeline {
@@ -80,6 +136,8 @@ body {
     margin: 0 auto;
     justify-content: center;
     height: 200px;
+    background-color: #ffffff;
+    color: black;
 }
 
 footer {
@@ -88,4 +146,6 @@ footer {
     margin: 0 auto;
     justify-content: center;
     height: 100px;
+    background-color: #ffffff;
+    color: black;
 }
