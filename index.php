@@ -36,13 +36,17 @@ xxxx Implement the 3D aspect of three.js.
     <div class="navbar">
         <nav>
             <ul>
-                <li> <a href="projects.php">PROJECTS</a></li>
-                <li> <a href="certificates.php">CERTIFICATES</a></li>
-                <div id='SAMEERHAQ'>
-                    <div id = "tooltip"></div>
-                </div>
-                <li> <a href="contact.php">CONTACT ME</a></li>
-                <li> <a href="resume.php">RESUME</a></li>
+                <li> <a href="#"><span>PROJECTS</span></a></li>
+                <li> <a href="#"><span>CERTIFICATES</span></a></li>
+            </ul>
+
+            <div id='SAMEERHAQ'>
+                <div id = "tooltip"></div>
+            </div>
+
+            <ul>
+                <li> <a href="#"><span>CONTACT ME</span></a></li>
+                <li> <a href="#"><span>RESUME</span></a></li>
             </ul>
         </nav>
     </div><br>

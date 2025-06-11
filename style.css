@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     position: relative;
     z-index: 0;
+    font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol","Noto Color Emoji";
 }
 
 .video-background {
@@ -43,36 +44,86 @@ body {
 
 .navbar {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     border-style: solid;
     margin: 0 auto;
     background-color: #3A506B;
     border-color: #062750;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .navbar nav ul {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .navbar nav ul li{
     border-color:black;
     border-style: solid;
     background-color: white;
-    width: 150px;
+    width: 175px;
     height: 80px;
-    justify-content: center;
-    align-items: center;
     list-style-type: none;
 }
 
+.navbar nav ul li a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+.navbar nav ul li a span {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar nav ul li a span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.navbar nav ul li a:hover span::after {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
 #SAMEERHAQ {
-    width: 80vh;
+    width: 1650px;
     height: 20vh;
     border-radius: 50px;
     overflow: hidden;
