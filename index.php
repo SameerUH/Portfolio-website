@@ -36,8 +36,8 @@ xxxx Implement the 3D aspect of three.js.
     <div class="navbar">
         <nav>
             <ul>
-                <li> <a href="#"><span>PROJECTS</span></a></li>
-                <li> <a href="#"><span>CERTIFICATES</span></a></li>
+                <li> <a href="projects.php"><span>PROJECTS</span></a></li>
+                <li> <a href="certificates.php"><span>CERTIFICATES</span></a></li>
             </ul>
 
             <div id='SAMEERHAQ'>
@@ -45,8 +45,8 @@ xxxx Implement the 3D aspect of three.js.
             </div>
 
             <ul>
-                <li> <a href="#"><span>CONTACT ME</span></a></li>
-                <li> <a href="#"><span>RESUME</span></a></li>
+                <li> <a href="contact.php"><span>CONTACT ME</span></a></li>
+                <li> <a href="resume.php"><span>RESUME</span></a></li>
             </ul>
         </nav>
     </div><br>
