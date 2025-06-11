@@ -1,5 +1,6 @@
 body {
-    background-color: #C7C7C7;
+    background-color: #1b1b1b;
+    color: #ffffff;
 }
 
 .navbar {
@@ -10,7 +11,7 @@ body {
     border-style: solid;
     margin: 0 auto;
     background-color: #3A506B;
-    border-color: black;
+    border-color: #062750;
 }
 
 .navbar nav ul {
@@ -44,14 +45,14 @@ body {
 #keywords {
     padding: 10px;
     border-style: solid;
-    border-color: black;
+    border-color: #ffffff;
     width: 50%;
     margin: 0 auto;
 }
 
 #aboutme {
     border-style: solid;
-    border-color: black;
+    border-color: #ffffff;
     width: 75%;
     margin: 0 auto;
     justify-content: center;
@@ -67,14 +68,14 @@ body {
 
 #pinned p {
     border-style: solid;
-    border-color: black;
+    border-color: #ffffff;
     width: 200px;
     height: 200px;
 }
 
 #timeline {
     border-style: solid;
-    border-color: black;
+    border-color: #ffffff;
     width: 75%;
     margin: 0 auto;
     justify-content: center;
@@ -83,7 +84,7 @@ body {
 
 footer {
     border-style: solid;
-    border-color: black;
+    border-color: #ffffff;
     margin: 0 auto;
     justify-content: center;
     height: 100px;

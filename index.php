@@ -3,7 +3,9 @@
 TODO LIST:
 - First add buttons and make divs of the initial design.
 - Decide on a colour scheme to use.
-- Implement the 3D aspect of three.js.
+xxxx Implement the 3D aspect of three.js.
+- Decide on the design of the buttons.
+- Possibly add an animated background, (black background with white something????).
 -->
 <html lang="en">
 <head>
