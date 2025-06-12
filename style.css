@@ -145,6 +145,7 @@ body {
 }
 
 #keywords {
+    display: flex;
     padding: 10px;
     border-style: solid;
     border-color: #ffffff;
@@ -153,6 +154,9 @@ body {
     background-color: #ffffff;
     color: black;
     height: 80px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }
 
 #aboutme {
