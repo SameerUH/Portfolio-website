@@ -37,7 +37,7 @@ xxxx Implement the 3D aspect of three.js.
         <nav>
             <ul>
                 <li> <a href="projects.php"><span>PROJECTS</span></a></li>
-                <li> <a href="certificates.php"><span>CERTIFICATES</span></a></li>
+                <li> <a href="certificates.php"><span>CERTIFICATES</span></a></li> <!--Span: inline container for phrasing content.-->
             </ul>
 
             <div id='SAMEERHAQ'>

@@ -8,7 +8,8 @@ const container = document.getElementById('SAMEERHAQ');
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xF7F7F7);
 
-const camera = new THREE.PerspectiveCamera(40, container.clientWidth /container.clientHeight, 0.1, 1000);
+const base_FOV = 40;
+const camera = new THREE.PerspectiveCamera(base_FOV, container.clientWidth /container.clientHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(container.clientWidth, container.clientHeight);
@@ -77,6 +78,28 @@ spotlight.distance = 10; //How far the light reached.
 
 scene.add(spotlight);
 
+//Adjusts the camera's position and FOV based on the screen size adjustment to make the name fit the camera.
+function fitCamera(camera, textMesh, controls, padding=1.2) {
+    const box = new THREE.Box3().setFromObject(textMesh); //Get a bounding box based on the 3D object.
+    const size = box.getSize(new THREE.Vector3()); //Get the size and center point of the bounding box.
+    const center = box.getCenter(new THREE.Vector3());
+
+    const fovRad = camera.fov * (Math.PI / 180); //Convert the camera's FOV from degees to radians.
+    const aspect = camera.aspect; //Current aspect ratio.
+
+    const height = size.y; //Calculate the required height based on the object's height.
+    let distanceHeight = (height/2) / Math.tan(fovRad/2);
+
+    const width = size.x; //Calcate the required width based on the object's width.
+    let distanceWidth = (width/2) / Math.tan(fovRad/2) / aspect;
+
+    let finalDistance = Math.max(distanceHeight, distanceWidth); //Maximum distance to ensure entire object is visible.
+    camera.position.set(center.x, center.y, center.z + finalDistance * padding); //Sets the camera's position to be centered and positioned in front of the object.
+    controls.target.copy(center);
+    controls.update();
+}
+
+
 //Text
 const textloader = new FontLoader();
 const letterSpacing = 0.47;
@@ -93,6 +116,7 @@ videoTexture.minFilter = THREE.LinearFilter; //Determines how the texture is sam
 videoTexture.magFilter = THREE.LinearFilter; //Determines how the texture is sampled when scaled up.
 videoTexture.format = THREE.RGBAFormat; //Interpretation of the pixels in the texture i.e. How they're arranged.
 
+let mainGroup; //Holds the entire group of 3D text.
 
 textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
     const textGroup = new THREE.Group(); //Creates a group to hold all characters.
@@ -116,10 +140,8 @@ textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
     const center = box.getCenter(new THREE.Vector3());
     textGroup.position.sub(center); // Center the text around (0, 0, 0)
 
-    controls.target.set(0, 0, 0); //Looks at the center of the text.
-    camera.position.set(0, 0, 2); //Moves the camera back by the Z-axis to see the full text.
-    camera.lookAt(controls.target); //Have the camera look at the target.
-    controls.update(); //Apply the changes by updating it.
+    mainGroup = textGroup; //Assigned to the entire text group.
+    onWindowResize();
 });
 
 const raycaster = new THREE.Raycaster(); //Invisible beam from a point in a space.
@@ -194,10 +216,26 @@ function animate() {
 }
 animate();
 
-window.addEventListener('resize', () => {
-    const width = container.clientWidth;
+//Function to handle camera and renderer adjustments on window resize.
+function onWindowResize() {
+    const width = container.clientWidth; //Current container width and height stored in constants.
     const height = container.clientHeight;
-    camera.aspect = width/height;
-    camera.updateProjectionMatrix();
+    camera.aspect = width/height; //Updated camera and standard aspect ratio.
+    const aspect = width/height;
+
+    //Adjust camera FOV based on aspect ratio to maintain consistent appearance.
+    if (aspect > 1) { //If wider than tall.
+        camera.fov = Math.min(base_FOV * (aspect / 1.5), 60);
+    } else {//If taller than wide.
+        camera.fov = Math.max(base_FOV / (aspect * 1.2), 30)
+    }
+
+    camera.updateProjectionMatrix(); //Updates the camera's projection matrix after changing FOV/apect.
     renderer.setSize(width, height);
-});
+    if (mainGroup) { //If there is a 3D text group and it's stored in mainGroup.
+        fitCamera(camera, mainGroup, controls, 1.1); //Refits the camera and sets the padding value to 1.1 making the full text visible.
+    }
+}
+
+
+window.addEventListener('resize', onWindowResize); //Whenever the window is resized call the function to make the 3D element fit on the page.

@@ -2,9 +2,9 @@ body {
     background-color: #1b1b1b;
     color: #ffffff;
     margin: 0;
-    min-height: 100vh;
+    min-height: 100vh; /*Full height of the viewport.*/
     position: relative;
-    z-index: 0;
+    z-index: 0; /*Sets the stacking order for the body.*/
     font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol","Noto Color Emoji";
 }
 
@@ -14,8 +14,8 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    z-index: -2;
+    overflow: hidden; /*Hides any content that overflows this container.*/
+    z-index: -2; /*Places the video behind other content.*/
     background-color: #1b1b1b;
 }
 
@@ -27,9 +27,9 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    filter: brightness(0.7);
+    transform: translate(-50%, -50%); /*Adjusts position to truly center the video using CSS transform.*/
+    object-fit: cover; /*Scales the video to cover the entire container.*/
+    filter: brightness(0.7); /*Makes the video darker.*/
 }
 
 .video-overlay {
@@ -38,7 +38,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /*Adds 50% opacity.*/
     z-index: -1;
 }
 
@@ -51,6 +51,8 @@ body {
     background-color: #3A506B;
     border-color: #062750;
     padding-top: 10px;
+    position: relative;
+    z-index: 10; /*Puts navbar above most content.*/
     padding-bottom: 10px;
 }
 
@@ -67,12 +69,12 @@ body {
 .navbar nav ul {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /*Distributes list items evenly with space around them.*/
     width: 100%;
     gap: 20px;
     margin: 0;
     padding: 0;
-    list-style-type: none;
+    list-style-type: none; /*Removes bullet point from the text.*/
 }
 
 .navbar nav ul li{
@@ -104,26 +106,26 @@ body {
 }
 
 .navbar nav ul li a span::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
+    content: ''; /*Required for pseudo-elements (virtual element that doesn't exist in the structure).*/
+    position: absolute; /*Positions the underline relative to the <span>.*/
+    bottom: -5px; /*Positions the underline directly below the text.*/
     left: 50%;
-    transform: translateX(-50%) scaleX(0);
+    transform: translateX(-50%) scaleX(0); /*Scales the zero width and centers.*/
     transform-origin: center;
     width: 100%;
     height: 3px;
     background-color: black;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /*Smooth transition for transform and opacity.*/
+    opacity: 0; /*Initially invisible.*/
 }
 
 .navbar nav ul li a:hover span::after {
-    transform: translateX(-50%) scaleX(1);
-    opacity: 1;
+    transform: translateX(-50%) scaleX(1); /*Scales the underline to full width.*/
+    opacity: 1; /*Makes the undelrine fully visible.*/
 }
 
 #SAMEERHAQ {
-    width: 1650px;
+    width: 60%;
     height: 20vh;
     border-radius: 50px;
     overflow: hidden;
