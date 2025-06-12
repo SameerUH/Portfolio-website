@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/contact.css">
     <title>CONTACT ME</title>
 </head>
 <body>
@@ -12,5 +12,16 @@
     include "../includes/navbar_fragment.php";
     ?>
 
+    <div id="title">
+        <p><strong>CONTACT</strong></p>
+    </div><br>
+
+    <div id="socialsection">
+        <p><strong>LINKEDIN | GITHUB | TRYHACKME | HTB | EMAIL SECTION.</strong></p>
+    </div><br>
+
+    <footer>
+        <p><strong>FOOTER</strong></p>
+    </footer>
 </body>
 </html>

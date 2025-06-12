@@ -12,7 +12,7 @@ xxxx Implement the 3D aspect of three.js.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <title>SAMEER HAQ</title>
 </head>
 
@@ -41,7 +41,7 @@ xxxx Implement the 3D aspect of three.js.
     </div><br>
 
     <footer>
-        <p>FOOTER</p>
+        <p><strong>FOOTER</strong></p>
     </footer>
 </body>
 </html>

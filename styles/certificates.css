@@ -144,64 +144,43 @@ body {
     z-index: 10;
 }
 
-#keywords {
+#title {
     display: flex;
     padding: 10px;
     border-style: solid;
     border-color: #ffffff;
-    width: 50%;
+    width: 25%;
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
-    height: 80px;
+    height: 50px;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 50px;
 }
 
-#aboutme {
-    border-style: solid;
-    border-color: #ffffff;
-    width: 75%;
-    margin: 0 auto;
-    justify-content: center;
-    height: 300px;
-    background-color: #ffffff;
-    color: black;
-}
-
-#pinned {
+#certificates {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-}
-
-#pinned p {
+    padding: 100px;
     border-style: solid;
     border-color: #ffffff;
-    width: 200px;
-    height: 200px;
-    background-color: #ffffff;
-    color: black;
-}
-
-#timeline {
-    border-style: solid;
-    border-color: #ffffff;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
-    justify-content: center;
-    height: 200px;
     background-color: #ffffff;
     color: black;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
 }
 
 footer {
+    display: flex;
     border-style: solid;
     border-color: #ffffff;
-    margin: 0 auto;
     justify-content: center;
+    align-items: center;
+    font-size: 40px;
     height: 100px;
     background-color: #ffffff;
     color: black;
