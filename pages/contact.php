@@ -20,8 +20,8 @@
         <p><strong>LINKEDIN | GITHUB | TRYHACKME | HTB | EMAIL SECTION.</strong></p>
     </div><br>
 
-    <footer>
-        <p><strong>FOOTER</strong></p>
-    </footer>
+    <?php
+    include '../includes/footer_fragment.php';
+    ?>
 </body>
 </html>
