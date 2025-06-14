@@ -1,46 +1,58 @@
+//Import everything from Three.js
 import * as THREE from 'three';
-import {GLTFLoader} from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
 
 const container = document.getElementById('profilepic');
 
+//Creates a scene.
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(70, container.clientWidth / container.clientHeight, 0.1, 1000);
+scene.background = new THREE.Color(0xffffff);
+
+const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+
+//Moves the camera back so we can see the cube.
 camera.position.z = 5;
 
+//Creates a renderer to draw everything on the screen.
 const renderer = new THREE.WebGLRenderer({antialias: true});
-renderer.setSize(container.clientWidth, container.clientHeight);
-container.appendChild(renderer.domElement);
+renderer.setSize(container.clientWidth, container.clientHeight); //Fullscreen
+container.appendChild(renderer.domElement);//Adds canvas to the page.
 
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(2, 2, 5);
-scene.add(light);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
 
-const loader = new GLTFLoader();
-loader.load(
-    '../assets/thumbnails/basic_coin.gltf',
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+directionalLight.position.set(1, 2, 5);
+directionalLight.lookAt(0, 0, 0);
+scene.add(directionalLight);
 
-    function (gltf) {
-        const model = gltf.scene;
-        model.scale.set(2, 2, 2);
-        model.position.y = -1;
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.7);
+directionalLight2.position.set(-5, 5, -5);
+directionalLight2.lookAt(0, 0, 0);
+scene.add(directionalLight2);
 
-        model.traverse((child) => {
-            if (child.isMesh) {
-                child.castShadow = true;
-                child.receiveShadow = true;
-                child.material = new THREE.MeshStandardMaterial({color: 0xFFD700, metalness: 1, roughness: 0.2,});
-            }
-        });
-        scene.add(model);
-    },
-    undefined, function(error) {
-        console.error('An error occured while loading the model: ', error);
-    }
-);
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load('../assets/thumbnails/profilepicture.jpg', (texture) => {
+    //Rotating circle:
+    const radius = 3;
+    const segments = 64;
+    const circle_geometry = new THREE.CircleGeometry(radius, segments)
+    const circle_material = new THREE.MeshStandardMaterial({map: texture, metalness: 0.1, roughness: 0.9});
+    const circle = new THREE.Mesh(circle_geometry, circle_material);
+    scene.add(circle);
+});
 
+//Animate function - called every frame (~60 times/sec).
 function animate() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-}
+  requestAnimationFrame(animate);//Asks the browser to call this again next frame
 
-animate()
+  //Renders the scene from the camera's perspective.
+  renderer.render(scene, camera);
+}
+animate();
+
+//Handles window resize to keep aspect ratio correct.
+window.addEventListener('resize', () => {
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();//Recalculate the camera.
+  renderer.setSize(container.clientWidth, container.clientHeight);//Resize the canvas
+});
