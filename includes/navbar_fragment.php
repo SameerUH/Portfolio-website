@@ -15,4 +15,4 @@
         </ul>
     </nav>
 </div><br>
-<script type="module" src="../js/project.js"></script>
+<script type="module" src="../js/name.js"></script>
