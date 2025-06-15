@@ -171,6 +171,18 @@ body {
     color: black;
 }
 
+#aboutme::after {
+    content: '';
+    position: absolute;
+    width: 79%;
+    height: 36.5%;
+    background: red;
+    top: 41.25%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+}
+
 #aboutme p {
     width: 60%;
     margin: 0;
