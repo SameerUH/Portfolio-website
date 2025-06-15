@@ -27,16 +27,19 @@ xxxx Implement the 3D aspect of three.js.
     </div><br>
 
     <div id="aboutme">
-        <p><u>About Me:</u><br>
-        I'm Sameer Ul Haq, a second-year Cyber Security student at Northumbria University with a passion for tech, security, and making a meaningful impact. I'm CCNA certified and regularly develop my skills through TryHackMe and Hack The Box.<br><br>I enjoy programming in Python, C, and JavaScript — building everything from small games to full-stack apps — and aim to grow into a well-rounded cybersecurity professional.<br><br>
+        <p><strong><u>About Me:</u></strong><br>
+            I'm Sameer Ul Haq, a second-year Cyber Security student at Northumbria University with a passion for tech, security, and making a meaningful impact. I'm CCNA certified and regularly develop my skills through TryHackMe and Hack The Box.<br><br>I enjoy programming in Python, C, and JavaScript — building everything from small games to full-stack apps — and aim to grow into a well-rounded cybersecurity professional.<br><br>
 
-        <u>Interests:</u><br>
-        I'm most excited when working on projects that challenge me creatively and technically. I've developed applications like Pong, GratiThink (a web/mobile app that promotes student wellbeing), and interactive portfolio websites using modern tools like React and Three.js. I also enjoy problem-solving, collaborative teamwork, and continuously learning how different programming languages can be applied to help people in practical ways.<br><br>
+            <strong><u>Interests:</u></strong><br>
+            I'm most excited when working on projects that challenge me creatively and technically. I've developed applications like Pong, GratiThink (a web/mobile app that promotes student wellbeing), and interactive portfolio websites using modern tools like React and Three.js. I also enjoy problem-solving, collaborative teamwork, and continuously learning how different programming languages can be applied to help people in practical ways.<br><br>
 
-        <u>Motiviations:</u><br>
-        I believe technology should protect and empower. Cybersecurity is evolving and is key to safeguarding people and data and I'm inspired by how tech can protect people from various attackers.
-    </p>
-    <img src="../assets/thumbnails/profilepicture.jpg">
+            <strong><u>Motiviations:</u></strong><br>
+            I believe technology should protect and empower. Cybersecurity is evolving and is key to safeguarding people and data and I'm inspired by how tech can protect people from various attackers.
+        </p>
+        <div class = "image-swap-container">
+            <img class="base-image" src="../assets/thumbnails/profilepicture.jpg" alt="originalimg">
+            <img class="hover-image" src="../assets/thumbnails/archery.jpg" alt="hoverimg">
+        </div>
     </div>
 
     <div id="pinned">

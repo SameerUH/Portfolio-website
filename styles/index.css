@@ -177,8 +177,39 @@ body {
     padding-right: 20px;
 }
 
-#aboutme img {
-    border: 1px solid black;
+#aboutme p strong{
+    font-size: 25px;
+}
+
+#aboutme .image-swap-container {
+    border: 2px solid black;
+    position: relative;
+    width: 350px;
+    height: 450px;
+}
+
+#aboutme .image-swap-container img{
+    position: absolute;
+    object-fit: cover;
+    width: 350px;
+    height: 450px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#aboutme .image-swap-container .base-image {
+    opacity: 1;
+}
+
+#aboutme .image-swap-container .hover-image {
+    opacity: 0;
+}
+
+#aboutme .image-swap-container:hover .base-image {
+    opacity: 0;
+}
+
+#aboutme .image-swap-container:hover .hover-image {
+    opacity: 1;
 }
 
 #pinned {
