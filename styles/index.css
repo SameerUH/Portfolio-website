@@ -177,11 +177,8 @@ body {
     padding-right: 20px;
 }
 
-#aboutme #profilepic {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #ccc;
-    flex-shrink: 0;
+#aboutme img {
+    border: 1px solid black;
 }
 
 #pinned {

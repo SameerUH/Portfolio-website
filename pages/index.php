@@ -36,7 +36,7 @@ xxxx Implement the 3D aspect of three.js.
         <u>Motiviations:</u><br>
         I believe technology should protect and empower. Cybersecurity is evolving and is key to safeguarding people and data and I'm inspired by how tech can protect people from various attackers.
     </p>
-    <div id="profilepic"></div>
+    <img src="../assets/thumbnails/profilepicture.jpg">
     </div>
 
     <div id="pinned">
@@ -52,6 +52,5 @@ xxxx Implement the 3D aspect of three.js.
     <?php
     include '../includes/footer_fragment.php';
     ?>
-    <script type="module" src="../js/profilepic.js"></script>
 </body>
 </html>
