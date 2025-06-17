@@ -159,6 +159,17 @@ body {
     font-size: 20px;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text-large {
+    font-size: 25px;
+}
 #aboutme {
     display: flex;
     border-style: solid;
@@ -212,10 +223,6 @@ body {
     width: 60%;
     margin: 0;
     padding-right: 20px;
-}
-
-#aboutme p strong{
-    font-size: 25px;
 }
 
 #aboutme .image-swap-container {
