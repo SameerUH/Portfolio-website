@@ -272,6 +272,11 @@ body {
     color: black;
 }
 
+#pinned p img {
+    width: 200px;
+    height: 200px;
+}
+
 #timeline {
     border-style: solid;
     border-color: #ffffff;

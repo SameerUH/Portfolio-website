@@ -45,7 +45,7 @@ xxx Possibly add an animated background, (black background with white something?
     </div>
 
     <div id="pinned">
-        <p>PONG</p>
+        <p><img class = "pong-image" src="../assets/thumbnails/pong-thumbnail.png" alt="pongimage">PONG</p>
         <p>NORTH TYNESIDE COUNCIL FRAMEWORK</p>
         <p>STUDENT PLACEMENT</p>
     </div>
