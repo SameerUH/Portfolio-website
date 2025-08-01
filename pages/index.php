@@ -43,6 +43,7 @@ xxx Possibly add an animated background, (black background with white something?
             <img class="hover-image" src="../assets/thumbnails/archery.jpg" alt="hoverimg">
         </div>
     </div>
+    <br>
 
     <div id="pinned">
         <p><img class = "pong-image" src="../assets/thumbnails/pong-thumbnail.png" alt="pongimage">PONG</p>
