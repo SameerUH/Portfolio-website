@@ -6,8 +6,9 @@ xxx Decide on a colour scheme to use.
 xxxx Implement the 3D aspect of three.js.
 xxx Decide on the design of the buttons.
 xxx Possibly add an animated background, (black background with white something????).
---- Research modern/good practice in web development and implement it in this code.
---- Find a good way to use CSS rather than having multiple files???
+--- Change images to cubes that you can rotate.
+--- Make a scrollable timeline using arrows on the side.
+--- Add cool footer.
 -->
 <html lang="en">
 <head>
@@ -46,10 +47,17 @@ xxx Possibly add an animated background, (black background with white something?
     <br>
 
     <div id="pinned">
-        <p><img class = "pong-image" src="../assets/thumbnails/pong-thumbnail.png" alt="pongimage">PONG</p>
-        <p>NORTH TYNESIDE COUNCIL FRAMEWORK</p>
-        <p>STUDENT PLACEMENT</p>
+        <p><img class="pong-image" src="../assets/thumbnails/pong-thumbnail.png" alt="pongimage">PONG</p>
+        <p><img class="gratithink-image" src="../assets/thumbnails/gratithink-thumbnail.png" alt="gratithinkimage">GRATITHINK</p>
+        <p><img class="northumbria-university-image" src="../assets/thumbnails/northumbriauniversity.jpg" alt="northumbriaimage">STUDENT PLACEMENT</p>
     </div>
+
+    <br><br>
+
+    <script type="module" src="../js/pinned.js"></script>
+    <div id="new-pinned"></div>
+
+    <br>
 
     <div id="timeline">
         <p>TIMELINE</p>

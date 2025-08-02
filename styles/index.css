@@ -260,18 +260,18 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 #pinned p {
     border-style: solid;
     border-color: #ffffff;
-    width: 200px;
+    width: 250px;
     height: 200px;
     background-color: #ffffff;
     color: black;
     padding: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     text-align: center;;
     text-decoration: solid;
     font-size: 25px;
@@ -280,6 +280,12 @@ body {
 #pinned p img {
     width: 200px;
     height: 200px;
+}
+
+#new-pinned {
+    width: 50%;
+    height: 400px;
+    margin: 0 auto;
 }
 
 #timeline {
