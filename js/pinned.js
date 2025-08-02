@@ -10,13 +10,23 @@ const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement);
 
-const bwidth = 1;
-const bheight = 1;
-const blength = 1;
-const geometry = new THREE.BoxGeometry(bwidth, bheight, blength);
-const material = new THREE.MeshStandardMaterial({color: 0x00ff00});
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+const projects = [
+    {name: 'Pong', image: '../assets/thumbnails/pong-thumbnail.png'},
+    {name: 'Gratithink', image: '../assets/thumbnails/gratithink-thumbnail.png'},
+    {name: 'Placement', image: '../assets/thumbnails/northumbriauniversity.jpg'}
+];
+
+const loader = new THREE.TextureLoader();
+projects.forEach((project, index) => {
+    loader.load(project.image, (texture) => {
+        const geometry = new THREE.BoxGeometry(1, 1, 0.2)
+        const material = new THREE.MeshStandardMaterial({map: texture});
+        const cube = new THREE.Mesh(geometry, material);
+        cube.position.x = index * 2 - (projects.length - 1);
+        cube.userData = {name: project.name}
+    scene.add(cube);
+    });
+});
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(5,5,10).normalize();
