@@ -44,9 +44,11 @@ xxx Possibly add an animated background, (black background with white something?
             <img class="hover-image" src="../assets/thumbnails/archery.jpg" alt="hoverimg">
         </div>
     </div>
-    
+
     <script type="module" src="../js/pinned.js"></script>
-    <div id="new-pinned"></div>
+    <div id="pinned">
+        <div id="pinned-tooltip"></div>
+    </div>
 
     <br>
 

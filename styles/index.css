@@ -261,16 +261,26 @@ body {
 }
 
 #pinned {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-}
-
-#new-pinned {
-    width: 75%;
+    width: 77%;
     height: 400px;
     margin: 0 auto;
+    position: relative;
+    border-color: #3A506B;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#pinned #pinned-tooltip {
+    position: absolute;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    display: none;
+    z-index: 10;
 }
 
 #timeline {
