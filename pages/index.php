@@ -27,7 +27,7 @@ xxx Possibly add an animated background, (black background with white something?
 
     <div id="keywords">
         <p><strong>CYBER SECURITY ENTHUSIAST | CCNA | PENTESTING | PROGRAMMING</strong></p>
-    </div><br>
+    </div>
 
     <div id="aboutme">
         <p><span class="underline bold text-large">About Me:</span><br>
@@ -44,16 +44,7 @@ xxx Possibly add an animated background, (black background with white something?
             <img class="hover-image" src="../assets/thumbnails/archery.jpg" alt="hoverimg">
         </div>
     </div>
-    <br>
-
-    <div id="pinned">
-        <p><img class="pong-image" src="../assets/thumbnails/pong-thumbnail.png" alt="pongimage">PONG</p>
-        <p><img class="gratithink-image" src="../assets/thumbnails/gratithink-thumbnail.png" alt="gratithinkimage">GRATITHINK</p>
-        <p><img class="northumbria-university-image" src="../assets/thumbnails/northumbriauniversity.jpg" alt="northumbriaimage">STUDENT PLACEMENT</p>
-    </div>
-
-    <br><br>
-
+    
     <script type="module" src="../js/pinned.js"></script>
     <div id="new-pinned"></div>
 

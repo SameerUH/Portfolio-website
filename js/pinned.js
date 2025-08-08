@@ -6,7 +6,7 @@ import {EdgesGeometry, LineSegments, LineBasicMaterial} from 'three';
 const container = document.getElementById("new-pinned");
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
 camera.position.z = 5;
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
@@ -26,13 +26,13 @@ const loader = new THREE.TextureLoader();
 const cubes = [];
 projects.forEach((project, index) => {
     loader.load(project.image, (texture) => {
-        const geometry = new THREE.BoxGeometry(1, 1, 1)
+        const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5)
         const materials = [new THREE.MeshStandardMaterial({map: texture}), new THREE.MeshStandardMaterial({map: texture}), new THREE.MeshBasicMaterial({color:0x0000ff}), new THREE.MeshBasicMaterial({color:0x0000ff}), new THREE.MeshStandardMaterial({map: texture}), new THREE.MeshStandardMaterial({map: texture})];
         const cube = new THREE.Mesh(geometry, materials);
         const edges = new EdgesGeometry(cube.geometry);
         const edgeLines = new LineSegments(edges, new LineBasicMaterial({color:0x000000}))
         cube.add(edgeLines);
-        cube.position.x = index * 2 - (projects.length - 1);
+        cube.position.x = index * 2.5 - (projects.length - 0.5);
         cube.userData = {name: project.name}
         cubes.push(cube)
         scene.add(cube);
