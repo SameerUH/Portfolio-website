@@ -6,7 +6,7 @@ xxx Decide on a colour scheme to use.
 xxxx Implement the 3D aspect of three.js.
 xxx Decide on the design of the buttons.
 xxx Possibly add an animated background, (black background with white something????).
---- Change images to cubes that you can rotate.
+xxx Change images to cubes that you can rotate.
 --- Make a scrollable timeline using arrows on the side.
 --- Add cool footer.
 -->
@@ -55,8 +55,19 @@ xxx Possibly add an animated background, (black background with white something?
     <br>
 
     <div id="timeline">
-        <p>TIMELINE</p>
+        <div class="slide fade">
+            <div class="year">2025</div>
+            <div class="text">Pong, GratiThink, Portfolio site, modules</div>
+        </div>
+        <div class="slide fade">
+            <div class="year">2024</div>
+            <div class="text">CISCO NETWORKING CERTIFICATE, modules</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div><br>
+    <script src="../js/timeline.js"></script>
 
     <?php
     include '../includes/footer_fragment.php';
