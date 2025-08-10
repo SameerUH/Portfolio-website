@@ -56,14 +56,13 @@ xxx Change images to cubes that you can rotate.
 
     <div id="timeline">
         <div class="slide fade">
+            <div class="year">2024</div>
+            <div class="text">UNIVERSITY MODULES:<br>Computers and Society (56%): Research paper on PEGI laws and regulations.<br>Data Fundamentals (40%): Written report on data security concepts and development of graphs based on big data using Python (Pandas, Matplotlib).<br>Programming (97%): Developed a productivity app using Python (Flask) with HTML and CSS including features such as to-do lists, calendars, creation and deletion of notes and user creation and authentication.<br>Network Switching and Routing (86%): Network creation and security learning concepts with CISCO such as STP, RIPv2, DHCP, port-security, WLANs, VLANs and toplogys such as Router on a stick and Inter-VLAN routing.<br>Human Factors in Cyber Security (75%): Research paper on how consumers react to data breaches with different variables such as type of attack, duration, time and overall view on data handling using results from interviews.<br>Operating Systems (68%): Multithreading systems in Ubuntu using C including file, selection and loop system and creation of DNS servers with Linux (Bind9) learning various topics such as deadlocks, semaphores, etc.</div>
+        </div>
+        <div class="slide fade">
             <div class="year">2025</div>
             <div class="text">Pong, GratiThink, Portfolio site, modules</div>
         </div>
-        <div class="slide fade">
-            <div class="year">2024</div>
-            <div class="text">CISCO NETWORKING CERTIFICATE, modules</div>
-        </div>
-
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div><br>
