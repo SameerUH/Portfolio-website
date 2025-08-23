@@ -17,7 +17,7 @@
     </div><br>
 
     <div id="resume">
-        <p><strong>RESUME<strong></p>
+        <p><strong>RESUME</strong></p>
     </div><br>
 
     <?php
