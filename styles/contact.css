@@ -49,6 +49,9 @@ body {
     border-style: solid;
     margin: 0 auto;
     background-color: #3A506B;
+    border-top: none;
+    border-right: none;
+    border-left: none;
     border-color: #062750;
     padding-top: 10px;
     position: relative;
@@ -180,6 +183,9 @@ footer {
     border-color: #062750;
     justify-content: center;
     align-items: center;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
     font-size: 40px;
     height: 100px;
     background-color: #3A506B;

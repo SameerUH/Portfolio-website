@@ -50,6 +50,9 @@ body {
     margin: 0 auto;
     background-color: #3A506B;
     border-color: #062750;
+    border-top: none;
+    border-right: none;
+    border-left: none;
     padding-top: 10px;
     position: relative;
     z-index: 10; /*Puts navbar above most content.*/
@@ -181,6 +184,9 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
     height: 100px;
     background-color: #3A506B;
     color: black;

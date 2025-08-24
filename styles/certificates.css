@@ -49,6 +49,9 @@ body {
     border-style: solid;
     margin: 0 auto;
     background-color: #3A506B;
+    border-top: none;
+    border-right: none;
+    border-left: none;
     border-color: #062750;
     padding-top: 10px;
     position: relative;
@@ -182,6 +185,9 @@ footer {
     align-items: center;
     font-size: 40px;
     height: 100px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
     background-color: #3A506B;
     color: black;
 }
