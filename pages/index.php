@@ -58,17 +58,16 @@ xxx Change images to cubes that you can rotate.
         <div class="slide fade">
             <div class="year">2024</div>
             <div class="text">
-                <div class="modules"><strong>UNIVERSITY MODULES:</strong>
+                <div class="modules"><strong>UNIVERSITY MODULES (1st year):</strong>
                 <br>Computers and Society (56%): Research paper on PEGI laws and regulations.
                 <br>Data Fundamentals (40%): Written report on data security concepts and development of graphs based on big data using Python (Pandas, Matplotlib).
                 <br>Programming (97%): Developed a productivity app using Python (Flask) with HTML and CSS including features such as to-do lists, calendars, creation and deletion of notes and user creation and authentication.
-                <br>Network Switching and Routing (86%): Network creation and security learning concepts with CISCO such as STP, RIPv2, DHCP, port-security, WLANs, VLANs and toplogys such as Router on a stick and Inter-VLAN routing.
-                <br>Human Factors in Cyber Security (75%): Research paper on how consumers react to data breaches with different variables such as type of attack, duration, time and overall view on data handling using results from interviews.
-                <br>Operating Systems (68%): Multithreading systems in Ubuntu using C including file, selection and loop system and creation of DNS servers with Linux (Bind9) learning various topics such as deadlocks, semaphores, etc.</div><br>
+                <br>Introduction to Networks and Cyber Security (57%): Learned basic device configuration (switches, routers and hosts), IP addressing schemes and networking protocols/practices.
+                <br>Computing Fundamentals (67%): Created a Caesar Cipher with x86 assembly language whilst learning set notation and logic gates.
+                <br>Computational Thinking (77%): Designed wireframes for our own and existing applications.</div><br>
                 <div class="projcerts"><strong>PROJECTS/CERTIFICATES:</strong>
                     <br>CCNAv7: Introductions to Networks.
-                    <br>Productivity App - Python.
-                </div><br>
+                    <br>Productivity App - Python.</div><br>
                 <div class="extra"><strong>EXTRA-CURRICULAR:</strong>
                     <br>Attended various networking event learning more about the industry.
                     <br>Member of Cyber Clinic to learn more about Penetration testing.
@@ -80,9 +79,22 @@ xxx Change images to cubes that you can rotate.
         <div class="slide fade">
             <div class="year">2025</div>
             <div class="text">
-                <div class="modules"><strong>UNIVERSITY MODULES:</strong>
-                <br>
-            </div>
+                <div class="modules"><strong>UNIVERSITY MODULES (2nd year):</strong>
+                <br>Network Switching and Routing (86%): Network creation and security learning concepts with CISCO such as STP, RIPv2, DHCP, port-security, WLANs, VLANs and toplogys such as Router on a stick and Inter-VLAN routing.
+                <br>Human Factors in Cyber Security (75%): Research paper on how consumers react to data breaches with different variables such as type of attack, duration, time and overall view on data handling using results from interviews.
+                <br>Operating Systems (68%): Multithreading systems in Ubuntu using C including file, selection and loop system and creation of DNS servers with Linux (Bind9) learning various topics such as deadlocks, semaphores, etc.
+                <br>Computing Consultancy Project (88%): Developed an 80-page cyber security framework with a group of talented students for primary schools with the North Tyneside Council going over concepts such as endpoint and network security, access control, etc.
+                <br>Digital Forensics Incident Response (80%): Investigated and analyzed a simulated criminal case using tools such as Autopsy, DB browser, FTK Registry Viewer and Volatility learning various terms such as windows artefacts, imaging cases, etc.
+                <br>Mobile & Web App Development (72%): Developed a website and mobile app using HTML, CSS, PHP, JavaScript and React with features such as filtered reviews, components, pages, routes, error pages, etc.</div><br>
+            <div class="projcerts"><strong>PROJECTS/CERTIFICATES:</strong>
+                <br>CCNA: Switching, Routing and Wireless Essentials
+                <br>GratiThink.
+                <br>Pong.
+                <br>Portfolio website.</div><br>
+            <div class="extra"><strong>EXTRA-CURRICULAR:</strong>
+                <br>Configured a Kali Linux Environment on a Raspberry Pi for experimenting with penetration testing outside of university.
+        </div>
+        </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
