@@ -93,6 +93,7 @@ xxx Change images to cubes that you can rotate.
                 <br>Portfolio website.</div><br>
             <div class="extra"><strong>EXTRA-CURRICULAR:</strong>
                 <br>Configured a Kali Linux Environment on a Raspberry Pi for experimenting with penetration testing outside of university.
+                <br>Started paths on TryHackMe and started practicing my penetration testing on HackTheBox machines.
         </div>
         </div>
         </div>
