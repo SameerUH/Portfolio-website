@@ -64,16 +64,25 @@ xxx Change images to cubes that you can rotate.
                 <br>Programming (97%): Developed a productivity app using Python (Flask) with HTML and CSS including features such as to-do lists, calendars, creation and deletion of notes and user creation and authentication.
                 <br>Network Switching and Routing (86%): Network creation and security learning concepts with CISCO such as STP, RIPv2, DHCP, port-security, WLANs, VLANs and toplogys such as Router on a stick and Inter-VLAN routing.
                 <br>Human Factors in Cyber Security (75%): Research paper on how consumers react to data breaches with different variables such as type of attack, duration, time and overall view on data handling using results from interviews.
-                <br>Operating Systems (68%): Multithreading systems in Ubuntu using C including file, selection and loop system and creation of DNS servers with Linux (Bind9) learning various topics such as deadlocks, semaphores, etc.</div>
-                <br>
+                <br>Operating Systems (68%): Multithreading systems in Ubuntu using C including file, selection and loop system and creation of DNS servers with Linux (Bind9) learning various topics such as deadlocks, semaphores, etc.</div><br>
                 <div class="projcerts"><strong>PROJECTS/CERTIFICATES:</strong>
                     <br>CCNAv7: Introductions to Networks.
                     <br>Productivity App - Python.
-                </div></div>
+                </div><br>
+                <div class="extra"><strong>EXTRA-CURRICULAR:</strong>
+                    <br>Attended various networking event learning more about the industry.
+                    <br>Member of Cyber Clinic to learn more about Penetration testing.
+                    <br>Attended CTFs hosted by the university.
+                    <br>Learning various different areas such as bash scripting and JavaScript to improve my portfolio.
+                </div>
+            </div>
         </div>
         <div class="slide fade">
             <div class="year">2025</div>
-            <div class="text">Pong, GratiThink, Portfolio site, modules</div>
+            <div class="text">
+                <div class="modules"><strong>UNIVERSITY MODULES:</strong>
+                <br>
+            </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>

@@ -384,7 +384,12 @@ body {
     border-color: red;
     border-style: solid;
     padding: 10px;
+}
 
+.extra {
+    border-color: green;
+    border-style: solid;
+    padding: 10px;
 }
 
 footer {
