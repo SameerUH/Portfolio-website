@@ -189,5 +189,9 @@ footer {
     font-size: 40px;
     height: 100px;
     background-color: #3A506B;
-    color: black;
+    color: white;
+}
+
+footer a {
+    color: white;
 }
