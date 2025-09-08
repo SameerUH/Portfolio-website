@@ -9,6 +9,7 @@ xxx Possibly add an animated background, (black background with white something?
 xxx Change images to cubes that you can rotate.
 --- Go back over the timeline and see if there's anything new you can add to it.
 --- Double check the LinkedIn link on the footer.
+--- Add @media CSS to the index page.
 -->
 <html lang="en">
 <head>

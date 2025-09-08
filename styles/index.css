@@ -1,3 +1,10 @@
+/*TO-DO LIST:
+--- Add the @media for the rest of the page.
+=== Make the navbar a column for mobile devices instead of a row.
+=== Make the contents of the pages fit their respective containers/boxes.
+=== Make the images smaller.
+*/
+
 body {
     background-color: #1b1b1b;
     color: #ffffff;
@@ -414,7 +421,29 @@ footer a {
     color: white;
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
+    .navbar nav ul {
+        flex-direction: column; /*Stacks the list items vertically.*/
+        gap: 10px; /*Adds space between the items.*/
+    }
+
+    #SAMEERHAQ {
+        width: 90%;
+        height: 15vh;
+    }
+
+    #keywords {
+        width: 90%;
+    }
+    #aboutme {
+        width: 80%;
+    }
+
+    #aboutme .card-content .image-swap-container {
+        width: 100px;
+        height: 150px;
+    }
+
     #timeline {
         width: 98%;
         padding: 10px;
