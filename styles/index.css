@@ -407,7 +407,11 @@ footer {
     border-left: none;
     height: 100px;
     background-color: #3A506B;
-    color: black;
+    color: white;
+}
+
+footer a {
+    color: white;
 }
 
 @media (max-width: 700px) {

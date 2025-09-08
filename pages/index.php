@@ -7,8 +7,8 @@ xxxx Implement the 3D aspect of three.js.
 xxx Decide on the design of the buttons.
 xxx Possibly add an animated background, (black background with white something????).
 xxx Change images to cubes that you can rotate.
---- Make a scrollable timeline using arrows on the side.
---- Add cool footer.
+--- Go back over the timeline and see if there's anything new you can add to it.
+--- Double check the LinkedIn link on the footer.
 -->
 <html lang="en">
 <head>
@@ -16,7 +16,7 @@ xxx Change images to cubes that you can rotate.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="../styles/index.css">
-    <title>SAMEER HAQ</title>
+    <title>Home | SameerUH</title>
 </head>
 
 <body>
