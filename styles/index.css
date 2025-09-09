@@ -456,17 +456,31 @@ footer a {
         width: 90%;
     }
     #aboutme {
-        width: 80%;
+        max-width: 98vw;
+        padding: 8px;
+    }
+
+    #aboutme .card-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #aboutme .card-content p {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+        text-align: left;
     }
 
     #aboutme .card-content .image-swap-container {
-        width: 100px;
-        height: 150px;
+        width: 200px;
+        height: 250px;
     }
 
     #aboutme .card-content .image-swap-container img {
-        width: 100px;
-        height: 150px;
+        width: 200px;
+        height: 250px;
     }
 
     #timeline {
