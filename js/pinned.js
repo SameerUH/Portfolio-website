@@ -94,6 +94,13 @@ window.addEventListener('mousemove', (event) => {
     }
 });
 
+
+if (window.innerWidth < 700) {
+    camera.position.set(0, 0, 7);
+    camera.fov = 55;
+    camera.updateProjectionMatrix();
+}
+
 //Animation/renderer
 const rotation = 0.01;
 function animate() {
