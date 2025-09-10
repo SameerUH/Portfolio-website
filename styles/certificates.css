@@ -132,6 +132,8 @@ body {
     height: 20vh;
     border-radius: 50px;
     overflow: hidden;
+    border-color: black;
+    border-style: solid;
 }
 
 #SAMEERHAQ #tooltip {
