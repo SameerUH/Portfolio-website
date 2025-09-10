@@ -17,7 +17,7 @@
     </div><br>
 
     <div id="project3D">
-        <p><strong>3D DESIGN WITH SWITCH AND ROUTER</strong></p>
+        <script type="module" src="../js/projectswitch.js"></script>
     </div><br>
 
     <div id="projecttitle">
