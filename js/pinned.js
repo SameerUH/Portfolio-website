@@ -100,7 +100,6 @@ if (window.innerWidth < 700) {
     camera.fov = 55;
     camera.updateProjectionMatrix();
 }
-
 //Animation/renderer
 const rotation = 0.01;
 function animate() {

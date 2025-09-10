@@ -1,8 +1,9 @@
 /*TO-DO LIST:
 --- Add the @media for the rest of the page.
-=== Make the navbar a column for mobile devices instead of a row.
+xxx Make the navbar a column for mobile devices instead of a row.
 === Make the contents of the pages fit their respective containers/boxes.
-=== Make the images smaller.
+xxx Make the images smaller.
+=== Add media for pixel width below 1000.
 */
 
 body {
@@ -381,6 +382,7 @@ body {
     width: 94%;
     align-items: center;
     margin: 0 auto;
+    font-size: 20px;
 }
 
 .modules {
@@ -422,7 +424,7 @@ footer a {
     text-align: center;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .navbar nav {
         flex-direction: column;
         align-items: center;
@@ -512,6 +514,10 @@ footer a {
     #timeline {
         width: 90%;
         padding: 10px;
+    }
+
+    #timeline .text {
+        font-size: 15px;
     }
 
     footer {
