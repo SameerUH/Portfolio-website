@@ -1,6 +1,12 @@
 import * as THREE from "three";
 import {GLTFLoader} from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
 
+/* TO-DO:
+--- Make the switch more visible, may be a lighting issue given that I have no lighting at the moment.
+--- Try and find a way to make each port clickable and redirectable to a different page.
+*/
+
+
 //Elements used in PHP file.
 const container = document.getElementById("project3D");
 
