@@ -38,7 +38,7 @@ xxx Add @media CSS to the index page.
                 <span class="underline bold text-large">Interests:</span><br>
                 I'm most excited when working on projects that challenge me creatively and technically. I've developed applications like Pong, GratiThink (a web/mobile app that promotes student wellbeing), and interactive portfolio websites using modern tools like React and Three.js. I also enjoy problem-solving, collaborative teamwork, and continuously learning how different programming languages can be applied to help people in practical ways.<br><br>
 
-                <span class="underline bold text-large">Motiviations:</span><br>
+                <span class="underline bold text-large">Motivations:</span><br>
                 I believe technology should protect and empower. Cybersecurity is evolving and is key to safeguarding people and data and I'm inspired by how tech can protect people from various attackers.
             </p>
             <div class = "image-swap-container">
