@@ -20,6 +20,10 @@
         <script type="module" src="../js/projectswitch.js"></script>
     </div><br>
 
+    <div id="newprojectmodel">
+        <script type="module" src="../js/newswitchmodel.js"></script>
+    </div><br>
+
     <div id="projecttitle">
         <p><strong>PROJECT TITLE | DATE</strong></p>
     </div><br>
