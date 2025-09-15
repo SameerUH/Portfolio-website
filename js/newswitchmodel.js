@@ -1,8 +1,19 @@
 import * as THREE from "three";
 import {OrbitControls} from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
+/*
+TO-DO:
+--- Possibly add an animated background to the box of the switch.
+--- Add a screen on the right side of the switch telling the user to pick a port.
+--- Add flicking LED lights to show activity.
+--- Add a wire from the back
+--- Add ethernet cables to some of the ports.
+--- Add tooltips which are project names and have it update the project title and description on the same page.
+--- Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
+*/
+
 //Colours:
-const box_colour = 0x333333;
+const box_colour = 0x00008B;
 const panel_colour = 0xffffff;
 
 
