@@ -66,15 +66,33 @@ const right_border = new THREE.Mesh(
     new THREE.MeshStandardMaterial({color:box_colour})
 );
 
-const portGeom = new THREE.BoxGeometry(0.6, 0.4, 0.5);
-let port_y = 0.35;
+function createPort() {
+    const portGeom = new THREE.Group();
+    const portShape = new THREE.Mesh(
+        new THREE.BoxGeometry(0.6, 0.4, 0.5),
+        new THREE.MeshStandardMaterial({color: 0x111111})
+    );
+    const portTop = new THREE.Mesh(
+        new THREE.BoxGeometry(0.4, 0.1, 0.5),
+        new THREE.MeshStandardMaterial({color: 0x111111})
+    );
+    portTop.position.set(0.01, 0.25, 0);
+    portGeom.add(portShape, portTop);
+    return portGeom;
+}
+
+let port_y = 0.25;
 let led_y = 0.68;
 
 for (let j=0; j < 2; j++) {
     for (let i=0; i < 8; i++) {
-        const port = new THREE.Mesh(portGeom, new THREE.MeshStandardMaterial({color:0x111111}));
-        port.position.set(-3.5 + i, port_y, 3.1);
+        const port = createPort();
+        port.position.set(-4.2 + i * 1, port_y, 3.1);
         network_switch.add(port);
+
+        if (j === 1) {
+            port.scale.y = -1;
+        }
 
         const led = new THREE.Mesh(
             new THREE.SphereGeometry(0.1, 16, 16),
@@ -83,8 +101,8 @@ for (let j=0; j < 2; j++) {
         led.position.set(port.position.x, led_y, 3.3);
         network_switch.add(led);
     }
-    port_y = -0.1;
-    led_y = -0.5;
+    port_y = -0.21;
+    led_y = -0.65;
 }
 
 top_border.position.set(0, 0.9, 3.15);
