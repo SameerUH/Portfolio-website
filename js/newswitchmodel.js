@@ -9,7 +9,7 @@ TO-DO:
 --- Add a wire from the back
 --- Add ethernet cables to some of the ports.
 --- Add tooltips which are project names and have it update the project title and description on the same page.
---- Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
+xxx Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
 */
 
 //Colours:
@@ -43,14 +43,14 @@ scene.add(light);
 const network_switch = new THREE.Group();
 
 const switch_box = new THREE.Mesh(
-    new THREE.BoxGeometry(10, 2, 6),
+    new THREE.BoxGeometry(15, 2, 6),
     new THREE.MeshStandardMaterial({color:box_colour})
 );
 
 network_switch.add(switch_box);
 
 const frontPanel = new THREE.Mesh(
-    new THREE.BoxGeometry(9.6, 1.6, 0.3),
+    new THREE.BoxGeometry(14.6, 1.6, 0.3),
     new THREE.MeshStandardMaterial({color:panel_colour})
 );
 frontPanel.position.set(0, 0, 3.15);
@@ -58,12 +58,12 @@ frontPanel.position.set(0, 0, 3.15);
 const panel_borders = new THREE.Group();
 
 const top_border = new THREE.Mesh(
-    new THREE.BoxGeometry(10, 0.2, 0.3),
+    new THREE.BoxGeometry(15, 0.2, 0.3),
     new THREE.MeshStandardMaterial({color:box_colour})
 );
 
 const bottom_border = new THREE.Mesh(
-    new THREE.BoxGeometry(10, 0.2, 0.3),
+    new THREE.BoxGeometry(15, 0.2, 0.3),
     new THREE.MeshStandardMaterial({color:box_colour})
 );
 
@@ -88,38 +88,46 @@ function createPort() {
         new THREE.MeshStandardMaterial({color: 0x111111})
     );
     portTop.position.set(0.01, 0.25, 0);
-    portGeom.add(portShape, portTop);
+
+    const portToptop = new THREE.Mesh(
+        new THREE.BoxGeometry(0.2, 0.05, 0.5),
+        new THREE.MeshStandardMaterial({color: 0x111111})
+    );
+    portToptop.position.set(0.015, 0.3, 0);
+
+    portGeom.add(portShape, portTop, portToptop);
     return portGeom;
 }
 
-let port_y = 0.25;
-let led_y = 0.68;
+let port_y = 0.235;
+let led_y = 0.685;
+const leds = [];
 
 for (let j=0; j < 2; j++) {
-    for (let i=0; i < 8; i++) {
+    for (let i=0; i < 9; i++) {
         const port = createPort();
-        port.position.set(-4.2 + i * 1, port_y, 3.1);
+        port.position.set(-6.5 + i * 1, port_y, 3.1);
         network_switch.add(port);
 
-        if (j === 1) {
-            port.scale.y = -1;
-        }
+        if (j === 1) port.scale.y = -1;
 
         const led = new THREE.Mesh(
             new THREE.SphereGeometry(0.1, 16, 16),
-            new THREE.MeshStandardMaterial({color: 0xff0000, emissive: 0x00ff00, emissiveIntensity: 0.5})
+            new THREE.MeshStandardMaterial({color: 0x00ff00, emissive: 0x00ff00, emissiveIntensity: 0.0})
         );
         led.position.set(port.position.x, led_y, 3.3);
         network_switch.add(led);
+
+        leds.push(led);
     }
-    port_y = -0.21;
-    led_y = -0.65;
+    port_y = -port_y;
+    led_y = -led_y;
 }
 
 top_border.position.set(0, 0.9, 3.15);
 bottom_border.position.set(0, -0.9, 3.15);
-left_border.position.set(-4.9, 0, 3.15);
-right_border.position.set(4.9, 0, 3.15);
+left_border.position.set(-7.4, 0, 3.15);
+right_border.position.set(7.4, 0, 3.15);
 
 panel_borders.add(top_border, bottom_border, left_border, right_border);
 
@@ -128,8 +136,20 @@ network_switch.add(panel_borders);
 
 scene.add(network_switch);
 
-function animate() {
+let lastUpdate = 0;
+function animate(time) {
     requestAnimationFrame(animate);
+
+    if (time - lastUpdate > 200) {
+        leds.forEach((led, index) => {
+            if (Math.random() > 0.95) {
+                led.material.emissiveIntensity = 1.0;
+            } else {
+                led.material.emissiveIntensity *= 0.9;
+            }
+        });
+        lastUpdate = time;
+    }
     controls.update();
     renderer.render(scene, camera);
 }
