@@ -122,7 +122,7 @@ function createPort(portIndex) {
     portGeom.userData = {
         isPort: true,
         portIndex: portIndex,
-        project: projectData[portIndex] || {name: "Coming Soon", url: "#", description: "Project in development"}
+        project: projectData[portIndex] || {name: "Coming Soon", date: "NULL", description: "Project in development"}
     }
     return portGeom;
 }
@@ -215,7 +215,7 @@ function updateProjectInfo(project) {
     if (projectTitle) {
         const titleText = projectTitle.querySelector('p strong');
         if (titleText) {
-            titleText.textContent = `${project.name.toUpperCase()}`;
+            titleText.textContent = `${project.name.toUpperCase()} | ${project.date.toUpperCase()}`;
         }
     }
 
