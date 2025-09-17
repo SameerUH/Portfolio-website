@@ -5,8 +5,8 @@ import {EdgesGeometry, LineSegments, LineBasicMaterial} from 'three';
 /*
 TO-DO:
 --- Possibly add an animated background to the box of the switch.
---- Add a screen on the right side of the switch telling the user to pick a port.
---- Add flicking LED lights to show activity.
+xxx Add a screen on the right side of the switch telling the user to pick a port.
+xxxx Add flicking LED lights to show activity.
 --- Add a wire from the back
 --- Add ethernet cables to some of the ports.
 --- Add tooltips which are project names and have it update the project title and description on the same page.
@@ -40,6 +40,31 @@ scene.add(new THREE.AmbientLight(0xffffff, 1.5));
 const light = new THREE.DirectionalLight(0xffffff, 1.2);
 light.position.set(5, 10, 5);
 scene.add(light);
+
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const clickablePorts = [];
+
+const projectData = [
+    {name: "2D Platformer", description: "A 2D platformer game I designed Year 10 of high school as a practice coursework."},
+    {name: "NEA Maze Game", description: "A maze game I created for my NEA (Year 11) project, similar to Pac-Man."},
+    {name: "Productivity app", description: "A productivity app I developed in my first year of university which helps users manage their tasks effectively."},
+    {name: "Pong", description: "My interpretation of the classic Pong game in PyGame."},
+    {name: "Gratithink", description: "A web-based journalling application and website used to help students reflect on their education habits."},
+    {name: "Portfollio website", description: "This website you are looking at."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."},
+    {name: "Coming soon", description: "Haven't filled this yet."}
+];
 
 const network_switch = new THREE.Group();
 
@@ -78,7 +103,7 @@ const right_border = new THREE.Mesh(
     new THREE.MeshStandardMaterial({color:box_colour})
 );
 
-function createPort() {
+function createPort(portIndex) {
     const portGeom = new THREE.Group();
     const portShape = new THREE.Mesh(
         new THREE.BoxGeometry(0.6, 0.4, 0.5),
@@ -97,18 +122,26 @@ function createPort() {
     portToptop.position.set(0.015, 0.3, 0);
 
     portGeom.add(portShape, portTop, portToptop);
+
+    portGeom.userData = {
+        isPort: true,
+        portIndex: portIndex,
+        project: projectData[portIndex] || {name: "Coming Soon", url: "#", description: "Project in development"}
+    }
     return portGeom;
 }
 
 let port_y = 0.235;
 let led_y = 0.685;
 const leds = [];
+let portIndex = 0;
 
 for (let j=0; j < 2; j++) {
     for (let i=0; i < 9; i++) {
         const port = createPort();
         port.position.set(-6.5 + i * 1, port_y, 3.1);
         network_switch.add(port);
+        clickablePorts.push(port);
 
         if (j === 1) port.scale.y = -1;
 
@@ -120,6 +153,7 @@ for (let j=0; j < 2; j++) {
         network_switch.add(led);
 
         leds.push(led);
+        portIndex++;
     }
     port_y = -port_y;
     led_y = -led_y;
