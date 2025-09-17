@@ -44,27 +44,23 @@ scene.add(light);
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 const clickablePorts = [];
+const leds = [];
 
-const projectData = [
-    {name: "2D Platformer", description: "A 2D platformer game I designed Year 10 of high school as a practice coursework."},
-    {name: "NEA Maze Game", description: "A maze game I created for my NEA (Year 11) project, similar to Pac-Man."},
-    {name: "Productivity app", description: "A productivity app I developed in my first year of university which helps users manage their tasks effectively."},
-    {name: "Pong", description: "My interpretation of the classic Pong game in PyGame."},
-    {name: "Gratithink", description: "A web-based journalling application and website used to help students reflect on their education habits."},
-    {name: "Portfollio website", description: "This website you are looking at."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."},
-    {name: "Coming soon", description: "Haven't filled this yet."}
-];
+let projectData = [];
+
+async function loadProjects() {
+    try {
+        const response = await fetch('../data/projects.json');
+        const data = await response.json();
+        projectData = data.projects;
+        console.log('Projects loaded successfully:', projectData.length);
+    } catch (error) {
+        console.error('Error loading projects:', error);
+        projectData = [
+            {name: "Error Loading", description: "Could not load project data."}
+        ];
+    }
+}
 
 const network_switch = new THREE.Group();
 
@@ -131,32 +127,33 @@ function createPort(portIndex) {
     return portGeom;
 }
 
-let port_y = 0.235;
-let led_y = 0.685;
-const leds = [];
-let portIndex = 0;
+function createPorts() {
+    let port_y = 0.235;
+    let led_y = 0.685;
+    let portIndex = 0;
 
-for (let j=0; j < 2; j++) {
-    for (let i=0; i < 9; i++) {
-        const port = createPort(portIndex);
-        port.position.set(-6.5 + i * 1, port_y, 3.1);
-        network_switch.add(port);
-        clickablePorts.push(port);
+    for (let j=0; j < 2; j++) {
+        for (let i=0; i < 9; i++) {
+            const port = createPort(portIndex);
+            port.position.set(-6.5 + i * 1, port_y, 3.1);
+            network_switch.add(port);
+            clickablePorts.push(port);
 
-        if (j === 1) port.scale.y = -1;
+            if (j === 1) port.scale.y = -1;
 
-        const led = new THREE.Mesh(
-            new THREE.SphereGeometry(0.1, 16, 16),
-            new THREE.MeshStandardMaterial({color: 0x00ff00, emissive: 0x00ff00, emissiveIntensity: 0.0})
-        );
-        led.position.set(port.position.x, led_y, 3.3);
-        network_switch.add(led);
+            const led = new THREE.Mesh(
+                new THREE.SphereGeometry(0.1, 16, 16),
+                new THREE.MeshStandardMaterial({color: 0x00ff00, emissive: 0x00ff00, emissiveIntensity: 0.0})
+            );
+            led.position.set(port.position.x, led_y, 3.3);
+            network_switch.add(led);
 
-        leds.push(led);
-        portIndex++;
+            leds.push(led);
+            portIndex++;
+        }
+        port_y = -port_y;
+        led_y = -led_y;
     }
-    port_y = -port_y;
-    led_y = -led_y;
 }
 
 top_border.position.set(0, 0.9, 3.15);
@@ -213,9 +210,6 @@ function createScreen(text = "PICK A PORT") {
     return {screen, update};
 }
 
-const {screen, update: updateScreen} = createScreen("PICK A PORT");
-network_switch.add(screen);
-
 function updateProjectInfo(project) {
     const projectTitle = document.getElementById('projecttitle');
     if (projectTitle) {
@@ -229,7 +223,7 @@ function updateProjectInfo(project) {
     if (projectDescription) {
         const description = projectDescription.querySelector('p strong');
         if (description) {
-            description.textContent = project.description;
+            description.textContent = project.fullDescription || project.shortDescription || project.description;
         }
     }
 }
@@ -252,31 +246,45 @@ function onMouseClick(event) {
     }
 }
 
-renderer.domElement.addEventListener('click', onMouseClick);
+async function init() {
+    await loadProjects();
+    createPorts();
 
-scene.add(network_switch);
+    const {screen, update: updateScreen} = createScreen("PICK A PORT");
+    network_switch.add(screen);
 
-let lastUpdate = 0;
-function animate(time) {
-    requestAnimationFrame(animate);
+    renderer.domElement.addEventListener('click', onMouseClick);
 
-    if (time - lastUpdate > 200) {
-        leds.forEach((led, index) => {
-            if (Math.random() > 0.95) {
-                led.material.emissiveIntensity = 1.0;
-            } else {
-                led.material.emissiveIntensity *= 0.9;
-            }
-        });
-        lastUpdate = time;
+    scene.add(network_switch);
+
+    let lastUpdate = 0;
+    function animate(time) {
+        requestAnimationFrame(animate);
+
+        if (time - lastUpdate > 200) {
+            leds.forEach((led) => {
+                if (Math.random() > 0.95) {
+                    led.material.emissiveIntensity = 1.0;
+                } else {
+                    led.material.emissiveIntensity *= 0.9;
+                }
+            });
+            lastUpdate = time;
+        }
+
+        updateScreen();
+        controls.update();
+        renderer.render(scene, camera);
     }
+    animate();
 
-    updateScreen();
-    controls.update();
-    renderer.render(scene, camera);
+    const defaultProject = {
+        name: "Select a Port",
+        description: "Please select a port to view its details."
+    }
+    updateProjectInfo(defaultProject);
 }
-
-animate();
+init();
 
 window.addEventListener('resize', () => {
     camera.aspect = container.clientWidth / container.clientHeight;

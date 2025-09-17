@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "2D Platformer",
+      "date": "Year 10 (2020)",
+      "shortDescription": "A 2D platformer game I designed in Year 10 as practice coursework.",
+      "fullDescription": "This was my first major programming project during Year 10.\nBuilt using Python and Pygame, it features multiple levels, enemy AI, power-ups, and a scoring system.\nThe game includes custom sprite animations, collision detection, and progressive difficulty.\nThis project taught me fundamental game development concepts and object-oriented programming principles.",
+      "technologies": ["Python", "Pygame", "Object-Oriented Programming"],
+      "image": "/images/projects/2d-platformer.png",
+      "gallery": [
+        "/images/projects/2d-platformer-1.png",
+        "/images/projects/2d-platformer-2.png"
+      ],
+      "githubUrl": "https://github.com/SameerUH/2d-platformer",
+      "liveUrl": null,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "NEA Maze Game",
+      "date": "Year 11 (2021)",
+      "shortDescription": "A maze game I created for my NEA project, similar to Pac-Man.",
+      "fullDescription": "Developed as my Non-Exam Assessment (NEA) project for A-Level Computer Science.\nThis Pac-Man inspired maze game features ghost AI with different behaviors, power pellets, score tracking, and multiple mazes.\nThe project included comprehensive documentation, user testing, and iterative development following the software development lifecycle.",
+      "technologies": ["Python", "Pygame", "AI Algorithms", "Software Engineering"],
+      "image": "/images/projects/nea-maze.png",
+      "githubUrl": "https://github.com/SameerUH/nea-maze",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Productivity App",
+      "date": "University Year 1 (2022)",
+      "shortDescription": "A productivity app developed in my first year of university.",
+      "fullDescription": "A comprehensive task management application built during my first year at university.\nFeatures include task creation and categorization, deadline tracking, progress visualization, and productivity analytics.\nThe app uses a clean, intuitive interface designed to help students manage their academic workload effectively.\nBuilt with modern web technologies and responsive design principles.",
+      "technologies": ["HTML5", "CSS", "JavaScript", "Local Storage", "Responsive Design"],
+      "image": "/images/projects/productivity-app.png",
+      "liveUrl": null,
+      "featured": true
+    }
+  ]
+}
