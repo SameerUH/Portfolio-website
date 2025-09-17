@@ -138,7 +138,7 @@ let portIndex = 0;
 
 for (let j=0; j < 2; j++) {
     for (let i=0; i < 9; i++) {
-        const port = createPort();
+        const port = createPort(portIndex);
         port.position.set(-6.5 + i * 1, port_y, 3.1);
         network_switch.add(port);
         clickablePorts.push(port);
@@ -216,6 +216,43 @@ function createScreen(text = "PICK A PORT") {
 const {screen, update: updateScreen} = createScreen("PICK A PORT");
 network_switch.add(screen);
 
+function updateProjectInfo(project) {
+    const projectTitle = document.getElementById('projecttitle');
+    if (projectTitle) {
+        const titleText = projectTitle.querySelector('p strong');
+        if (titleText) {
+            titleText.textContent = `${project.name.toUpperCase()}`;
+        }
+    }
+
+    const projectDescription = document.getElementById('description');
+    if (projectDescription) {
+        const description = projectDescription.querySelector('p strong');
+        if (description) {
+            description.textContent = project.description;
+        }
+    }
+}
+
+
+function onMouseClick(event) {
+    const rect  = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObjects(clickablePorts, true);  
+
+    if (intersects.length > 0) {
+        const clickedPort = intersects[0].object.parent;
+        if (clickedPort.userData.isPort) {
+            updateProjectInfo(clickedPort.userData.project);
+        }
+    }
+}
+
+renderer.domElement.addEventListener('click', onMouseClick);
 
 scene.add(network_switch);
 
@@ -246,3 +283,11 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
 })
+
+window.addEventListener('load', () => {
+    const defaultProject = {
+        name: "Select a Port",
+        description: "Please select a port to view its details."
+    };
+    updateProjectInfo(defaultProject);
+});
