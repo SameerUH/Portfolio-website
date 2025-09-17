@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import {OrbitControls} from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+import {EdgesGeometry, LineSegments, LineBasicMaterial} from 'three';
 
 /*
 TO-DO:
@@ -134,6 +135,54 @@ panel_borders.add(top_border, bottom_border, left_border, right_border);
 network_switch.add(frontPanel);
 network_switch.add(panel_borders);
 
+function createScreen(text = "PICK A PORT") {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height =  256;
+    const context = canvas.getContext('2d');
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({map: texture});
+    const geometry = new THREE.BoxGeometry(3, 1.2, 1.5);
+
+    const screen = new THREE.Mesh(geometry, material);
+    const edges = new EdgesGeometry(screen.geometry);
+    const edgeLines = new LineSegments(edges, new LineBasicMaterial({color: 0x000000}));
+    screen.add(edgeLines);
+    screen.position.set(5, 0, 2.6);
+
+    let scrollX = canvas.width;
+
+    function update() {
+        context.fillStyle = "#ffffff";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        //Text
+        context.fillStyle = "#00ff00";
+        context.font = "bold 125px Arial";
+        context.textAlign = "left";
+        context.textBaseline = "middle";
+
+        const textWidth = context.measureText(text).width;
+        const gap = 150;
+
+        context.fillText(text, scrollX, canvas.height / 2);
+        context.fillText(text, scrollX + textWidth + gap, canvas.height / 2);
+        
+        scrollX -= 2;
+        if (scrollX + textWidth < 0) {
+            scrollX += textWidth + gap;
+        }
+        texture.needsUpdate = true;
+    }
+
+    return {screen, update};
+}
+
+const {screen, update: updateScreen} = createScreen("PICK A PORT");
+network_switch.add(screen);
+
+
 scene.add(network_switch);
 
 let lastUpdate = 0;
@@ -150,6 +199,8 @@ function animate(time) {
         });
         lastUpdate = time;
     }
+
+    updateScreen();
     controls.update();
     renderer.render(scene, camera);
 }
