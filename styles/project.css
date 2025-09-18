@@ -164,21 +164,6 @@ body {
     font-size: 50px;
 }
 
-#project3D {
-    display: flex;
-    padding: 100px;
-    border-style: solid;
-    border-color: #ffffff;
-    width: 80vw;
-    margin: 0 auto;
-    background-color: #ffffff;
-    color: black;
-    height: 250px;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-}
-
 #newprojectmodel {
     display: flex;
     padding: 100px;

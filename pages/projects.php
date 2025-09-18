@@ -17,10 +17,6 @@
         <p><strong>PROJECTS</strong></p>
     </div><br>
 
-    <div id="project3D">
-        <script type="module" src="../js/projectswitch.js"></script>
-    </div><br>
-
     <div id="newprojectmodel">
         <script type="module" src="../js/newswitchmodel.js"></script>
     </div><br>
