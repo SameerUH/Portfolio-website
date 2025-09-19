@@ -109,7 +109,7 @@ function createPort(portIndex) {
         new THREE.BoxGeometry(0.4, 0.1, 0.5),
         new THREE.MeshStandardMaterial({color: 0x111111})
     );
-    portTop.position.set(0.01, 0.25, 0);
+    portTop.position.set(0.01, 0.25, 0)
 
     const portToptop = new THREE.Mesh(
         new THREE.BoxGeometry(0.2, 0.05, 0.5),
@@ -156,6 +156,25 @@ function createPorts() {
     }
 }
 
+
+function createCable() {
+    const cable = new THREE.Group();
+    const cable_head = new THREE.Mesh(
+        new THREE.BoxGeometry(0.6, 0.4, 0.5),
+        new THREE.MeshStandardMaterial( {color: 0x555555} )
+    );
+
+    cable.add(cable_head);
+    cable.position.set(-6.5, 0.235, 3.25);
+
+    const cable_top = new THREE.Mesh(
+        new THREE.BoxGeometry(0.3, 0.09, 0.5),
+        new THREE.MeshStandardMaterial({color: 0x555555})
+    );
+    cable.add(cable_top);
+    cable_top.position.set(0.01, 0.24, 0);
+    scene.add(cable);
+}
 top_border.position.set(0, 0.9, 3.15);
 bottom_border.position.set(0, -0.9, 3.15);
 left_border.position.set(-7.4, 0, 3.15);
@@ -249,6 +268,7 @@ function onMouseClick(event) {
 async function init() {
     await loadProjects();
     createPorts();
+    createCable();
 
     const {screen, update: updateScreen} = createScreen("PICK A PORT");
     network_switch.add(screen);
