@@ -171,8 +171,23 @@ function createCable() {
         new THREE.BoxGeometry(0.3, 0.09, 0.5),
         new THREE.MeshStandardMaterial({color: 0x555555})
     );
+
     cable.add(cable_top);
     cable_top.position.set(0.01, 0.24, 0);
+
+    const path = new THREE.CatmullRomCurve3([
+        new THREE.Vector3(0, 0.05, -1),
+        new THREE.Vector3(0, 0.05, 0.5),
+        new THREE.Vector3(-5, 0, 0.5)
+    ]);
+
+    const cableGeom = new THREE.TubeGeometry(path, 50, 0.2, 50, false);
+    const cableMat = new THREE.MeshStandardMaterial({color: 0xff0000});
+    const cable_wire = new THREE.Mesh(cableGeom, cableMat);
+
+    cable.add(cable_wire);
+    cable_wire.position.set(0, 0, 0.7);
+
     scene.add(cable);
 }
 top_border.position.set(0, 0.9, 3.15);
