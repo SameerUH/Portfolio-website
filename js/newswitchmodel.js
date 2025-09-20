@@ -143,7 +143,7 @@ function createPorts() {
 
             const led = new THREE.Mesh(
                 new THREE.SphereGeometry(0.1, 16, 16),
-                new THREE.MeshStandardMaterial({color: 0x00ff00, emissive: 0x00ff00, emissiveIntensity: 0.0})
+                new THREE.MeshStandardMaterial({color: 0xffff00, emissive: 0x00ff00, emissiveIntensity: 0.0})
             );
             led.position.set(port.position.x, led_y, 3.3);
             network_switch.add(led);
@@ -156,8 +156,7 @@ function createPorts() {
     }
 }
 
-
-function createCable() {
+function createCable(portpicked, direction_x, direction_y, flipped) {
     const cable = new THREE.Group();
     const cable_head = new THREE.Mesh(
         new THREE.BoxGeometry(0.6, 0.4, 0.5),
@@ -165,7 +164,7 @@ function createCable() {
     );
 
     cable.add(cable_head);
-    cable.position.set(-6.5, 0.235, 3.25);
+    cable.position.set(portpicked.position.x, portpicked.position.y, 3.25);
 
     const cable_top = new THREE.Mesh(
         new THREE.BoxGeometry(0.3, 0.09, 0.5),
@@ -175,14 +174,16 @@ function createCable() {
     cable.add(cable_top);
     cable_top.position.set(0.01, 0.24, 0);
 
+    if (flipped) cable.scale.y = -1;
+
     const path = new THREE.CatmullRomCurve3([
         new THREE.Vector3(0, 0.05, -1),
         new THREE.Vector3(0, 0.05, 0.5),
-        new THREE.Vector3(-5, 0, 0.5)
+        new THREE.Vector3(direction_x, direction_y, 0.5)
     ]);
 
     const cableGeom = new THREE.TubeGeometry(path, 50, 0.2, 50, false);
-    const cableMat = new THREE.MeshStandardMaterial({color: 0xff0000});
+    const cableMat = new THREE.MeshStandardMaterial({color: new THREE.Color(Math.random() * 0xffffff)});
     const cable_wire = new THREE.Mesh(cableGeom, cableMat);
 
     cable.add(cable_wire);
@@ -283,7 +284,10 @@ function onMouseClick(event) {
 async function init() {
     await loadProjects();
     createPorts();
-    createCable();
+    createCable(clickablePorts[0], 0, 5, false);
+    createCable(clickablePorts[1], 0, 5, false);
+    createCable(clickablePorts[2], 0, 5, false);
+    createCable(clickablePorts[3], 0, 5, false);
 
     const {screen, update: updateScreen} = createScreen("PICK A PORT");
     network_switch.add(screen);
@@ -297,11 +301,15 @@ async function init() {
         requestAnimationFrame(animate);
 
         if (time - lastUpdate > 200) {
-            leds.forEach((led) => {
-                if (Math.random() > 0.95) {
-                    led.material.emissiveIntensity = 1.0;
+            leds.forEach((led, index) => {
+                if (index < 4) {
+                    if (Math.random() > 0.8) {
+                        led.material.color.set(0x00ff00);
+                    } else {
+                        led.material.color.set(0xffff00);
+                    }
                 } else {
-                    led.material.emissiveIntensity *= 0.9;
+                    led.material.color.set(0xffff00);
                 }
             });
             lastUpdate = time;
