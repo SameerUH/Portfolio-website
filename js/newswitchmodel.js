@@ -191,6 +191,17 @@ function createCable(portpicked, direction_x, direction_y, flipped) {
 
     scene.add(cable);
 }
+
+const back_path = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(6, 0, -2),
+    new THREE.Vector3(6, 0, -10)
+]);
+
+const back_cableGeom = new THREE.TubeGeometry(back_path, 50, 0.35, 50, false);
+const back_cableMat = new THREE.MeshStandardMaterial({color: 0x000000});
+const back_cable = new THREE.Mesh(back_cableGeom, back_cableMat);
+scene.add(back_cable);
+
 top_border.position.set(0, 0.9, 3.15);
 bottom_border.position.set(0, -0.9, 3.15);
 left_border.position.set(-7.4, 0, 3.15);
