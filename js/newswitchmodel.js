@@ -7,8 +7,8 @@ TO-DO:
 --- Possibly add an animated background to the box of the switch.
 xxx Add a screen on the right side of the switch telling the user to pick a port.
 xxxx Add flicking LED lights to show activity.
---- Add a wire from the back
---- Add ethernet cables to some of the ports.
+xxx Add a wire from the back
+xxx Add ethernet cables to some of the ports.
 --- Add tooltips which are project names and have it update the project title and description on the same page.
 xxx Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
 */
