@@ -4,7 +4,6 @@
       "id": 1,
       "name": "2D Platformer",
       "date": "Year 10 (2020)",
-      "shortDescription": "A 2D platformer game I designed in Year 10 as practice coursework.",
       "fullDescription": "This was my first major programming project during Year 10.\nBuilt using Python and Pygame, it features multiple levels, enemy AI, power-ups, and a scoring system.\nThe game includes custom sprite animations, collision detection, and progressive difficulty.\nThis project taught me fundamental game development concepts and object-oriented programming principles.",
       "technologies": ["Python", "Pygame", "Object-Oriented Programming"],
       "image": "/images/projects/2d-platformer.png",

@@ -11,6 +11,7 @@ xxx Add a wire from the back
 xxx Add ethernet cables to some of the ports.
 --- Add tooltips which are project names and have it update the project title and description on the same page.
 xxx Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
+--- Fix the JSON and formatting of the PHP file for better visuals.
 */
 
 //Colours:
@@ -269,7 +270,7 @@ function updateProjectInfo(project) {
     if (projectDescription) {
         const description = projectDescription.querySelector('p strong');
         if (description) {
-            description.textContent = project.fullDescription || project.shortDescription || project.description;
+            description.textContent = `${project.technologies.join(", ")} ${project.fullDescription}`;
         }
     }
 }
