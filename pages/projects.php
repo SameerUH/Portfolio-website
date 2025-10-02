@@ -21,13 +21,19 @@
         <script type="module" src="../js/newswitchmodel.js"></script>
     </div><br>
 
-    <div id="projecttitle">
-        <p><strong>PROJECT TITLE | DATE</strong></p>
-    </div><br>
+    <div id="project-display">
+        <div id="projecttitle">
+            <p><strong>PROJECT TITLE | DATE</strong></p>
+        </div><br>
 
-    <div id="description">
-        <p><strong>PROJECT DESCRIPTION</strong></p>
-    </div><br>
+        <div id="description">
+            <div id="skills"><strong></strong></div>
+            <!-- <img id="project-image" src="" alt="Project Image"><br> -->
+            <div id="fulldescription"><strong>PROJECT DESCRIPTION</strong></div>
+            <!-- <p id="projectlink"><strong>PROJECT LINK</strong></p> -->
+        </div>
+    </div>
+    <br>
 
     <?php
     include '../includes/footer_fragment.php';

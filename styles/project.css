@@ -196,7 +196,8 @@ body {
 
 #description {
     display: flex;
-    padding: 100px;
+    flex-direction: column;
+    padding: 40px 100px;
     border-style: solid;
     border-color: #ffffff;
     width: 70vw;
@@ -207,6 +208,18 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    gap: 20px;
+}
+
+#description > div {
+    width: 100%;
+    text-align: left;
+}
+
+#description #skills {
+    text-decoration: bold;
+    font-size: 30px;
+
 }
 
 footer {

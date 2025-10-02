@@ -257,20 +257,29 @@ function createScreen(text = "PICK A PORT") {
     return {screen, update};
 }
 
+
 function updateProjectInfo(project) {
     const projectTitle = document.getElementById('projecttitle');
     if (projectTitle) {
         const titleText = projectTitle.querySelector('p strong');
         if (titleText) {
-            titleText.textContent = `${project.name.toUpperCase()} | ${project.date.toUpperCase()}`;
+            const name = project.name ? project.name.toUpperCase() : "PROJECT";
+            const date = project.date ? project.date.toUpperCase() : "";
+            titleText.textContent = `${name} | ${date}`;
         }
     }
 
-    const projectDescription = document.getElementById('description');
+    const projectSkills = document.getElementById('skills');
+    if (projectSkills) {
+        const skillsArr = project.skills || project.technologies || [];
+        projectSkills.innerHTML = skillsArr.length ? skillsArr.join(", ") : "";
+    }
+
+    const projectDescription = document.getElementById('fulldescription');
     if (projectDescription) {
-        const description = projectDescription.querySelector('p strong');
+        const description = projectDescription.querySelector('strong');
         if (description) {
-            description.textContent = `${project.technologies.join(", ")} ${project.fullDescription}`;
+            description.textContent = project.fullDescription || project.description || "";
         }
     }
 }
