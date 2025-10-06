@@ -20,6 +20,9 @@ const panel_colour = 0xffffff; //Gray???
 const port_colour = 0x111111; //Black
 const back_cable_colour = 0x111111; //Black
 const screen_font_colour = 0x00ff00; //Green
+const LED_ON_colour = 0x00ff00; //Green
+const LED_OFF_colour = 0xffff00; //Yellow
+const cable_head_colour = 0x555555; //Gray
 
 
 //Elements used in PHP file.
@@ -190,7 +193,7 @@ function createCable(portpicked, direction_x, direction_y, flipped) {
     const cable = new THREE.Group();
     const cable_head = new THREE.Mesh(
         new THREE.BoxGeometry(0.6, 0.4, 0.5),
-        new THREE.MeshStandardMaterial( {color: 0x555555} )
+        new THREE.MeshStandardMaterial( {color: cable_head_colour} )
     );
 
     cable.add(cable_head);
@@ -198,7 +201,7 @@ function createCable(portpicked, direction_x, direction_y, flipped) {
 
     const cable_top = new THREE.Mesh(
         new THREE.BoxGeometry(0.3, 0.09, 0.5),
-        new THREE.MeshStandardMaterial({color: 0x555555})
+        new THREE.MeshStandardMaterial({color: cable_head_colour})
     );
 
     cable.add(cable_top);
@@ -213,6 +216,7 @@ function createCable(portpicked, direction_x, direction_y, flipped) {
     ]);
 
     const cableGeom = new THREE.TubeGeometry(path, 50, 0.2, 50, false);
+    //Sets a random colour for the wires, changes every time you reload the page.
     const cableMat = new THREE.MeshStandardMaterial({color: new THREE.Color(Math.random() * 0xffffff)});
     const cable_wire = new THREE.Mesh(cableGeom, cableMat);
 
@@ -335,30 +339,39 @@ function updateProjectInfo(project) {
 
 
 function onMouseClick(event) {
+    //Size of the scene on the screen and converts the mouse position to the 3D scene coordinates.
     const rect  = renderer.domElement.getBoundingClientRect();
     mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
+    //Makes a ray that detects for mouse events such as clicks.
     raycaster.setFromCamera(mouse, camera);
 
     const intersects = raycaster.intersectObjects(clickablePorts, true);  
 
+    //If at least one object is clicked, check the parent objects and verify that it is a port.    
     if (intersects.length > 0) {
         const clickedPort = intersects[0].object.parent;
         if (clickedPort.userData.isPort) {
+            //If it is a port and it has data inside of it, update the PHP below to display the project information.
             updateProjectInfo(clickedPort.userData.project);
         }
     }
 }
 
+
+//Initialize the 3D scene and start the animation.
 async function init() {
-    await loadProjects();
-    createPorts();
+    await loadProjects(); //Let the JSON load before continuing
+    createPorts(); //Create the clickable ports and add them to the switch.
+
+    //Add cables to the switch and connect them to the ports.
     createCable(clickablePorts[0], 0, 5, false);
     createCable(clickablePorts[1], 0, 5, false);
     createCable(clickablePorts[2], 0, 5, false);
     createCable(clickablePorts[3], 0, 5, false);
 
+    //Create a screen and add text to it.
     const {screen, update: updateScreen} = createScreen("PICK A PORT");
     network_switch.add(screen);
 
@@ -366,6 +379,7 @@ async function init() {
 
     scene.add(network_switch);
 
+    //LED flicker update so it lights up randomly.
     let lastUpdate = 0;
     function animate(time) {
         requestAnimationFrame(animate);
@@ -374,12 +388,12 @@ async function init() {
             leds.forEach((led, index) => {
                 if (index < 4) {
                     if (Math.random() > 0.8) {
-                        led.material.color.set(0x00ff00);
+                        led.material.color.set(LED_ON_colour);
                     } else {
-                        led.material.color.set(0xffff00);
+                        led.material.color.set(LED_OFF_colour);
                     }
                 } else {
-                    led.material.color.set(0xffff00);
+                    led.material.color.set(LED_OFF_colour);
                 }
             });
             lastUpdate = time;
@@ -391,6 +405,7 @@ async function init() {
     }
     animate();
 
+    //Default text before the user clicks a port.
     const defaultProject = {
         name: "Select a Port",
         description: "Please select a port to view its details."
