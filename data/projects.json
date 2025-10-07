@@ -6,7 +6,7 @@
       "date": "Year 10 (2020)",
       "fullDescription": "This was my first major programming project during Year 10.\nBuilt using Python and Pygame, it features multiple levels, enemy AI, power-ups, and a scoring system.\nThe game includes custom sprite animations, collision detection, and progressive difficulty.\nThis project taught me fundamental game development concepts and object-oriented programming principles.",
       "skills": ["Python", "Pygame", "Object-Oriented Programming"],
-      "image": "/images/projects/2d-platformer.png",
+      "image": "../assets/thumbnails/gratithink-thumnbail.png",
       "gallery": [
         "/images/projects/2d-platformer-1.png",
         "/images/projects/2d-platformer-2.png"

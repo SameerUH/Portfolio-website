@@ -211,15 +211,40 @@ body {
     gap: 20px;
 }
 
+.skillsandimage {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
 #description > div {
     width: 100%;
     text-align: left;
 }
 
-#description #skills {
+#skills {
     text-decoration: bold;
     font-size: 30px;
+    flex: 1 1 0;
+    max-width: 70%;
+}
 
+#project-image {
+    height: 150px;
+    width: 200px;
+    /*object-fit: contain;*/
+    border-style: solid;
+    border-color: black;
+}
+
+.center-description > div {
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
 }
 
 footer {

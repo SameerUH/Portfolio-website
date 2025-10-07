@@ -270,11 +270,11 @@ function createScreen(text = "PICK A PORT") {
     let scrollX = canvas.width; //Start writing text just off the right side of the screen.
 
     function update() {
-        context.fillStyle = panel_colour;
+        context.fillStyle = "#ffffff";
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         //Text styling
-        context.fillStyle = screen_font_colour;
+        context.fillStyle = "#00ff00";
         context.font = "bold 125px Arial";
         context.textAlign = "left";
         context.textBaseline = "middle";
@@ -312,7 +312,7 @@ function updateProjectInfo(project) {
         if (titleText) {
             const name = project.name ? project.name.toUpperCase() : "PROJECT";
             const date = project.date ? project.date.toUpperCase() : "";
-            titleText.textContent = `${name} | ${date}`;
+            titleText.textContent = date ? `${name} | ${date}` : name;
         }
     }
 
@@ -324,8 +324,15 @@ function updateProjectInfo(project) {
         //Change the HTML so it looks like a list with commas instead of just outputting the raw array.
         projectSkills.innerHTML = skillsArr.length ? skillsArr.join(", ") : "";
     }
-
-    //Find the full description element.
+    const descriptionContainer = document.getElementById('description');
+    if (descriptionContainer) {
+        if (project.name === "Select a Port") {
+            descriptionContainer.classList.add("center-description");
+        } else {
+            descriptionContainer.classList.remove("center-description");
+        }
+    }
+    //Find the text description element.
     const projectDescription = document.getElementById('fulldescription');
     if (projectDescription) {
         //If it exists look for the <strong> element inside the full description div.
@@ -333,6 +340,16 @@ function updateProjectInfo(project) {
         //If it exists then replace the <strong> element's text content with whats in the JSON file.
         if (description) {
             description.textContent = project.fullDescription || project.description || "";
+        }
+    }
+
+    const projectImage = document.getElementById('project-image');
+    if (projectImage) {
+        if (project.image) {
+            projectImage.src = project.image;
+            projectImage.style.display = "block";
+        } else {
+            projectImage.style.display = "none";
         }
     }
 }

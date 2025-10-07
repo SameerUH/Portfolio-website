@@ -27,8 +27,10 @@
         </div><br>
 
         <div id="description">
-            <div id="skills"><strong></strong></div>
-            <!-- <img id="project-image" src="" alt="Project Image"><br> -->
+            <div class="skillsandimage">
+                <div id="skills"><strong></strong></div>
+                <img id="project-image" src="" alt="Project Image" style="display:none;"><br>
+            </div>
             <div id="fulldescription"><strong>PROJECT DESCRIPTION</strong></div>
             <!-- <p id="projectlink"><strong>PROJECT LINK</strong></p> -->
         </div>
