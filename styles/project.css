@@ -204,17 +204,21 @@ body {
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
-    height: 400px;
+    height: 200px;
     justify-content: center;
     align-items: center;
     font-size: 25px;
     gap: 20px;
 }
 
+#description.expanded {
+    height: 600px;
+}
+
 .skillsandimage {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 40px;
     width: 100%;
@@ -245,6 +249,14 @@ body {
     align-items: center !important;
     text-align: center !important;
     justify-content: center !important;
+}
+
+#projectlink {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    display: block;
 }
 
 footer {

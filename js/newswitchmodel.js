@@ -320,16 +320,18 @@ function updateProjectInfo(project) {
     const projectSkills = document.getElementById('skills');
     if (projectSkills) {
         //If it exists then fetch the data from the JSON file with the name of skills or technologies or an empty array.
-        const skillsArr = project.skills || project.technologies || [];
+        const skillsArr = project.skills || [];
         //Change the HTML so it looks like a list with commas instead of just outputting the raw array.
         projectSkills.innerHTML = skillsArr.length ? skillsArr.join(", ") : "";
     }
     const descriptionContainer = document.getElementById('description');
     if (descriptionContainer) {
-        if (project.name === "Select a Port") {
+        if (project.name === "Select a Port" || project.name === "Coming Soon") {
             descriptionContainer.classList.add("center-description");
+            descriptionContainer.classList.remove('expanded');
         } else {
             descriptionContainer.classList.remove("center-description");
+            descriptionContainer.classList.add('expanded');
         }
     }
     //Find the text description element.
@@ -350,6 +352,17 @@ function updateProjectInfo(project) {
             projectImage.style.display = "block";
         } else {
             projectImage.style.display = "none";
+        }
+    }
+
+    const projectLink = document.getElementById('projectlink');
+    if (projectLink) {
+        if (project.githubUrl) {
+            const urls = project.githubUrl.split(",");
+            projectLink.innerHTML = urls.map(url =>
+                `<a href="${url.trim()}" target="_blank">${url.trim()}</a>`).join("<br>");
+        } else {
+            projectLink.innerHTML = "";
         }
     }
 }

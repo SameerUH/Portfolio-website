@@ -11,28 +11,34 @@
         "/images/projects/2d-platformer-1.png",
         "/images/projects/2d-platformer-2.png"
       ],
-      "githubUrl": "https://github.com/SameerUH/2d-platformer",
-      "liveUrl": null
+      "githubUrl": "https://github.com/SameerUH/2D-Platformer"
     },
     {
       "id": 2,
       "name": "NEA Maze Game",
       "date": "Year 11 (2021)",
-      "shortDescription": "A maze game I created for my NEA project, similar to Pac-Man.",
       "fullDescription": "Developed as my Non-Exam Assessment (NEA) project for A-Level Computer Science.\nThis Pac-Man inspired maze game features ghost AI with different behaviors, power pellets, score tracking, and multiple mazes.\nThe project included comprehensive documentation, user testing, and iterative development following the software development lifecycle.",
-      "technologies": ["Python", "Pygame", "AI Algorithms", "Software Engineering"],
+      "skills": ["Python", "Pygame", "Algorithms"],
       "image": "/images/projects/nea-maze.png",
-      "githubUrl": "https://github.com/SameerUH/nea-maze"
+      "githubUrl": "https://github.com/SameerUH/NEA-Maze-Game"
     },
     {
       "id": 3,
       "name": "Productivity App",
-      "date": "University Year 1 (2022)",
-      "shortDescription": "A productivity app developed in my first year of university.",
+      "date": "1st Year (2022)",
       "fullDescription": "A comprehensive task management application built during my first year at university.\nFeatures include task creation and categorization, deadline tracking, progress visualization, and productivity analytics.\nThe app uses a clean, intuitive interface designed to help students manage their academic workload effectively.\nBuilt with modern web technologies and responsive design principles.",
-      "technologies": ["HTML5", "CSS", "JavaScript", "Local Storage", "Responsive Design"],
+      "skills": ["HTML", "CSS", "JavaScript", "Responsive Design"],
       "image": "/images/projects/productivity-app.png",
-      "liveUrl": null
+      "githubUrl": "https://github.com/SameerUH/Productivity-app"
+    },
+    {
+      "id": 4,
+      "name": "Gratithink",
+      "date": "2nd Year (2025)",
+      "fullDescription": "GratiThink is a web and mobile app that helps students build a positive mindset through daily gratitude journaling. It encourages users to reflect on meaningful moments, track their progress, and develop a habit of mindfulness in an easy-to-use, student-friendly interface.\nThe project was developed using HTML, CSS, PHP, and JavaScript for the website and React.js for the mobile version. It showcases full-stack development skills and thoughtful design focused on simplicity, accessibility, and personal growth.",
+      "skills": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Wireframes", "Responsive Design"],
+      "image": "/images/projects/gratithink-image.png",
+      "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app"
     }
   ]
 }
