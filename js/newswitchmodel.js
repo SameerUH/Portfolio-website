@@ -346,12 +346,22 @@ function updateProjectInfo(project) {
     }
 
     const projectImage = document.getElementById('project-image');
+    const projectImage2 = document.getElementById('project-image-2');
     if (projectImage) {
-        if (project.image) {
-            projectImage.src = project.image;
+        if (project.images && project.images.length > 0) {
+            projectImage.src = project.images[0];
             projectImage.style.display = "block";
         } else {
             projectImage.style.display = "none";
+        }
+    }
+
+    if (projectImage2) {
+        if (project.images && project.images.length > 1) {
+            projectImage2.src = project.images[1];
+            projectImage2.style.display = "block";
+        } else {
+            projectImage2.style.display = "none";
         }
     }
 

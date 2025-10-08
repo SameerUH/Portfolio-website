@@ -224,6 +224,15 @@ body {
     width: 100%;
 }
 
+.imageandlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
 #description > div {
     width: 100%;
     text-align: left;
@@ -242,6 +251,15 @@ body {
     /*object-fit: contain;*/
     border-style: solid;
     border-color: black;
+    flex-shrink: 0;
+}
+
+#project-image-2 {
+    height: 150px;
+    width: 200px;
+    border-style: solid;
+    border-color: black;
+    flex-shrink: 0;
 }
 
 .center-description > div {
@@ -252,11 +270,11 @@ body {
 }
 
 #projectlink {
-    width: 100%;
     text-align: left;
+    font-size: 20px;
+    word-break: break-all;
+    flex: 1 1 0;
     margin-left: 0;
-    margin-right: auto;
-    display: block;
 }
 
 footer {
