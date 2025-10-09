@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- 
+--- Add more details of the certificates including dates and possibly a bulleted list of what you learnt.
+--- Add the grade unless you are still doing it.
+--- Make the formatting nice and figure out how to do full width borders.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +22,15 @@
     </div><br>
 
     <div id="certificates">
-        <p><strong>CERTIFICATES (IN SECTIONS)</strong></p>
+        <div class = "sections">
+            <p><strong>CCNA V1</strong></p>
+        </div><br>
+        <div class = "sections">
+            <p><strong>CCNA V2</strong></p>
+        </div><br>
+        <div class = "sections">
+            <p><strong>CISCO: Ethical Hacker</strong></p>
+        </div>
     </div><br>
 
     <?php
