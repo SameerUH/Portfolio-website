@@ -345,11 +345,11 @@ function updateProjectInfo(project) {
         }
     }
 
-    const projectImage = document.getElementById('project-image');
-    const projectImage2 = document.getElementById('project-image-2');
+    const projectImage = document.getElementById('project-image'); //Gets the first image element into a constant.
+    const projectImage2 = document.getElementById('project-image-2'); //Gets the second image element into another constant.
     if (projectImage) {
-        if (project.images && project.images.length > 0) {
-            projectImage.src = project.images[0];
+        if (project.images && project.images.length > 0) { //Checks if there is at least one image in the JSON array.
+            projectImage.src = project.images[0]; //Sets it to the first image URL in the array.
             projectImage.style.display = "block";
         } else {
             projectImage.style.display = "none";
@@ -357,22 +357,22 @@ function updateProjectInfo(project) {
     }
 
     if (projectImage2) {
-        if (project.images && project.images.length > 1) {
-            projectImage2.src = project.images[1];
+        if (project.images && project.images.length > 1) { //Checks if there is a second image in the JSON array.
+            projectImage2.src = project.images[1]; //Sets it to the second image URL in the array.
             projectImage2.style.display = "block";
         } else {
             projectImage2.style.display = "none";
         }
     }
 
-    const projectLink = document.getElementById('projectlink');
+    const projectLink = document.getElementById('projectlink'); //Gets the link element into a constant.
     if (projectLink) {
         if (project.githubUrl) {
-            const urls = project.githubUrl.split(",");
+            const urls = project.githubUrl.split(","); //Splits the URLs by commas in case there are multiple.
             projectLink.innerHTML = urls.map(url =>
-                `<a href="${url.trim()}" target="_blank">${url.trim()}</a>`).join("<br>");
+                `<a href="${url.trim()}" target="_blank">${url.trim()}</a>`).join("<br>"); //Removes the commas/whitespaces and makes each URL a clickable link whilst putting it on a new line.
         } else {
-            projectLink.innerHTML = "";
+            projectLink.innerHTML = ""; //If there is no URL then just clear the link element.
         }
     }
 }

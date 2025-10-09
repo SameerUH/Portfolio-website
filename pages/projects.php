@@ -32,7 +32,7 @@
                 <img id="project-image" alt="Project Image" style="display:none;"><br>
             </div>
             <div id="fulldescription"><strong>PROJECT DESCRIPTION</strong></div><br>
-            <div id="imageandlinks">
+            <div class="imageandlinks">
                 <img id="project-image-2" alt="Project Image 2" style="display:none;">
                 <div id="projectlink"></div>
             </div>
