@@ -6,7 +6,7 @@
       "date": "Year 10 (2020)",
       "fullDescription": "This was my first major programming project during Year 10.\nBuilt using Python and Pygame, it features multiple levels, enemy AI, power-ups, and a scoring system.\nThe game includes custom sprite animations, collision detection, and progressive difficulty.\nThis project taught me fundamental game development concepts and object-oriented programming principles.",
       "skills": ["Python", "Pygame", "Object-Oriented Programming"],
-      "images": ["/images/projects/2d-platformer-1.png", "/images/projects/2d-platformer-2.png"],
+      "images": ["../assets/thumbnails/projectspictures/2d-platformer-1.png", "../assets/thumbnails/projectspictures/2d-platformer-2.png"],
       "githubUrl": "https://github.com/SameerUH/2D-Platformer"
     },
     {
@@ -15,7 +15,7 @@
       "date": "Year 11 (2021)",
       "fullDescription": "Developed as my Non-Exam Assessment (NEA) project for A-Level Computer Science.\nThis Pac-Man inspired maze game features ghost AI with different behaviors, power pellets, score tracking, and multiple mazes.\nThe project included comprehensive documentation, user testing, and iterative development following the software development lifecycle.",
       "skills": ["Python", "Pygame", "Algorithms"],
-      "images": ["/images/projects/nea-maze-game-1.png", "/images/projects/nea-maze-game-2.png"],
+      "images": ["../assets/thumbnails/projectspictures/nea-maze-game-1.png", "../assets/thumbnails/projectspictures/nea-maze-game-2.png"],
       "githubUrl": "https://github.com/SameerUH/NEA-Maze-Game"
     },
     {

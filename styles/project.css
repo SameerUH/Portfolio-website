@@ -246,8 +246,8 @@ body {
 }
 
 #project-image {
-    height: 150px;
-    width: 200px;
+    height: 300px;
+    width: 350px;
     /*object-fit: contain;*/
     border-style: solid;
     border-color: black;
@@ -255,8 +255,8 @@ body {
 }
 
 #project-image-2 {
-    height: 150px;
-    width: 200px;
+    height: 300px;
+    width: 350px;
     border-style: solid;
     border-color: black;
     flex-shrink: 0;
