@@ -34,8 +34,8 @@ const container = document.getElementById("newprojectmodel");
 //Scene:
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
-const FOV = 50;
-const camera =  new THREE.PerspectiveCamera(FOV, container.clientWidth / container.clientHeight, 0.1, 1000);
+const base_FOV = 50;
+const camera =  new THREE.PerspectiveCamera(base_FOV, container.clientWidth / container.clientHeight, 0.1, 1000);
 camera.position.z = 10;
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
@@ -227,6 +227,26 @@ function createCable(portpicked, direction_x, direction_y, flipped) {
     cable_wire.position.set(0, 0, 0.7);
 
     scene.add(cable);
+}
+
+function fitCamera(camera, object, controls, padding = 1.2) {
+    const box = new THREE.Box3().setFromObject(object);
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
+
+    const fovRad = camera.fov * (Math.PI / 180);
+    const aspect = camera.aspect;
+
+    const height = size.y;
+    let distanceHeight = (height / 2) / Math.tan(fovRad / 2);
+
+    const width = size.x;
+    let distanceWidth = (width / 2) / Math.tan(fovRad / 2) / aspect;
+
+    let finalDistance = Math.max(distanceHeight, distanceWidth);
+    camera.position.set(center.x, center.y, center.z + finalDistance * padding);
+    controls.target.copy(center);
+    controls.update();
 }
 
 const back_path = new THREE.CatmullRomCurve3([
@@ -454,14 +474,29 @@ async function init() {
         description: "Please select a port to view its details."
     }
     updateProjectInfo(defaultProject);
+    onWindowResize();
 }
 init();
 
-window.addEventListener('resize', () => {
+function onWindowResize() {
     camera.aspect = container.clientWidth / container.clientHeight;
+    const aspect = container.clientWidth / container.clientHeight;
+
+    if (aspect > 1) {
+        camera.fov = Math.min(base_FOV * (aspect / 1.5), 60);
+    } else {
+        camera.fov = Math.max(base_FOV * (aspect * 1.2), 60);
+    }
+
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
-})
+
+    if (network_switch) {
+        fitCamera(camera, network_switch, controls, 1.2)
+    }
+}
+
+window.addEventListener('resize', onWindowResize);
 
 window.addEventListener('load', () => {
     const defaultProject = {

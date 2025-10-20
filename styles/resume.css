@@ -166,14 +166,14 @@ body {
 
 #resume {
     display: flex;
-    padding: 100px;
+    padding: 20px;
     border-style: solid;
     border-color: #ffffff;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
-    height: 800px;
+    height: 1200px;
     justify-content: center;
     align-items: center;
     font-size: 50px;

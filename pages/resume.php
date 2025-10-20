@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/resume.css">
-    <title>Resume | SameerUH</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <title>SameerUH | Resume</title>
 </head>
 <body>
     <?php
@@ -17,7 +18,7 @@
     </div><br>
 
     <div id="resume">
-        <embed src="../assets/Sameer Haq CV (Base).pdf" type="application/pdf" width="100%" height="600px" />
+        <embed src="../assets/Sameer Haq CV (Base).pdf" type="application/pdf" width="100%" height="100%" />
     </div><br>
 
     <?php

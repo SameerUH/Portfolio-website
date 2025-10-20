@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/project.css">
     <link rel="icon" href="../favicon.png" type="image/png">
-    <title>Projects | SameerUH</title>
+    <title>SameerUH | Projects</title>
 </head>
 <body>
     <?php

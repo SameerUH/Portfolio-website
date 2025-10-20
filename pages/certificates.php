@@ -11,7 +11,7 @@ xxx Make the formatting nice and figure out how to do full width borders.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/certificates.css">
     <link rel="icon" href="../favicon.png" type="image/png">
-    <title>Certificates | SameerUH</title>
+    <title>SameerUH | Certificates</title>
 </head>
 <body>
     <?php

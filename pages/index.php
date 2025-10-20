@@ -17,7 +17,7 @@ xxx Add @media CSS to the index page.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="../styles/index.css">
-    <title>Home | SameerUH</title>
+    <title>SameerUH | Home</title>
 </head>
 
 <body>
