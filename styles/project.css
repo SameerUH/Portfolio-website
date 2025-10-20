@@ -343,9 +343,26 @@ footer a {
         font-size: 20px;
     }
 
+    #description {
+        flex-direction: column;
+        width: 80vw;
+    }
+    
+
+    #description.expanded {
+        height: 1000px;
+    }
+
     .skillsandimage {
         font-size: 20px;
-        width: 40vw;
+        gap: 10px;
+        width: 60vw;
+        flex-direction: column;
+    }
+
+    .imageandlinks {
+        flex-direction: column;
+        gap: 10px;
     }
 
     footer {
