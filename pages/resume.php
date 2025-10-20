@@ -17,7 +17,7 @@
     </div><br>
 
     <div id="resume">
-        <p><strong>RESUME</strong></p>
+        <embed src="../assets/Sameer Haq CV (Base).pdf" type="application/pdf" width="100%" height="600px" />
     </div><br>
 
     <?php
