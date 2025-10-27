@@ -3,6 +3,7 @@
 TO DO:
 --- Finish the @media for the projects page.
 --- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
+--- Fix the CSS of the description for @media.
 -->
 <html lang="en">
 <head>

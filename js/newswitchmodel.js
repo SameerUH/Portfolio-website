@@ -244,7 +244,9 @@ function fitCamera(camera, object, controls, padding = 1.2) {
     let distanceWidth = (width / 2) / Math.tan(fovRad / 2) / aspect;
 
     let finalDistance = Math.max(distanceHeight, distanceWidth);
+
     camera.position.set(center.x, center.y, center.z + finalDistance * padding);
+    camera.lookAt(center);
     controls.target.copy(center);
     controls.update();
 }
@@ -442,6 +444,14 @@ async function init() {
 
     scene.add(network_switch);
 
+    //Default text before the user clicks a port.
+    const defaultProject = {
+        name: "Select a Port",
+        description: "Please select a port to view its details."
+    }
+    updateProjectInfo(defaultProject);
+
+
     //LED flicker update so it lights up randomly.
     let lastUpdate = 0;
     function animate(time) {
@@ -467,14 +477,6 @@ async function init() {
         renderer.render(scene, camera);
     }
     animate();
-
-    //Default text before the user clicks a port.
-    const defaultProject = {
-        name: "Select a Port",
-        description: "Please select a port to view its details."
-    }
-    updateProjectInfo(defaultProject);
-    onWindowResize();
 }
 init();
 

@@ -201,7 +201,6 @@ body {
     border-style: solid;
     border-color: #ffffff;
     width: 60vw;
-    max-width: 1100px;
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
@@ -214,7 +213,8 @@ body {
 }
 
 #description.expanded {
-    height: 600px;
+    height: 85vh;
+    width: 60vw;
 }
 
 .skillsandimage {
@@ -351,14 +351,17 @@ footer a {
     #projecttitle {
         font-size: 20px;
     }
+    
+    #skills {
+        align-items: stretch;
+    }
 
     #description {
         flex-direction: column;
-        width: 90vw;
+        width: 80vw;
         font-size: 20px;
         align-items: stretch;
         padding: 20px;
-        min-height: 300px;
     }
 
     #description > div {
@@ -366,13 +369,14 @@ footer a {
     }
 
     #description.expanded {
-        height: 1300px;
+        height: 140vh;
+        width: 80vw;
     }
 
     #fulldescription {
         width: 100% !important;
         box-sizing: border-box;
-        padding: 0 8px;
+        padding: 0px;
         text-align: left;
         flex: 1 1 auto;
     }
@@ -396,8 +400,10 @@ footer a {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        align-items: flex-start;
-        width: 100%;
+        padding: 0px;
+        align-items: stretch;
+        max-width: 100%;
+        font-size: 20px;
     }
 
     footer {
