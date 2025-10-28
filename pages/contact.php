@@ -17,7 +17,21 @@
     </div><br>
 
     <div id="socialsection">
-        <p><strong>LINKEDIN | GITHUB | TRYHACKME | HTB | EMAIL SECTION.</strong></p>
+        <div class="sections">
+            <p><strong>LINKEDIN.</strong></p>
+        </div>
+        <div class="sections">
+            <p><strong>GITHUB.</strong></p>
+        </div>
+        <div class="sections">
+            <p><strong>TRYHACKME.</strong></p>
+        </div>
+        <div class="sections">
+            <p><strong>HTB.</strong></p>
+        </div>
+        <div class="sections">
+            <p><strong>EMAIL SECTION.</strong></p>
+        </div>
     </div><br>
 
     <?php

@@ -253,7 +253,32 @@ footer a {
     }
 
     #title {
-        font-size: 20px;
+        font-size: 15px;
+    }
+
+    #certificates {
+        width: 70vw;
+        padding: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    #certificates .sections {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #certificates .sections ul {
+        padding-left: 15px;
+        margin-left: 0px;
+    }
+
+    #certificates .sections li {
+        margin-left: 0px;
+    }
+
+    #certificates .title {
+        font-size: 30px;
     }
 
     footer {

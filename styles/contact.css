@@ -166,6 +166,7 @@ body {
 
 #socialsection {
     display: flex;
+    flex-direction: column;
     padding: 100px;
     border-style: solid;
     border-color: #ffffff;
@@ -177,6 +178,13 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 50px;
+}
+
+.sections {
+    border-top: 4px black solid;
+    border-bottom: 4px black solid;
+    margin-bottom: 1rem;
+    width: 90%
 }
 
 footer {
