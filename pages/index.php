@@ -96,8 +96,8 @@ xxx Add @media CSS to the index page.
                 <br><i>Configured a Kali Linux Environment on a Raspberry Pi for experimenting with penetration testing outside of university.</i>
                 <br><i>Started paths on TryHackMe (Jr Penetration Tester, SOC Analyst level 1) and started practicing my penetration testing on HackTheBox machines.</i>
                 <br><i>Learnt Three.js with JavaScript for my portfolio website which taught me how to create 3D objects, interactions and lighting effects.</i>
-        </div>
-        </div>
+            </div>
+            </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
