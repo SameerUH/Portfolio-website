@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!---
+TODO LIST:
+--- Maybe look into removing the slideshow to different pages and maybe just have a set of logos for people to click.
+--- Start and complete email form.
+--- 
+--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +34,7 @@
             <p><strong>GITHUB.</strong></p>
         </div>
         <div class="slide socials fade">
-            <img src="../assets/tryhackme_face.png" alt="TryHackMe picture">
+            <img src="https://tryhackme-badges.s3.amazonaws.com/SameerUH.png" alt="Your Image Badge"/>
             <p><strong>TRYHACKME.</strong></p>
         </div>
         <div class="slide socials fade">

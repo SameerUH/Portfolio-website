@@ -4,6 +4,7 @@ TO DO:
 --- Finish the @media for the projects page.
 --- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
 --- Fix the CSS of the description for @media.
+--- Make the container larger to fit all the information.
 -->
 <html lang="en">
 <head>
@@ -22,7 +23,6 @@ TO DO:
     <div id="title">
         <p><strong>PROJECTS</strong></p>
     </div><br>
-
     <div id="newprojectmodel">
         <script type="module" src="../js/newswitchmodel.js"></script>
     </div><br>
