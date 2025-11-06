@@ -200,7 +200,7 @@ body {
     padding: 40px 80px;
     border-style: solid;
     border-color: #ffffff;
-    width: 60vw;
+    width: 75vw;
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
@@ -214,7 +214,7 @@ body {
 
 #description.expanded {
     height: 85vh;
-    width: 60vw;
+    width: 75vw;
 }
 
 .skillsandimage {
@@ -222,7 +222,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 200px;
+    gap: 300px;
     width: 100%;
 }
 
@@ -250,8 +250,8 @@ body {
 #skills {
     text-decoration: bold;
     font-size: 30px;
-    flex: 1 1 0;
-    max-width: 70%;
+    flex: 1 1;
+    max-width: 90%;
 }
 
 #project-image {

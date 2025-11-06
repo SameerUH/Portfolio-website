@@ -3,7 +3,6 @@
 TODO LIST:
 --- Maybe look into removing the slideshow to different pages and maybe just have a set of logos for people to click.
 --- Start and complete email form.
---- 
 --->
 <html lang="en">
 <head>
@@ -23,28 +22,15 @@ TODO LIST:
     </div><br>
 
     <div id="socialsection">
-        <div class="slide socials fade">
-            <img src="../assets/linkedin_face.png" alt="LinkedIn picture">
-            <p><strong>LINKEDIN.</strong></p>
-            <p>IT Student Placement @ Northumbria University | BSc Computer Networks and Cyber Security student @ Northumbria University | CCNA</p>
-            <a href="https://uk.linkedin.com/in/sameer-ul-haq-6861b923b">Profile Link</a>
+        <div class="row">
+            <a href=""><img src="../assets/linked_in_logo.png" alt="LINKEDIN LOGO"></a>
+            <a href=""><img src="../assets/github.png" alt="GITHUB LOGO"></a>
         </div>
-        <div class="slide socials fade">
-            <img src="../assets/github_face.png" alt="GitHub picture">
-            <p><strong>GITHUB.</strong></p>
+        <div class="row">
+            <a href=""><iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3019828"></iframe></a>
+            <a href="https://www.hackthebox.eu/home/users/profile/1925576"><img src="https://www.hackthebox.com/badge/image/1925576"></a>
         </div>
-        <div class="slide socials fade">
-            <img src="https://tryhackme-badges.s3.amazonaws.com/SameerUH.png" alt="Your Image Badge"/>
-            <p><strong>TRYHACKME.</strong></p>
-        </div>
-        <div class="slide socials fade">
-            <img src="../assets/htb_face.png" alt="HTB picture">
-            <p><strong>HTB.</strong></p>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div><br>
-    <script src="../js/timeline.js"></script>
 
     <div id="form">
         <p><strong>EMAIL SECTION.</strong></p>
