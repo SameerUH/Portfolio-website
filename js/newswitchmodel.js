@@ -440,23 +440,24 @@ function updateProjectURL(project) {
 //Initialize the 3D scene and start the animation.
 async function init() {
     await loadProjects(); //Let the JSON load before continuin
+    createPorts(); //Create the clickable ports and add them to the switch.
 
     const urlParams = new URLSearchParams(window.location.search);
     const projectSlug = urlParams.get('project');
+    let loadedFromURL = false;
 
     if (projectSlug) {
         const project = projectData.find(p =>
-            p.name.toLowerCase === projectSlug
+            p.slugUrl && p.slugUrl.toLowerCase() === projectSlug.toLowerCase()
         );
 
         if (project) {
             updateProjectInfo(project);
+            loadedFromURL = true;
         } else {
             console.warn('Project not found for slug:', projectSlug);
         }
     }
-
-    createPorts(); //Create the clickable ports and add them to the switch.
 
     //Add cables to the switch and connect them to the ports.
     createCable(clickablePorts[0], 0, 5, false);
@@ -472,13 +473,14 @@ async function init() {
 
     scene.add(network_switch);
 
-    //Default text before the user clicks a port.
-    const defaultProject = {
-        name: "Select a Port",
-        description: "Please select a port to view its details."
+    if (!loadedFromURL) {
+        //Default text before user clicks a port.
+        const defaultProject = {
+            name: "Select a Port",
+            description: "Please select a port to view its details."
+        };
+        updateProjectInfo(defaultProject);
     }
-    updateProjectInfo(defaultProject);
-
 
     //LED flicker update so it lights up randomly.
     let lastUpdate = 0;
@@ -527,11 +529,3 @@ function onWindowResize() {
 }
 
 window.addEventListener('resize', onWindowResize);
-
-window.addEventListener('load', () => {
-    const defaultProject = {
-        name: "Select a Port",
-        description: "Please select a port to view its details."
-    };
-    updateProjectInfo(defaultProject);
-});
