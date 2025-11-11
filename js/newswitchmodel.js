@@ -420,14 +420,42 @@ function onMouseClick(event) {
         if (clickedPort.userData.isPort) {
             //If it is a port and it has data inside of it, update the PHP below to display the project information.
             updateProjectInfo(clickedPort.userData.project);
+            updateProjectURL(clickedPort.userData.project);
         }
     }
+}
+
+function updateProjectURL(project) {
+    if (!project || !project.name) return;
+
+    const url = new URL(window.location);
+    //Turn projectname into a URL-friendly string.
+    const projectSlug = project.slugUrl.toLowerCase();
+    url.searchParams.set('project', projectSlug);
+    //Updates the URL without reloading the page.
+    history.replaceState(null, '', url);
 }
 
 
 //Initialize the 3D scene and start the animation.
 async function init() {
-    await loadProjects(); //Let the JSON load before continuing
+    await loadProjects(); //Let the JSON load before continuin
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectSlug = urlParams.get('project');
+
+    if (projectSlug) {
+        const project = projectData.find(p =>
+            p.name.toLowerCase === projectSlug
+        );
+
+        if (project) {
+            updateProjectInfo(project);
+        } else {
+            console.warn('Project not found for slug:', projectSlug);
+        }
+    }
+
     createPorts(); //Create the clickable ports and add them to the switch.
 
     //Add cables to the switch and connect them to the ports.

@@ -31,17 +31,21 @@ TODO LIST:
     </div><br>
 
     <div id="form">
+        <h1>MESSAGE ME :D</h1><br>
         <!-- modify this form HTML and place wherever you want your form -->
         <form action="https://formspree.io/f/mdkynobk" method="POST">
         <label>
-            Your email:
+            <i>Name:</i>
+            <input type="name" name="name">
+        </label>
+        <label>
+            <i>Email:</i>
             <input type="email" name="email">
         </label>
         <label>
-            Your message:
+            <i>Message:</i>
             <textarea name="message"></textarea>
         </label>
-        <!-- your other form fields go here -->
         <button type="submit">Send</button>
         </form>
     </div><br>
