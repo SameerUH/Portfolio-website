@@ -13,8 +13,9 @@ const blue = 0x0000ff
 
 //Scenes/camera
 const scene = new THREE.Scene();
-const FOV = 50;
-const camera = new THREE.PerspectiveCamera(FOV, container.clientWidth / container.clientHeight, 0.1, 1000);
+const aspect = container.clientWidth / container.clientHeight;
+const frustumSize = 4;
+const camera = new THREE.OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 0.1, 1000);
 camera.position.z = 5;
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
@@ -24,9 +25,9 @@ container.appendChild(renderer.domElement);
 
 //Shapes
 const projects = [ //List of projects to be displayed in the scene and their corresponding details, kind of like a dictionary.
-    {name: 'Pong', image: '../assets/thumbnails/pong-thumbnail.png'},
-    {name: 'Gratithink', image: '../assets/thumbnails/gratithink-thumbnail.png'},
-    {name: 'Placement', image: '../assets/thumbnails/northumbriauniversity.jpg'}
+    {name: 'Pong', image: '../assets/thumbnails/pong-thumbnail.png', url: '/PORTFOLIO/projects/pong'},
+    {name: 'Gratithink', image: '../assets/thumbnails/gratithink-thumbnail.png', url: '/PORTFOLIO/projects/gratithink'},
+    {name: 'CCNA', image: '../assets/thumbnails/ccna.png', url: '/PORTFOLIO/pages/certificates.php'}
 ];
 
 const loader = new THREE.TextureLoader();
@@ -45,7 +46,7 @@ projects.forEach((project, index) => {
         const edgeLines = new LineSegments(edges, new LineBasicMaterial({color:black}))
         edgeLines.raycast = () => {}; //Removes edgelines from the raycaster solving hovering issues with tooltips.
         cube.add(edgeLines);
-        cube.userData = {name: project.name} //Adds the projects name to their corresponding cube.
+        cube.userData = {name: project.name, url: project.url} //Adds the projects name to their corresponding cube.
         cubes.push(cube)
         scene.add(cube);
     });
@@ -94,10 +95,33 @@ window.addEventListener('mousemove', (event) => {
     }
 });
 
+window.addEventListener('click', (event) => {
+    const bounds = container.getBoundingClientRect();
+    mouse.x = ((event.clientX - bounds.left) / bounds.width) * 2 - normalization;
+    mouse.y = -((event.clientY - bounds.top) / bounds.height) * 2 + normalization;
+
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(cubes, true);
+    if (intersects.length > 0) {
+        let clicked = intersects[0].object;
+        while (clicked && !clicked.userData.name && clicked.parent) {
+            clicked = clicked.parent;
+        }
+        
+        if (clicked && clicked.userData.name) {
+            window.location.href = clicked.userData.url;
+        }
+    }
+})
 
 if (window.innerWidth < 700) {
     camera.position.set(0, 0, 7);
-    camera.fov = 55;
+    const mobileFrustumSize = 5;
+    const aspect = container.clientWidth / container.clientHeight;
+    camera.left = -mobileFrustumSize * aspect / 2;
+    camera.right = mobileFrustumSize * aspect / 2;
+    camera.top = mobileFrustumSize / 2;
+    camera.bottom = -mobileFrustumSize / 2;
     camera.updateProjectionMatrix();
 }
 //Animation/renderer
@@ -113,6 +137,11 @@ animate();
 
 window.addEventListener('resize', () => {
     camera.aspect = container.clientWidth / container.clientHeight;
+    const frustumSize = (window.innerWidth < 700) ? 5 : 4;
+    camera.left = -frustumSize * aspect / 2;
+    camera.right = frustumSize * aspect / 2;
+    camera.top = frustumSize / 2;
+    camera.bottom = -frustumSize / 2;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
 })

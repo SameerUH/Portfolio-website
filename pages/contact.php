@@ -25,7 +25,7 @@ TODO LIST:
     <div id="socialsection">
         <div class="row">
             <a href="https://www.linkedin.com/in/sameer-ul-haq-6861b923b"><img src="../assets/thumbnails/socialsicons/linkedin1.jpg" alt="LINKEDIN LOGO"></a>
-            <a href=""><iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3019828"></iframe></a>
+            <a href=""><iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3019828" scrolling="no" frameborder="0"></iframe></a>
             <a href="https://github.com/SameerUH"><img src="../assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO"></a>
         </div>
     </div><br>
@@ -45,7 +45,7 @@ TODO LIST:
         <label>
             <i>Message:</i>
             <textarea name="message"></textarea>
-        </label><br>
+        </label>
         <button type="submit">Send</button>
         </form>
     </div><br>

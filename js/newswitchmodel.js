@@ -428,10 +428,9 @@ function onMouseClick(event) {
 function updateProjectURL(project) {
     if (!project || !project.name) return;
 
-    const url = new URL(window.location);
     //Turn projectname into a URL-friendly string.
     const projectSlug = project.slugUrl.toLowerCase();
-    url.searchParams.set('project', projectSlug);
+    const url = `/PORTFOLIO/projects/${projectSlug}`;
     //Updates the URL without reloading the page.
     history.replaceState(null, '', url);
 }
@@ -442,11 +441,13 @@ async function init() {
     await loadProjects(); //Let the JSON load before continuin
     createPorts(); //Create the clickable ports and add them to the switch.
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectSlug = urlParams.get('project');
+    //Parse the new URL format: /projects/gratithink
+    const path = window.location.pathname;
+    const match = path.match(/\/projects\/([a-z0-9-]+)/)
     let loadedFromURL = false;
 
-    if (projectSlug) {
+    if (match) {
+        const projectSlug = match[1];
         const project = projectData.find(p =>
             p.slugUrl && p.slugUrl.toLowerCase() === projectSlug.toLowerCase()
         );

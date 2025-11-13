@@ -170,7 +170,7 @@ body {
     position: relative;
     border-style: solid;
     border-color: #ffffff;
-    width: 40vw;
+    width: 50vw;
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
@@ -183,6 +183,8 @@ body {
 #socialsection .row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -192,9 +194,13 @@ img {
 }
 
 iframe {
-    width: 350px;
-    height: 100px;
-    border-style: none;
+    display: inline-block;
+    overflow: hidden;
+    border-style: solid;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 85px;
 }
 
 #form {
@@ -228,6 +234,7 @@ h1 {
 
 #form input {
     height: 30px;
+    margin-bottom: 5px;
 }
 
 #form textarea {
@@ -236,11 +243,17 @@ h1 {
 
 #form button {
     display: flex;
-    background-color: white;
-    width: 50px;
+    background-color: blue;
+    width: 100px;
+    font-size: 30px;
     height: 40px;
+    border-radius: 40px;
     margin: 0 auto;
     justify-content: center;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 0px 5px 10px black;
 }
 
 footer {
