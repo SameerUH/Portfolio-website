@@ -45,7 +45,7 @@ TODO LIST:
         <label>
             <i>Message:</i>
             <textarea name="message"></textarea>
-        </label>
+        </label><br>
         <button type="submit">Send</button>
         </form>
     </div><br>
