@@ -9,14 +9,14 @@ xxx Make the formatting nice and figure out how to do full width borders.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/certificates.css">
-    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="stylesheet" href="/PORTFOLIO/styles/certificates.css">
+    <link rel="icon" href="/PORTFOLIO/favicon.png" type="image/png">
     <title>SameerUH | Certificates</title>
 </head>
 <body>
     <?php
-    include "../includes/background_and_import.php";
-    include "../includes/navbar_fragment.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/background_and_import.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/navbar_fragment.php";
     ?>
 
     <div id="title">
@@ -60,7 +60,7 @@ xxx Make the formatting nice and figure out how to do full width borders.
     </div><br>
 
     <?php
-    include '../includes/footer_fragment.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/PORTFOLIO/includes/footer_fragment.php';
     ?>
 </body>
 </html>

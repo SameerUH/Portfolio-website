@@ -68,7 +68,7 @@ let projectData = [];
 async function loadProjects() {
     try {
         //Fetches the JSON file that contains the listed projects.
-        const response = await fetch('../data/projects.json');
+        const response = await fetch('/PORTFOLIO/data/projects.json');
         //Turns the response into a JavaScript object.
         const data = await response.json();
         //Stores the projects data into a variable.
@@ -420,45 +420,14 @@ function onMouseClick(event) {
         if (clickedPort.userData.isPort) {
             //If it is a port and it has data inside of it, update the PHP below to display the project information.
             updateProjectInfo(clickedPort.userData.project);
-            updateProjectURL(clickedPort.userData.project);
         }
     }
 }
-
-function updateProjectURL(project) {
-    if (!project || !project.name) return;
-
-    //Turn projectname into a URL-friendly string.
-    const projectSlug = project.slugUrl.toLowerCase();
-    const url = `/PORTFOLIO/projects/${projectSlug}`;
-    //Updates the URL without reloading the page.
-    history.replaceState(null, '', url);
-}
-
 
 //Initialize the 3D scene and start the animation.
 async function init() {
     await loadProjects(); //Let the JSON load before continuin
     createPorts(); //Create the clickable ports and add them to the switch.
-
-    //Parse the new URL format: /projects/gratithink
-    const path = window.location.pathname;
-    const match = path.match(/\/projects\/([a-z0-9-]+)/)
-    let loadedFromURL = false;
-
-    if (match) {
-        const projectSlug = match[1];
-        const project = projectData.find(p =>
-            p.slugUrl && p.slugUrl.toLowerCase() === projectSlug.toLowerCase()
-        );
-
-        if (project) {
-            updateProjectInfo(project);
-            loadedFromURL = true;
-        } else {
-            console.warn('Project not found for slug:', projectSlug);
-        }
-    }
 
     //Add cables to the switch and connect them to the ports.
     createCable(clickablePorts[0], 0, 5, false);
@@ -474,14 +443,11 @@ async function init() {
 
     scene.add(network_switch);
 
-    if (!loadedFromURL) {
-        //Default text before user clicks a port.
-        const defaultProject = {
-            name: "Select a Port",
-            description: "Please select a port to view its details."
-        };
-        updateProjectInfo(defaultProject);
-    }
+    const defaultProject = {
+        name: "Select a Port",
+        description: "Please select a port to view its details."
+    };
+    updateProjectInfo(defaultProject);
 
     //LED flicker update so it lights up randomly.
     let lastUpdate = 0;

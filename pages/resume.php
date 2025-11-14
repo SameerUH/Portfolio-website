@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/resume.css">
-    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="stylesheet" href="/PORTFOLIO/styles/resume.css">
+    <link rel="icon" href="/PORTFOLIO/favicon.png" type="image/png">
     <title>SameerUH | Resume</title>
 </head>
 <body>
     <?php
-    include "../includes/background_and_import.php";
-    include "../includes/navbar_fragment.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/background_and_import.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/navbar_fragment.php";
     ?>
 
     <div id="title">
@@ -18,11 +18,11 @@
     </div><br>
 
     <div id="resume">
-        <embed src="../assets/Sameer Haq CV (Base).pdf" type="application/pdf" width="100%" height="100%" />
+        <embed src="/PORTFOLIO/assets/Sameer Haq CV (Base).pdf" type="application/pdf" width="100%" height="100%" />
     </div><br>
 
     <?php
-    include '../includes/footer_fragment.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/PORTFOLIO/includes/footer_fragment.php';
     ?>
 </body>
 </html>

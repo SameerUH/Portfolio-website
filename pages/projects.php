@@ -10,21 +10,21 @@ TO DO:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/project.css">
-    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="stylesheet" href="/PORTFOLIO/styles/project.css">
+    <link rel="icon" href="/PORTFOLIO/favicon.png" type="image/png">
     <title>SameerUH | Projects</title>
 </head>
 <body>
     <?php
-    include "../includes/background_and_import.php";
-    include "../includes/navbar_fragment.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/background_and_import.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/navbar_fragment.php";
     ?>
 
     <div id="title">
         <p><strong>PROJECTS</strong></p>
     </div><br>
     <div id="newprojectmodel">
-        <script type="module" src="../js/newswitchmodel.js"></script>
+        <script type="module" src="/PORTFOLIO/js/newswitchmodel.js"></script>
     </div><br>
 
     <div id="project-display">
@@ -47,7 +47,7 @@ TO DO:
     <br>
 
     <?php
-    include '../includes/footer_fragment.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/PORTFOLIO/includes/footer_fragment.php';
     ?>
 </body>
 </html>
