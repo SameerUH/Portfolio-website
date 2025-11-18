@@ -11,7 +11,7 @@ xxx Go back over the timeline and see if there's anything new you can add to it.
 xxx Double check the LinkedIn link on the footer.
 xxx Add @media CSS to the index page.
 --- Add rounded corners to most/all elements.
---- Fix URLs on the pinned section.
+xxx Fix URLs on the pinned section.
 --- Add timeline slide for the current year.
 -->
 <html lang="en">
