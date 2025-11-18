@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+TO-DO LIST:
+--- Add rounded corners to most/all elements.
+--- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -8,7 +8,7 @@
       "skills": ["Python", "Pygame", "Object-Oriented Programming"],
       "images": ["../assets/thumbnails/projectspictures/2d-platformer-1.png", "../assets/thumbnails/projectspictures/2d-platformer-2.png"],
       "githubUrl": "https://github.com/SameerUH/2D-Platformer",
-      "slugUrl": "2D-Platformer"
+      "slugUrl": "2d-platformer"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "skills": ["Python", "Pygame", "Algorithms"],
       "images": ["../assets/thumbnails/projectspictures/nea-maze-game-1.png", "../assets/thumbnails/projectspictures/nea-maze-game-2.png"],
       "githubUrl": "https://github.com/SameerUH/NEA-Maze-Game",
-      "slugUrl": "NEA-Maze-Game"
+      "slugUrl": "nea-maze-game"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "skills": ["HTML", "CSS", "JavaScript", "Responsive Design"],
       "images": ["/images/projects/productivity-app.png", "/images/projects/productivity-app-2.png"],
       "githubUrl": "https://github.com/SameerUH/Productivity-app",
-      "slugUrl": "Productivity-App"
+      "slugUrl": "productivity-app"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "skills": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Wireframes", "Responsive Design"],
       "images": ["/images/projects/gratithink-image.png", "/images/projects/gratithink-image-2.png"],
       "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app",
-      "slugUrl": "Gratithink"
+      "slugUrl": "gratithink"
     }
   ]
 }

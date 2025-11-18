@@ -418,8 +418,17 @@ function onMouseClick(event) {
     if (intersects.length > 0) {
         const clickedPort = intersects[0].object.parent;
         if (clickedPort.userData.isPort) {
+            const project = clickedPort.userData.project;
             //If it is a port and it has data inside of it, update the PHP below to display the project information.
-            updateProjectInfo(clickedPort.userData.project);
+            updateProjectInfo(project);
+
+            //Update URL
+            if (project.slugUrl) {
+                const newUrl = `/PORTFOLIO/projects/${project.slugUrl}`;
+                window.history.pushState({project: project}, project.name, newUrl);
+            } else {
+                window.history.pushState({}, '', '/PORTFOLIO/projects');
+            }
         }
     }
 }
@@ -447,7 +456,21 @@ async function init() {
         name: "Select a Port",
         description: "Please select a port to view its details."
     };
-    updateProjectInfo(defaultProject);
+
+    const pathParts = window.location.pathname.split('/');
+    const projectSlug = pathParts[3];
+
+    if (projectSlug) {
+        const matching = projectData.find(p => p.slugUrl === projectSlug);
+
+        if (matching) {
+            updateProjectInfo(matching);
+        } else {
+            updateProjectInfo(defaultProject);
+        }
+    } else {
+        updateProjectInfo(defaultProject);
+    }
 
     //LED flicker update so it lights up randomly.
     let lastUpdate = 0;
@@ -494,5 +517,17 @@ function onWindowResize() {
         fitCamera(camera, network_switch, controls, 1.2)
     }
 }
+
+window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.project) {
+        updateProjectInfo(event.state.project);
+    } else {
+        const defaultProject = {
+            name: "Select a Port",
+            description: "Please select a port to view its details."
+        };
+        updateProjectInfo(defaultProject);
+    }
+});
 
 window.addEventListener('resize', onWindowResize);

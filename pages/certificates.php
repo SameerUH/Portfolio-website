@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!-- 
+TO-DO LIST:
 xxx Add more details of the certificates including dates and possibly a bulleted list of what you learnt.
 --- Add the grade unless you are still doing it.
 xxx Make the formatting nice and figure out how to do full width borders.
 --- Look into @media with CSS.
+--- Add rounded corners to most/all elements.
 -->
 <html lang="en">
 <head>

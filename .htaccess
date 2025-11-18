@@ -3,6 +3,7 @@ RewriteEngine On
 #URL rewrites
 RewriteRule ^certificates$ pages/certificates.php [L]
 RewriteRule ^projects$ pages/projects.php [L]
+RewriteRule ^projects/([a-zA-Z0-9-]+)$ pages/projects.php?project=$1 [L]
 RewriteRule ^index$ pages/index.php [L]
 RewriteRule ^contact$ pages/contact.php [L]
 RewriteRule ^resume$ pages/resume.php [L]

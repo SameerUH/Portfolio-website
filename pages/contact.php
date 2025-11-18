@@ -3,6 +3,10 @@
 TODO LIST:
 xxx Maybe look into removing the slideshow to different pages and maybe just have a set of logos for people to click.
 xxx Start and complete email form.
+--- Add rounded corners to most/all elements.
+--- Do @media for the page.
+--- Fix the tryhackme iframe somehow.
+--- Maybe redesign the page to make it look nicer and not bland???
 --->
 <html lang="en">
 <head>
