@@ -5,8 +5,8 @@ TO DO:
 --- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
 --- Fix the CSS of the description for @media.
 --- Make the container larger to fit all the information.
---- Add rounded corners to most/all elements.
---- Fix the URL rewriting and make it compatible with .htaccess changes.
+xxx Add rounded corners to most/all elements.
+xxx Fix the URL rewriting and make it compatible with .htaccess changes.
 -->
 <html lang="en">
 <head>

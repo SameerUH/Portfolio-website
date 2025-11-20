@@ -87,6 +87,7 @@ body {
     width: 175px;
     height: 80px;
     list-style-type: none;
+    border-radius: 10px;
 }
 
 .navbar nav ul li a {
@@ -162,6 +163,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    border-radius: 10px;
 }
 
 #socialsection {
@@ -178,6 +180,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    border-radius: 10px;
 }
 
 #socialsection .row {
@@ -193,14 +196,18 @@ img {
     height: 100px;
 }
 
-iframe {
+#thm_id {
+    max-height: 100%;
+    width: auto;
+}
+
+.container {
+    width: 400px;
+    height: 85px;
     display: inline-block;
     overflow: hidden;
-    border-style: solid;
     align-items: center;
     justify-content: center;
-    width: 330px;
-    height: 85px;
 }
 
 #form {
@@ -273,4 +280,83 @@ footer {
 
 footer a {
     color: white;
+}
+
+@media screen and (max-width: 800px) {
+    .navbar nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav ul {
+        flex-direction: column; /*Stacks the list items vertically.*/
+        align-items: center;
+        gap: 10px; /*Adds space between the items.*/
+        align-items: stretch;
+    }
+
+    .navbar nav ul li {
+        width: 100%;
+        height: 60px;
+        margin: 0;
+    }
+
+    .navbar nav ul li a {
+        font-size: 18px;
+    }
+
+    #SAMEERHAQ {
+        width: 90%;
+        flex-direction: column;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        height: 15vh;
+    }
+
+    #title {
+        font-size: 25px;
+    }
+
+    #socialsection {
+        width: 80vw;
+        height: 15vh;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .container {
+        width: 165px;
+        height: 43px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    #form {
+        display: flex;
+        width: 40vw;
+        height: 60vh;
+        flex-direction: column;
+        align-items: flex-start !important;
+        justify-content: flex-start !important
+    }
+
+    #form input {
+        width: 90%;
+    }
+
+    #form textarea {
+        height: 150px;
+        width: 90%;
+        padding: none;
+    }
+
+    footer {
+        font-size: 20px;
+        text-align: center;
+    }
 }

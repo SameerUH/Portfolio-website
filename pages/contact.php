@@ -3,9 +3,9 @@
 TODO LIST:
 xxx Maybe look into removing the slideshow to different pages and maybe just have a set of logos for people to click.
 xxx Start and complete email form.
---- Add rounded corners to most/all elements.
---- Do @media for the page.
---- Fix the tryhackme iframe somehow.
+xxx Add rounded corners to most/all elements.
+xxx Do @media for the page.
+xxx Fix the tryhackme iframe somehow.
 --- Maybe redesign the page to make it look nicer and not bland???
 --->
 <html lang="en">
@@ -29,7 +29,7 @@ xxx Start and complete email form.
     <div id="socialsection">
         <div class="row">
             <a href="https://www.linkedin.com/in/sameer-ul-haq-6861b923b"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/linkedin1.jpg" alt="LINKEDIN LOGO"></a>
-            <a href=""><iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3019828" scrolling="no" frameborder="0"></iframe></a>
+            <img src="https://tryhackme-badges.s3.amazonaws.com/SameerUH.png" alt="Your Image Badge" onclick="location.href='https://tryhackme.com/p/SameerUH'" id="thm_id"/>
             <a href="https://github.com/SameerUH"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO"></a>
         </div>
     </div><br>

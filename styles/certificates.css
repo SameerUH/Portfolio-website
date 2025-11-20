@@ -87,6 +87,7 @@ body {
     width: 175px;
     height: 80px;
     list-style-type: none;
+    border-radius: 10px;
 }
 
 .navbar nav ul li a {
@@ -162,6 +163,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    border-radius: 10px;
 }
 
 #certificates {
@@ -175,6 +177,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 #certificates .sections {

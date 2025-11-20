@@ -92,6 +92,7 @@ body {
     border-color:black;
     border-style: solid;
     background-color: white;
+    border-radius: 10px;
     width: 175px;
     height: 80px;
     list-style-type: none;
@@ -163,6 +164,7 @@ body {
     border-style: solid;
     border-color: #ffffff;
     width: 50%;
+    border-radius: 10px;
     margin: 0 auto;
     background-color: #ffffff;
     color: black;
@@ -302,6 +304,7 @@ body {
     border-style: solid;
     box-sizing: border-box;
     margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 #pinned #pinned-tooltip {
@@ -329,6 +332,7 @@ body {
     min-height: 600px;
     background-color: #ffffff;
     color: black;
+    border-radius: 10px;
 }
 
 
