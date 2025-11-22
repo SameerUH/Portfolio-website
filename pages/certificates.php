@@ -6,6 +6,7 @@ xxx Add more details of the certificates including dates and possibly a bulleted
 xxx Make the formatting nice and figure out how to do full width borders.
 --- Look into @media with CSS.
 xxx Add rounded corners to most/all elements.
+--- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
 -->
 <html lang="en">
 <head>
