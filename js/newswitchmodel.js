@@ -9,7 +9,7 @@ xxx Add a screen on the right side of the switch telling the user to pick a port
 xxxx Add flicking LED lights to show activity.
 xxx Add a wire from the back
 xxx Add ethernet cables to some of the ports.
---- Add tooltips which are project names and have it update the project title and description on the same page.
+xxx Add tooltips which are project names and have it update the project title and description on the same page.
 xxx Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
 xxx Fix the JSON and formatting of the PHP file for better visuals.
 --- Finish the projects page with by adding images and resizing them.
@@ -30,6 +30,7 @@ const cable_head_colour = 0x555555; //Gray
 
 //Elements used in PHP file.
 const container = document.getElementById("newprojectmodel");
+const tooltip = document.getElementById('tooltip');
 
 //Scene:
 const scene = new THREE.Scene();
@@ -151,6 +152,7 @@ function createPortShape(portIndex) {
     portGeom.userData = {
         isPort: true,
         portIndex: portIndex,
+        name: projectData[portIndex]?.name || "Coming Soon",
         project: projectData[portIndex] || {name: "Coming Soon", date: "NULL", description: "Project in development"}
     }
     return portGeom;
@@ -401,6 +403,41 @@ function updateProjectInfo(project) {
         }
     }
 }
+
+//Tooltips
+let hovered = null;
+const normalization = 1;
+const offset = 10;
+window.addEventListener('mousemove', (event) => {
+    const bounds = container.getBoundingClientRect();
+    mouse.x = ((event.clientX - bounds.left) / bounds.width) * 2 - normalization; //Gets mouse coordinates and maps them into scene.
+    mouse.y = - ((event.clientY - bounds.top) / bounds.height) * 2 + normalization;
+
+    raycaster.setFromCamera(mouse, camera); //Shoots ray through the mouse position.
+    const intersects = raycaster.intersectObjects(clickablePorts, true); //Finds hits.
+
+    if (intersects.length > 0) { //Checks if hovered.
+        let porthover = intersects[0].object;
+
+        while (porthover && !porthover.userData.isPort && porthover.parent) {
+            porthover = porthover.parent; //Checks if the hovered object is correct if not then move to the next one.
+        }
+
+        if (porthover && porthover.userData.isPort) { //If it is then modify the CSS to make the tooltip display.
+            hovered = porthover;
+            tooltip.textContent = hovered.userData.name;
+            tooltip.style.display = 'block';
+            tooltip.style.left = `${event.pageX + offset}px`;
+            tooltip.style.top = `${event.pageY + offset}px`;
+        } else {
+            hovered = null;
+            tooltip.style.display = 'none'; //If it's wrong then remove the tooltip.
+        }
+    } else {
+        hovered = null;
+        tooltip.style.display = 'none'; //If not hovering over an object then remove the tooltip.
+    }
+});
 
 
 function onMouseClick(event) {

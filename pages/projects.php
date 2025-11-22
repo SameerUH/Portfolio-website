@@ -26,6 +26,7 @@ xxx Fix the URL rewriting and make it compatible with .htaccess changes.
         <p><strong>PROJECTS</strong></p>
     </div><br>
     <div id="newprojectmodel">
+        <div id="tooltip"></div>
         <script type="module" src="/PORTFOLIO/js/newswitchmodel.js"></script>
     </div><br>
 

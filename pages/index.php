@@ -12,7 +12,6 @@ xxx Double check the LinkedIn link on the footer.
 xxx Add @media CSS to the index page.
 xxx Add rounded corners to most/all elements.
 xxx Fix URLs on the pinned section.
---- Add timeline slide for the current year.
 -->
 <html lang="en">
 <head>
