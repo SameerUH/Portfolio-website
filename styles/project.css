@@ -235,19 +235,36 @@ body {
     align-items: flex-start;
 }
 
-.skillsandimage {
+.skillsandimagerow {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 400px;
+    justify-content: flex-end;
+    gap: 40px;
     width: 100%;
+}
+
+#skills {
+    width: 40%;
+    display: flex;
+    font-size: 28px;
+    align-items: center;
+    margin-right: auto;
+}
+
+#project-image, #project-image-2 {
+    height: 300px;
+    width: 350px;
+    border-style: solid;
+    border-color: black;
+    flex-shrink: 0;
 }
 
 #fulldescription {
     box-sizing: border-box;
     width: 100%;
     align-self: stretch;
+    margin: 0 auto;
     padding: 0 10px;
     white-space: pre-wrap;
 }
@@ -256,39 +273,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 200px;
+    justify-content: space-between;
+    gap: 40px;
     width: 100%;
 }
 
 #description > div {
     width: 100%;
     text-align: left;
-}
-
-#skills {
-    text-decoration: bold;
-    font-size: 30px;
-    flex: 1 1;
-    max-width: 90%;
-}
-
-#project-image {
-    height: 300px;
-    width: 350px;
-    /*object-fit: contain;*/
-    border-style: solid;
-    border-color: black;
-    flex-shrink: 0;
-}
-
-#project-image-2 {
-    height: 300px;
-    width: 350px;
-    border-style: solid;
-    border-color: black;
-    flex-shrink: 0;
-    display: block;
 }
 
 .center-description > div {
@@ -299,8 +291,8 @@ body {
 }
 
 #projectlink {
-    text-align: left;
-    font-size: 20px;
+    text-align: right;
+    font-size: 30px;
     word-break: break-all;
     max-width: 70%;
     flex: 1 1 0;
@@ -373,6 +365,8 @@ footer a {
     
     #skills {
         align-items: stretch;
+        font-size: 20px;
+        width: 100%;
     }
 
     #description {
@@ -388,7 +382,7 @@ footer a {
     }
 
     #description.expanded {
-        height: 140vh;
+        height: auto;
         width: 80vw;
     }
 
@@ -400,7 +394,7 @@ footer a {
         flex: 1 1 auto;
     }
 
-    .skillsandimage, .imageandlinks {
+    .skillsandimagerow, .imageandlinks {
         width: 100%;
         gap: 10px;
         flex-direction: column;

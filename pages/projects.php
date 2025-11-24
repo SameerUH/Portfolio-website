@@ -36,7 +36,7 @@ xxx Fix the URL rewriting and make it compatible with .htaccess changes.
         </div><br>
 
         <div id="description">
-            <div class="skillsandimage">
+            <div class="skillsandimagerow">
                 <div id="skills"><strong></strong></div>
                 <img id="project-image" alt="Project Image" style="display:none;"><br>
             </div>

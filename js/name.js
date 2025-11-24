@@ -4,6 +4,7 @@ import { FontLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders
 import { TextGeometry } from 'https://unpkg.com/three@0.160.0/examples/jsm/geometries/TextGeometry.js';
 
 const container = document.getElementById('SAMEERHAQ');
+const tooltip = document.getElementById('tooltip'); 
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xF7F7F7);
