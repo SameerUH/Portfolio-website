@@ -14,7 +14,7 @@
       "id": 2,
       "name": "NEA Maze Game",
       "date": "Year 11 (2021)",
-      "fullDescription": "NEA project for A-Level Computer Science, decided to make a game similar to Pac-Man and to my last project where there would be 2 characters, a scoring system and obstacles to avoid. Given that I had done last years project in PyGame, it allowed me to add more complicated challenges to this project such as algorithms and screens.\n\nWhen starting with the project I first implemented what I had learnt last time and created classes for the player, enemy, star and walls, a lot of this was trial and error to mess with the sizing of the objects but I decided to keep it simple with the design of the game.\n\nWith learning from my last project, I decided to put all of the walls in a list which the collision detection system way easier and quicker to implement, as instead of replicating 1 function for 13 walls, I could simply loop through the list and detect it then. After I worked on the scoring and lives system again using the .blit() function to have it display on the screen and storing it in the constructors of classes. To start focusing on more advanced features, I wanted to improve the enemy class to make it more realistic and challenging for the user rather than the mess I created last project. I learnt a couple of pathfinding algorithms such as Djikstra’s and A* to see if I can have the enemy predict where the player would be and track it. I added some white nodes across the map which aren’t visible to the user and kept track of the distances between the player and all those nodes, whichever node was closest would be the one the enemy would go to.\n\nI managed to get the theory to work with tracking the nodes and having the enemy move but there were some small issues that were too confusing to solve, so I ended up making a final decision to have the enemy move randomly between the nodes. This did cause a fun challenge for the user as the enemy became less difficult to predict making the user focus more on the game but it was unfortunate to not get the algorithm to work.",
+      "fullDescription": "NEA project for A-Level Computer Science, decided to make a game similar to Pac-Man and to my last project where there would be 2 characters, a scoring system and obstacles to avoid. Given that I had done last years project in PyGame, it allowed me to add more complicated challenges to this project such as algorithms and screens.\n\nWhen starting with the project I first implemented what I had learnt last time and created classes for the player, enemy, star and walls, a lot of this was trial and error to mess with the sizing of the objects but I decided to keep it simple with the design of the game.\n\nWith learning from my last project, I decided to put all of the walls in a list which the collision detection system way easier and quicker to implement, as instead of replicating 1 function for 13 walls, I could simply loop through the list and detect it then. After I worked on the scoring and lives system again using the .blit() function to have it display on the screen and storing it in the constructors of classes. To start focusing on more advanced features, I wanted to improve the enemy class to make it more realistic and challenging for the user rather than the mess I created last project. I learnt a couple of pathfinding algorithms such as Djikstra’s and A* to see if I can have the enemy predict where the player would be and track it. I added some white nodes across the map which aren’t visible to the user and kept track of the distances between the player and all those nodes, whichever node was closest would be the one the enemy would go to.\n\nI managed to get the theory to work with tracking the nodes and having the enemy move but there were some small issues that were too confusing to solve, so I ended up making a final decision to have the enemy move randomly between the nodes. This did cause a fun challenge for the user as the enemy became less difficult to predict making the user focus more on the game but it was unfortunate to not get the algorithm to work.\n\nAdding different screens was a cool experience, I made a class for buttons which changes boolean variables which act as game states. Only one game state can be true and they display different buttons every time. The classes were easy to make as they were easy rectangles but positioning the buttons took some time with trial and error.\n\nThe settings screen complicated to make given that I had to think of different features the user can change but I made colourblind settings for accessibility, speed settings for user preference and a “hardmode” button for difficulty, basically makes it so if you touch a wall you lose a life.\n\nOverall I was very happy with this project if had more time then I would improve the following, I could redo the pathfinding algorithm to make it more accurate and realistic, I do think my previous attempt would have worked if I implemented some selection statements that remove the logic errors. The gameplay itself is fine but I do think there are other features I can implement to improve experience such as a scoreboard, full screen button with .display(), music with .mixer(), etc.",
       "skills": ["Python", "Pygame", "Algorithms"],
       "images": ["../assets/thumbnails/projectspictures/nea-maze-game-1.png", "../assets/thumbnails/projectspictures/nea-maze-game-2.png"],
       "githubUrl": "https://github.com/SameerUH/NEA-Maze-Game",
@@ -26,19 +26,37 @@
       "date": "1st Year (2022)",
       "fullDescription": "A comprehensive task management application built during my first year at university.\nFeatures include task creation and categorization, deadline tracking, progress visualization, and productivity analytics.\nThe app uses a clean, intuitive interface designed to help students manage their academic workload effectively.\nBuilt with modern web technologies and responsive design principles.",
       "skills": ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      "images": ["/images/projects/productivity-app.png", "/images/projects/productivity-app-2.png"],
+      "images": ["../assets/thumbnails/projectspictures/productivity-app.png", "../assets/thumbnails/projectspictures/productivity-app-2.png"],
       "githubUrl": "https://github.com/SameerUH/Productivity-app",
       "slugUrl": "productivity-app"
     },
     {
       "id": 4,
-      "name": "Gratithink",
+      "name": "Pong",
+      "date": "2025",
+      "fullDescription": "Pong in my own interpretation/implementation",
+      "skills": ["Python", "PyGame", "Object-Oriented Programming", "Enemy Computer"],
+      "images": ["../assets/thumbnails/projectspictures/pong-image.png", "../assets/thumbnails/projectspictures/pong-image-2.png"],
+      "githubUrl": "https://github.com/SameerUH/Pong",
+      "slugUrl": "pong"
+    },
+    {
+      "id": 5,
+      "name": "Gratithink (Website)",
       "date": "2nd Year (2025)",
       "fullDescription": "GratiThink is a web and mobile app that helps students build a positive mindset through daily gratitude journaling. It encourages users to reflect on meaningful moments, track their progress, and develop a habit of mindfulness in an easy-to-use, student-friendly interface.\nThe project was developed using HTML, CSS, PHP, and JavaScript for the website and React.js for the mobile version. It showcases full-stack development skills and thoughtful design focused on simplicity, accessibility, and personal growth.",
       "skills": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Wireframes", "Responsive Design"],
-      "images": ["/images/projects/gratithink-image.png", "/images/projects/gratithink-image-2.png"],
+      "images": ["../assets/thumbnails/projectspictures/gratithink-webimage.png", "../assets/thumbnails/projectspictures/gratithink-webimage-2.png"],
       "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app",
-      "slugUrl": "gratithink"
-    }
+      "slugUrl": "gratithink-website"
+    },
+    { "id": 6,
+      "name": "Gratithink (App)",
+      "date": "2nd Year (2025)",
+      "fullDescription": "GratiThink is a web and mobile app that helps students build a positive mindset through daily gratitude journaling. It encourages users to reflect on meaningful moments, track their progress, and develop a habit of mindfulness in an easy-to-use, student-friendly interface.\nThe project was developed using HTML, CSS, PHP, and JavaScript for the website and React.js for the mobile version. It showcases full-stack development skills and thoughtful design focused on simplicity, accessibility, and personal growth.",
+      "skills": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Wireframes", "Responsive Design"],
+      "images": ["../assets/thumbnails/projectspictures/gratithink-appimage.png", "../assets/thumbnails/projectspictures/gratithink-appimage-2.png"],
+      "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app",
+      "slugUrl": "gratithink-app"}
   ]
 }

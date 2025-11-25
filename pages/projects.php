@@ -7,6 +7,7 @@ TO DO:
 --- Make the container larger to fit all the information.
 xxx Add rounded corners to most/all elements.
 xxx Fix the URL rewriting and make it compatible with .htaccess changes.
+--- Add bulleted list and have less paragraphs, paragraphs could have story of project and list could have technical stuff/features???
 -->
 <html lang="en">
 <head>

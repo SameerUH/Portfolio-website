@@ -480,6 +480,8 @@ async function init() {
     createCable(clickablePorts[1], 0, 5, false);
     createCable(clickablePorts[2], 0, 5, false);
     createCable(clickablePorts[3], 0, 5, false);
+    createCable(clickablePorts[4], 0, 5, false);
+    createCable(clickablePorts[5], 0, 5, false);
 
     //Create a screen and add text to it.
     const {screen, update: updateScreen} = createScreen("PICK A PORT");
