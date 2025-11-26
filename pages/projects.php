@@ -5,9 +5,8 @@ TO DO:
 --- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
 --- Fix the CSS of the description for @media.
 --- Make the container larger to fit all the information.
-xxx Add rounded corners to most/all elements.
+--- Add rounded corners to most/all elements.
 xxx Fix the URL rewriting and make it compatible with .htaccess changes.
---- Add bulleted list and have less paragraphs, paragraphs could have story of project and list could have technical stuff/features???
 -->
 <html lang="en">
 <head>
@@ -27,8 +26,8 @@ xxx Fix the URL rewriting and make it compatible with .htaccess changes.
         <p><strong>PROJECTS</strong></p>
     </div><br>
     <div id="newprojectmodel">
-        <div id="tooltip"></div>
         <script type="module" src="/PORTFOLIO/js/newswitchmodel.js"></script>
+        <div id="tooltips"></div>
     </div><br>
 
     <div id="project-display">
