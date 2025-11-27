@@ -476,12 +476,9 @@ async function init() {
     createPorts(); //Create the clickable ports and add them to the switch.
 
     //Add cables to the switch and connect them to the ports.
-    createCable(clickablePorts[0], 0, 5, false);
-    createCable(clickablePorts[1], 0, 5, false);
-    createCable(clickablePorts[2], 0, 5, false);
-    createCable(clickablePorts[3], 0, 5, false);
-    createCable(clickablePorts[4], 0, 5, false);
-    createCable(clickablePorts[5], 0, 5, false);
+    for (let i=0; i<7; i++){
+        createCable(clickablePorts[i], 0, 5, false);
+    };
 
     //Create a screen and add text to it.
     const {screen, update: updateScreen} = createScreen("PICK A PORT");

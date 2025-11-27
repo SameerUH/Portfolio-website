@@ -57,6 +57,16 @@
       "skills": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Wireframes", "Responsive Design"],
       "images": ["../assets/thumbnails/projectspictures/gratithink-appimage.png", "../assets/thumbnails/projectspictures/gratithink-appimage-2.png"],
       "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app",
-      "slugUrl": "gratithink-app"}
+      "slugUrl": "gratithink-app"
+    },
+    { "id": 7,
+      "name": "Portfolio Site",
+      "date": "3rd Year (2025)",
+      "fullDescription": "The site you are looking at now.",
+      "skills": ["HTML", "CSS", "JavaScript", "Three.js", "Wireframes", "Responsive Design", "Interactive shapes"],
+      "images": ["../assets/thumbnails/projectspictures/portfolio-image.png", "../assets/thumbnails/projectspictures/portfolio-image-2.png"],
+      "githubUrl": "https://github.com/SameerUH/Portfolio-website",
+      "slugUrl": "portfolio"
+    }
   ]
 }

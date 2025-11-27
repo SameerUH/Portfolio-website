@@ -165,15 +165,18 @@ window.addEventListener('mousemove', (event) => {
         }
 
         if (hovered && hovered.userData.url) { //If it is then modify the CSS to make the tooltip display.
+            document.body.style.cursor = "pointer";
             tooltip.textContent = 'Left-click to open | Left-click and hold to rotate | Scroll to zoom';
             tooltip.style.display = 'block';
             tooltip.style.left = `${event.clientX + 10}px`;
             tooltip.style.top = `${event.clientY + 10}px`;
         } else {
             tooltip.style.display = 'none'; //If it's wrong then remove the tooltip.
+            document.body.style.cursor = "default";
         }
     } else {
         tooltip.style.display = 'none'; //If not hovering over an object then remove the tooltip.
+        document.body.style.cursor = "default";
     }
 });
 
