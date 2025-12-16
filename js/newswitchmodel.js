@@ -515,7 +515,7 @@ async function init() {
 
         if (time - lastUpdate > 200) {
             leds.forEach((led, index) => {
-                if (index < 4) {
+                if (index < 7) {
                     if (Math.random() > 0.8) {
                         led.material.color.set(LED_ON_colour);
                     } else {
