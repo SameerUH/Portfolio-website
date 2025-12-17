@@ -2,11 +2,13 @@
 <!--
 TO DO:
 --- Finish the @media for the projects page.
---- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
---- Fix the CSS of the description for @media.
---- Make the container larger to fit all the information.
---- Add rounded corners to most/all elements.
+xxx Fix the CSS of the description for @media.
+xxx Make the container larger to fit all the information.
+xxx Add rounded corners to most/all elements.
 xxx Fix the URL rewriting and make it compatible with .htaccess changes.
+--- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
+--- Add a features section to put between the skills and first image.
+--- Try and change the material to an animated one, maybe ask Ryan which one he used for his?
 -->
 <html lang="en">
 <head>

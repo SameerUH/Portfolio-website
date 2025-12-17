@@ -12,7 +12,7 @@ xxx Double check the LinkedIn link on the footer.
 xxx Add @media CSS to the index page.
 xxx Add rounded corners to most/all elements.
 xxx Fix URLs on the pinned section.
---- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure.
+--- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
 -->
 <html lang="en">
 <head>
