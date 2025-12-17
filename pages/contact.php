@@ -29,9 +29,9 @@ xxx Fix the tryhackme iframe somehow.
 
     <div id="socialsection">
         <div class="row">
-            <a href="https://www.linkedin.com/in/sameer-ul-haq-6861b923b"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/linkedin1.jpg" alt="LINKEDIN LOGO"></a>
-            <img src="https://tryhackme-badges.s3.amazonaws.com/SameerUH.png" alt="Your Image Badge" onclick="location.href='https://tryhackme.com/p/SameerUH'" id="thm_id"/>
-            <a href="https://github.com/SameerUH"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO"></a>
+            <a href="https://www.linkedin.com/in/sameer-ul-haq-6861b923b" target="_blank"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/linkedin1.jpg" alt="LINKEDIN LOGO"></a>
+            <a href="https://tryhackme.com/p/SameerUH" target="_blank"><img src="https://tryhackme-badges.s3.amazonaws.com/SameerUH.png" alt="Your Image Badge" id="thm_id"/>
+            <a href="https://github.com/SameerUH" target="_blank"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO"></a>
         </div>
     </div><br>
 
