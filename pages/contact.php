@@ -38,7 +38,6 @@ xxx Fix the tryhackme iframe somehow.
 
     <div id="form">
         <h1>MESSAGE ME :D</h1><br>
-        <!-- modify this form HTML and place wherever you want your form -->
         <form action="https://formspree.io/f/mdkynobk" method="POST">
         <label>
             <i>Name:</i>

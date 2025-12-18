@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 TO DO:
---- Finish the @media for the projects page.
+xxx Finish the @media for the projects page.
 xxx Fix the CSS of the description for @media.
 xxx Make the container larger to fit all the information.
 xxx Add rounded corners to most/all elements.
@@ -9,6 +9,7 @@ xxx Fix the URL rewriting and make it compatible with .htaccess changes.
 --- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
 --- Add a features section to put between the skills and first image.
 --- Try and change the material to an animated one, maybe ask Ryan which one he used for his?
+--- Add the portfolio description and if it comes out then add the claude hackathon one too.
 -->
 <html lang="en">
 <head>
@@ -39,7 +40,8 @@ xxx Fix the URL rewriting and make it compatible with .htaccess changes.
 
         <div id="description">
             <div class="skillsandimagerow">
-                <div id="skills"><strong></strong></div>
+                <div id="languages"><strong></strong></div>
+                <div id="features"><strong></strong></div>
                 <img id="project-image" alt="Project Image" style="display:none;"><br>
             </div>
             <div id="fulldescription"><strong>PROJECT DESCRIPTION</strong></div><br>

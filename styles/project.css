@@ -244,12 +244,17 @@ body {
     width: 100%;
 }
 
-#skills {
+#languages {
     width: 40%;
     display: flex;
     font-size: 28px;
     align-items: center;
     margin-right: auto;
+}
+
+#features {
+    display: flex;
+    align-items: center;
 }
 
 #project-image, #project-image-2 {
@@ -363,7 +368,7 @@ footer a {
         font-size: 20px;
     }
     
-    #skills {
+    #languages {
         align-items: stretch;
         font-size: 20px;
         width: 100%;

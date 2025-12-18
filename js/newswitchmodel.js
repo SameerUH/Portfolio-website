@@ -343,14 +343,28 @@ function updateProjectInfo(project) {
         }
     }
 
-    //Find the skills element.
-    const projectSkills = document.getElementById('skills');
-    if (projectSkills) {
-        //If it exists then fetch the data from the JSON file with the name of skills or technologies or an empty array.
-        const skillsArr = project.skills || [];
+    //Find the languages element.
+    const projectLanguages = document.getElementById('languages');
+    if (projectLanguages) {
+        //If it exists then fetch the data from the JSON file with languages or frameworks
+        const languagesArr = project.languages || [];
         //Change the HTML so it looks like a list with commas instead of just outputting the raw array.
-        projectSkills.innerHTML = skillsArr.length ? skillsArr.join(", ") : "";
+        projectLanguages.innerHTML = languagesArr.length ? languagesArr.join(", ") : "";
     }
+
+    //Find the languages element.
+    const projectFeatures = document.getElementById('features');
+    if (projectFeatures) {
+        //If it exists then fetch the data from the JSON file with languages or frameworks
+        const featuresArr = project.features || [];
+        //Change the HTML so it looks like a list with commas instead of just outputting the raw array.
+        if (featuresArr.length) {
+            projectFeatures.innerHTML = '<ul>' + featuresArr.map(feature => `<li>${feature}</li>`).join('') + '</ul>';
+        } else {
+            projectFeatures.innerHTML = "";
+        }
+    }
+
     const descriptionContainer = document.getElementById('description');
     if (descriptionContainer) {
         if (project.name === "Select a Port" || project.name === "Coming Soon") {
