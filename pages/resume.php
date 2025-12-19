@@ -2,7 +2,7 @@
 <!--
 TO-DO LIST:
 xxxs Add rounded corners to most/all elements.
---- Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
+xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
 -->
 <html lang="en">
 <head>
