@@ -13,6 +13,7 @@ xxx Add @media CSS to the index page.
 xxx Add rounded corners to most/all elements.
 xxx Fix URLs on the pinned section.
 xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
+--- Add a 404 page.
 -->
 <html lang="en">
 <head>

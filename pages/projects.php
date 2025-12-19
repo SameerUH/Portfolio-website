@@ -7,8 +7,7 @@ xxx Make the container larger to fit all the information.
 xxx Add rounded corners to most/all elements.
 xxx Fix the URL rewriting and make it compatible with .htaccess changes.
 xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
---- Add a features section to put between the skills and first image.
---- Try and change the material to an animated one, maybe ask Ryan which one he used for his?
+xxx Add a features section to put between the skills and first image.
 --- Add the portfolio description and if it comes out then add the claude hackathon one too.
 -->
 <html lang="en">

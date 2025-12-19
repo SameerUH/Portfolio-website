@@ -12,9 +12,9 @@ xxx Add ethernet cables to some of the ports.
 xxx Add tooltips which are project names and have it update the project title and description on the same page.
 xxx Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
 xxx Fix the JSON and formatting of the PHP file for better visuals.
---- Finish the projects page with by adding images and resizing them.
---- Look at rewriting the projects descriptions as well to be more accurate and in depth.
---- Possibly look at turning gallery into a slideshow instead of multiple images (or you can do a ladder of images on the left and right???).
+xxx Finish the projects page with by adding images and resizing them.
+xxx Look at rewriting the projects descriptions as well to be more accurate and in depth.
+xxx Possibly look at turning gallery into a slideshow instead of multiple images (or you can do a ladder of images on the left and right???).
 */
 
 //Colours:
