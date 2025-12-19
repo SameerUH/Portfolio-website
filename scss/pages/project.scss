@@ -97,25 +97,20 @@ body {
 }
 
 .skillsandimagerow {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
     align-items: center;
     justify-content: flex-end;
-    gap: 40px;
+    gap: 60px;
     width: 100%;
 }
 
-#languages {
-    width: 40%;
-    display: flex;
-    font-size: 28px;
-    align-items: center;
-    margin-right: auto;
+#languages, #features {
+    justify-self: start;
 }
 
-#features {
-    display: flex;
-    align-items: center;
+#project-image {
+    justify-self: center;
 }
 
 #project-image, #project-image-2 {
@@ -212,10 +207,13 @@ body {
     }
 
     .skillsandimagerow, .imageandlinks {
-        width: 100%;
-        gap: 10px;
-        flex-direction: column;
-        align-items: stretch;
+        grid-template: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+
+    #languages, #features, #project-image {
+        justify-self: center;
     }
 
     #project-image, #project-image-2 {
@@ -223,16 +221,10 @@ body {
         max-width: 420px;
         height: auto;
         margin: 0 auto;
-        flex-shrink: 0;
     }
 
     #projectlink {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0px;
-        align-items: stretch;
-        max-width: 100%;
-        font-size: 20px;
+        justify-self: center;
+        text-align: center;
     }
 }

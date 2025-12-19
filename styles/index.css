@@ -111,22 +111,22 @@
   opacity: 1; /*Makes the undelrine fully visible.*/
 }
 @media screen and (max-width: 800px) {
-  .navbar .navbar nav {
+  .navbar nav {
     flex-direction: column;
     align-items: center;
   }
-  .navbar .navbar nav ul {
+  .navbar nav ul {
     flex-direction: column; /*Stacks the list items vertically.*/
     align-items: center;
     gap: 10px; /*Adds space between the items.*/
     align-items: stretch;
   }
-  .navbar .navbar nav ul li {
+  .navbar nav ul li {
     width: 100%;
     height: 60px;
     margin: 0;
   }
-  .navbar .navbar nav ul li a {
+  .navbar nav ul li a {
     font-size: 18px;
   }
 }
@@ -152,7 +152,7 @@
   z-index: 10;
 }
 @media screen and (max-width: 800px) {
-  #SAMEERHAQ #SAMEERHAQ {
+  #SAMEERHAQ {
     width: 90%;
     flex-direction: column;
     margin-bottom: 10px;
@@ -178,13 +178,13 @@ footer {
 footer a {
   color: white;
 }
-
 @media screen and (max-width: 800px) {
   footer {
     font-size: 20px;
     text-align: center;
   }
 }
+
 /*TO-DO LIST:
 xxx Add the @media for the rest of the page.
 xxx Make the navbar a column for mobile devices instead of a row.

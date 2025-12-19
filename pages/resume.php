@@ -3,6 +3,7 @@
 TO-DO LIST:
 xxxs Add rounded corners to most/all elements.
 xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
+--- Fix the @media in SCSS.
 -->
 <html lang="en">
 <head>

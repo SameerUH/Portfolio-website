@@ -42,7 +42,7 @@ xxx Change the CSS on pages to import other CSS files, makes it easier on file o
             <div class="skillsandimagerow">
                 <div id="languages"><strong></strong></div>
                 <div id="features"><strong></strong></div>
-                <img id="project-image" alt="Project Image" style="display:none;"><br>
+                <img id="project-image" alt="Project Image" style="display:none;">
             </div>
             <div id="fulldescription"><strong>PROJECT DESCRIPTION</strong></div><br>
             <div class="imageandlinks">
