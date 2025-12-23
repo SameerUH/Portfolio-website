@@ -32,7 +32,11 @@
         "Pygame"
       ],
       "features": [
-        "Algorithms"
+        "Object-Oriented Programming",
+        "Hitboxes",
+        "Colourblind mode",
+        "Settings screen",
+        "Scoring system"
       ],
       "images": [
         "../assets/thumbnails/projectspictures/nea-maze-game-1.png",
@@ -53,7 +57,10 @@
       ],
       "features": [
         "Object-Oriented Programming",
-        "Form handling"
+        "Form handling",
+        "Notes page",
+        "To-Do list",
+        "User authentication"
       ],
       "images": [
         "../assets/thumbnails/projectspictures/productivity-app.png",
@@ -73,7 +80,10 @@
       ],
       "features": [
         "Object-Oriented Programming",
-        "Enemy Computer"
+        "Enemy Computer",
+        "Settings screen",
+        "Intro animation",
+        "Pause screen"
       ],
       "images": [
         "../assets/thumbnails/projectspictures/pong-image.png",
@@ -94,14 +104,16 @@
         "PHP"
       ],
       "features": [
-        "Wireframes",
-        "Responsive Design"
+        "PHP includes",
+        "Navbar",
+        "Filtered reviews",
+        "Flexbox"
       ],
       "images": [
         "../assets/thumbnails/projectspictures/gratithink-webimage.png",
         "../assets/thumbnails/projectspictures/gratithink-webimage-2.png"
       ],
-      "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app",
+      "githubUrl": "https://github.com/SameerUH/GratiThink-Website",
       "slugUrl": "gratithink-website"
     },
     {
@@ -117,30 +129,34 @@
       ],
       "features": [
         "Wireframes",
-        "Responsive Design"
+        "Routes",
+        "Personal statistics",
+        "Multiple choice questions"
       ],
       "images": [
         "../assets/thumbnails/projectspictures/gratithink-appimage.png",
         "../assets/thumbnails/projectspictures/gratithink-appimage-2.png"
       ],
-      "githubUrl": "https://github.com/SameerUH/GratiThink-Website,https://github.com/SameerUH/Gratithink-app",
+      "githubUrl": "https://github.com/SameerUH/Gratithink-app",
       "slugUrl": "gratithink-app"
     },
     {
       "id": 7,
       "name": "Portfolio Site",
       "date": "3rd Year (2025)",
-      "fullDescription": "The site you are looking at now.",
+      "fullDescription": "The portfolio website was something I'd been meaning to create for a while as a way to showcase everything I've worked on while building something that I have full creativity on. At the start, I had so many ideas bouncing around in my head. I wanted something interactive, visually engaging, and definitely not your typical static website. I decided to challenge myself by learning new tools like THREE.JS for some cool 3D effects, more JavaScript to interact with HTML elements and JSON to dynamically store and organize my project data. It was a steep learning curve, but I was excited to push my skills and try to make something a bit different.\n\nOne of the things I was most excited about was using THREE.JS. I'd never worked with 3D graphics before, but I knew I wanted my site to stand out, so I took it on as a challenge. The main goal was to make my name spin in 3D on the homepage. From there, it grew into a rotating switch model that users could interact with as the home button. Learning THREE.JS took some trial and error (lighting and positioning in 3D space was a lot to get my head around at first), but it was totally worth it. Spending a couple of weeks learning THREE.JS was definitely worth it and looking at the final result makes me really happy and proud.\n\nI started by tackling the home page first using wireframes I designed for the website, focusing on getting the core structure and navigation in place. Once that foundation was solid, I moved on to other pages such as projects, contact, certificates, etc. The PHP and CSS was relatively simple given that I had done it before and had lots of practice with it but figuring out how to create a 3D network switch model was difficult, I was stuck between picking a GLTF model or creating my own network switch and using functions to speed up the design of ports but I ended up making it myself and making it so when you clicked a port with a cable in, it would update the project.\n\nAs I did the final pages of certificates, contacts, resume and error, I already knew I didn't want to anything excessive as I had done with the index and projects page, so I kept very simple with a couple of PHP containers with text in them and a PDF embedded in the resume page. I had issues with the CSS for when dealing with repeated elements and I wanted something similar to PHP so I ended up switching to SCSS which allowed me to store my navbar and footer CSS separately and them compiles it together to create one large CSS file.\n\nOverall, I'm very happy with how this project went especially given how much time and effort I put into it all, creating large ideas such as a network switch and fine tuning small details such as widths and heights. This is by far the largest project I have ever worked on in my career and there is so much more to come. If I were to go back and change some things I'd first use a framework to help speed up the process, experiment more with the colour scheme, I do feel like repeated the black and white a bit too much so changing that would be nice, and finally change the layout of the project descriptions, I'm unsure how people would feel about reading long descriptions about my perspective with a project.",
       "languages": [
         "HTML",
-        "CSS",
+        "SCSS",
         "JavaScript",
         "Three.js"
       ],
       "features": [
-        "Wireframes",
-        "Responsive Design",
-        "Interactive shapes"
+        "3D spinnable name (Home button)",
+        "3D network switch as projects showcase.",
+        "Timeline of career",
+        "SCSS to help with repeated elements",
+        "Contact form and resume embedded in page"
       ],
       "images": [
         "../assets/thumbnails/projectspictures/portfolio-image.png",

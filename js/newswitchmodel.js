@@ -84,13 +84,28 @@ async function loadProjects() {
 }
 
 //Switch model:
+const texturepaths = ["856460-uhd_3840_2160_30fps.mp4", "12934691_1920_1080_30fps.mp4", "14250443_1920_1080_30fps.mp4", "14570200_2560_1440_24fps.mp4"]
+let random = Math.floor(Math.random() * texturepaths.length);
+let cooltexture = texturepaths[random];
+
+const video = document.createElement('video'); //Creates a video element in the PHP.
+video.src = `/PORTFOLIO/assets/thumbnails/switchtextures/${cooltexture}`;
+video.loop = true;
+video.muted = true; //REQUIRED TO ADD THE TEXT WITHOUT HAVING CONSOLE ERRORS.
+video.play();
+
+const videoTexture = new THREE.VideoTexture(video); //Converts the video into a texture.
+videoTexture.minFilter = THREE.LinearFilter; //Determines how the texture is sampled when scaled down.
+videoTexture.magFilter = THREE.LinearFilter; //Determines how the texture is sampled when scaled up.
+videoTexture.format = THREE.RGBAFormat; //Interpretation of the pixels in the texture i.e. How they're arranged.
+
 //Group which stores the entire model.
 const network_switch = new THREE.Group();
 
 //Main blue box
 const switch_box = new THREE.Mesh(
     new THREE.BoxGeometry(15, 2, 6),
-    new THREE.MeshStandardMaterial({color:box_colour})
+    new THREE.MeshStandardMaterial({map: videoTexture})
 );
 
 network_switch.add(switch_box);
@@ -108,22 +123,22 @@ const panel_borders = new THREE.Group();
 
 const top_border = new THREE.Mesh(
     new THREE.BoxGeometry(15, 0.2, 0.3),
-    new THREE.MeshStandardMaterial({color:box_colour})
+    new THREE.MeshStandardMaterial({map: videoTexture})
 );
 
 const bottom_border = new THREE.Mesh(
     new THREE.BoxGeometry(15, 0.2, 0.3),
-    new THREE.MeshStandardMaterial({color:box_colour})
+    new THREE.MeshStandardMaterial({map: videoTexture})
 );
 
 const left_border = new THREE.Mesh(
     new THREE.BoxGeometry(0.2, 1.6, 0.3),
-    new THREE.MeshStandardMaterial({color:box_colour})
+    new THREE.MeshStandardMaterial({map: videoTexture})
 );
 
 const right_border = new THREE.Mesh(
     new THREE.BoxGeometry(0.2, 1.6, 0.3),
-    new THREE.MeshStandardMaterial({color:box_colour})
+    new THREE.MeshStandardMaterial({map: videoTexture})
 );
 
 //Port creation as a function so it can be called specific number of times.
@@ -411,7 +426,7 @@ function updateProjectInfo(project) {
         if (project.githubUrl) {
             const urls = project.githubUrl.split(","); //Splits the URLs by commas in case there are multiple.
             projectLink.innerHTML = urls.map(url =>
-                `<a href="${url.trim()}" target="_blank">${url.trim()}</a>`).join("<br>"); //Removes the commas/whitespaces and makes each URL a clickable link whilst putting it on a new line.
+                `<a href="${url.trim()}" target="_blank"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO" style="width: 110px; height: 110px;"></a>`).join("<br>"); //Removes the commas/whitespaces and makes each URL a clickable link whilst putting it on a new line.
         } else {
             projectLink.innerHTML = ""; //If there is no URL then just clear the link element.
         }
