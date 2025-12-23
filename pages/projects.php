@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--
-TO DO:
-xxx Finish the @media for the projects page.
-xxx Fix the CSS of the description for @media.
-xxx Make the container larger to fit all the information.
-xxx Add rounded corners to most/all elements.
-xxx Fix the URL rewriting and make it compatible with .htaccess changes.
-xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
-xxx Add a features section to put between the skills and first image.
-xxx Add the portfolio description and if it comes out then add the claude hackathon one too.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

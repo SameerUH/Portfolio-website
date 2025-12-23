@@ -2,27 +2,10 @@ import * as THREE from "three";
 import {OrbitControls} from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 import {EdgesGeometry, LineSegments, LineBasicMaterial} from 'three';
 
-/*
-TO-DO:
---- Possibly add an animated background to the box of the switch.
-xxx Add a screen on the right side of the switch telling the user to pick a port.
-xxxx Add flicking LED lights to show activity.
-xxx Add a wire from the back
-xxx Add ethernet cables to some of the ports.
-xxx Add tooltips which are project names and have it update the project title and description on the same page.
-xxx Maybe add another smaller rectangle on the ports to show realism (don't think it's necessary though).
-xxx Fix the JSON and formatting of the PHP file for better visuals.
-xxx Finish the projects page with by adding images and resizing them.
-xxx Look at rewriting the projects descriptions as well to be more accurate and in depth.
-xxx Possibly look at turning gallery into a slideshow instead of multiple images (or you can do a ladder of images on the left and right???).
-*/
-
 //Colours:
-const box_colour = 0x00008B; //Dark blue
-const panel_colour = 0xffffff; //Gray???
+const panel_colour = 0xffffff; //Gray
 const port_colour = 0x111111; //Black
 const back_cable_colour = 0x111111; //Black
-const screen_font_colour = 0x00ff00; //Green
 const LED_ON_colour = 0x00ff00; //Green
 const LED_OFF_colour = 0xffff00; //Yellow
 const cable_head_colour = 0x555555; //Gray

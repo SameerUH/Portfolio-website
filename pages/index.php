@@ -1,20 +1,4 @@
 <!DOCTYPE html>
-<!--
-TODO LIST:
-xxx First add buttons and make divs of the initial design.
-xxx Decide on a colour scheme to use.
-xxxx Implement the 3D aspect of three.js.
-xxx Decide on the design of the buttons.
-xxx Possibly add an animated background, (black background with white something????).
-xxx Change images to cubes that you can rotate.
-xxx Go back over the timeline and see if there's anything new you can add to it.
-xxx Double check the LinkedIn link on the footer.
-xxx Add @media CSS to the index page.
-xxx Add rounded corners to most/all elements.
-xxx Fix URLs on the pinned section.
-xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
-xxx Add a 404 page.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

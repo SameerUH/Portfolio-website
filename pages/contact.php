@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!---
-TODO LIST:
-xxx Maybe look into removing the slideshow to different pages and maybe just have a set of logos for people to click.
-xxx Start and complete email form.
-xxx Add rounded corners to most/all elements.
-xxx Do @media for the page.
-xxx Fix the tryhackme iframe somehow.
-xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
---->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

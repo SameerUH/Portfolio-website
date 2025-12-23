@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-TO-DO LIST:
-xxx Add more details of the certificates including dates and possibly a bulleted list of what you learnt.
-xxx Make the formatting nice and figure out how to do full width borders.
-xxx Look into @media with CSS.
-xxx Add rounded corners to most/all elements.
-xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

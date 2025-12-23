@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-TO-DO LIST:
-xxxs Add rounded corners to most/all elements.
-xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
-xxx Fix the @media in SCSS.
-xxx Update resume page.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
