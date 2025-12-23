@@ -82,15 +82,18 @@ window.addEventListener('mousemove', (event) => {
         }
 
         if (hovered && hovered.userData.name) { //If it is then modify the CSS to make the tooltip display.
+            document.body.style.cursor = "pointer";
             const cube = intersects[0].object;
             tooltip.textContent = cube.userData.name;
             tooltip.style.display = 'block';
             tooltip.style.left = `${event.clientX - bounds.left + offset}px`;
             tooltip.style.top = `${event.clientY - bounds.top + offset}px`;
         } else {
+            document.body.style.cursor = "default";
             tooltip.style.display = 'none'; //If it's wrong then remove the tooltip.
         }
     } else {
+        document.body.style.cursor = "default";
         tooltip.style.display = 'none'; //If not hovering over an object then remove the tooltip.
     }
 });

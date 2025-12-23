@@ -453,16 +453,19 @@ window.addEventListener('mousemove', (event) => {
         }
 
         if (porthover && porthover.userData.isPort) { //If it is then modify the CSS to make the tooltip display.
+            document.body.style.cursor = "pointer";
             hovered = porthover;
             tooltip.textContent = hovered.userData.name;
             tooltip.style.display = 'block';
             tooltip.style.left = `${event.pageX + offset}px`;
             tooltip.style.top = `${event.pageY + offset}px`;
         } else {
+            document.body.style.cursor = "default";
             hovered = null;
             tooltip.style.display = 'none'; //If it's wrong then remove the tooltip.
         }
     } else {
+        document.body.style.cursor = "default";
         hovered = null;
         tooltip.style.display = 'none'; //If not hovering over an object then remove the tooltip.
     }
