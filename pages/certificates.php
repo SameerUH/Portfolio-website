@@ -2,7 +2,6 @@
 <!-- 
 TO-DO LIST:
 xxx Add more details of the certificates including dates and possibly a bulleted list of what you learnt.
---- Add the grade unless you are still doing it.
 xxx Make the formatting nice and figure out how to do full width borders.
 xxx Look into @media with CSS.
 xxx Add rounded corners to most/all elements.

@@ -8,7 +8,7 @@ xxx Add rounded corners to most/all elements.
 xxx Fix the URL rewriting and make it compatible with .htaccess changes.
 xxx Change the CSS on pages to import other CSS files, makes it easier on file organization and structure (Maybe look into Sass).
 xxx Add a features section to put between the skills and first image.
---- Add the portfolio description and if it comes out then add the claude hackathon one too.
+xxx Add the portfolio description and if it comes out then add the claude hackathon one too.
 -->
 <html lang="en">
 <head>
