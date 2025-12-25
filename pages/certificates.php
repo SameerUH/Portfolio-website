@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/PORTFOLIO/styles/certificates.css">
-    <link rel="icon" href="/PORTFOLIO/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/certificates.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
     <title>SameerUH | Certificates</title>
 </head>
 <body>
     <?php
-    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/background_and_import.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/navbar_fragment.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/includes/background_and_import.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/includes/navbar_fragment.php";
     ?>
 
     <div id="title">
@@ -54,7 +54,7 @@
     </div><br>
 
     <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/PORTFOLIO/includes/footer_fragment.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer_fragment.php';
     ?>
 </body>
 </html>

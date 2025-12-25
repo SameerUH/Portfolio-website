@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/PORTFOLIO/favicon.png" type="image/png">
-    <link rel="stylesheet" href="/PORTFOLIO/styles/index.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/index.css">
     <title>SameerUH | Home</title>
 </head>
 
 <body>
     <?php
-    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/background_and_import.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/PORTFOLIO/includes/navbar_fragment.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/includes/background_and_import.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/includes/navbar_fragment.php";
     ?>
 
     <div id="keywords">
@@ -30,13 +30,13 @@
                 I believe technology should protect and empower. Cybersecurity is evolving and is key to safeguarding people and data and I'm inspired by how tech can protect people from various attackers.
             </p>
             <div class = "image-swap-container">
-                <img class="base-image" src="/PORTFOLIO/assets/thumbnails/archery.jpg" alt="originalimg">
-                <img class="hover-image" src="/PORTFOLIO/assets/thumbnails/profilepicture.jpg" alt="hoverimg">
+                <img class="base-image" src="/assets/thumbnails/archery.jpg" alt="originalimg">
+                <img class="hover-image" src="/assets/thumbnails/profilepicture.jpg" alt="hoverimg">
             </div>
         </div>
     </div>
 
-    <script type="module" src="/PORTFOLIO/js/pinned.js"></script>
+    <script type="module" src="/js/pinned.js"></script>
     <div id="pinned">
         <div id="pinned-tooltip"></div>
     </div>
@@ -90,10 +90,10 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div><br>
-    <script src="/PORTFOLIO/js/timeline.js"></script>
+    <script src="/js/timeline.js"></script>
 
     <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/PORTFOLIO/includes/footer_fragment.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer_fragment.php';
     ?>
 </body>
 </html>

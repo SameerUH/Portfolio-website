@@ -107,7 +107,7 @@ const letterSpacing = 0.47;
 const text = "SAMEER HAQ"; //Text that wil be displayed.
 
 const video = document.createElement('video'); //Creates a video element in the PHP.
-video.src = '/PORTFOLIO/assets/thumbnails/lettertexture.mp4';
+video.src = '/assets/thumbnails/lettertexture.mp4';
 video.loop = true;
 video.muted = true; //REQUIRED TO ADD THE TEXT WITHOUT HAVING CONSOLE ERRORS.
 video.play();
@@ -133,7 +133,7 @@ textloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
         textGroup.add(textMesh); //Adds each letter to text group.
     });
 
-    textGroup.userData = {url:"https://w23002216.nuwebspace.co.uk/PORTFOLIO/index"}; //Adds the link to the text.
+    textGroup.userData = {url:"https://sameeruh.dev/index"}; //Adds the link to the text.
     scene.add(textGroup); //Adds the entire textured phrase to the screen.
 
     // Center the group

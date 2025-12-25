@@ -25,9 +25,9 @@ container.appendChild(renderer.domElement);
 
 //Shapes
 const projects = [ //List of projects to be displayed in the scene and their corresponding details, kind of like a dictionary.
-    {name: 'Pong', image: '/PORTFOLIO/assets/thumbnails/pong-thumbnail.png', url: '/PORTFOLIO/projects/pong'},
-    {name: 'Gratithink', image: '/PORTFOLIO/assets/thumbnails/gratithink-thumbnail.png', url: '/PORTFOLIO/projects/gratithink'},
-    {name: 'CCNA', image: '/PORTFOLIO/assets/thumbnails/ccna.png', url: '/PORTFOLIO/pages/certificates.php'}
+    {name: 'Pong', image: '/assets/thumbnails/pong-thumbnail.png', url: '/projects/pong'},
+    {name: 'Gratithink', image: '/assets/thumbnails/gratithink-thumbnail.png', url: '/projects/gratithink-website'},
+    {name: 'CCNA', image: '/assets/thumbnails/ccna.png', url: '/certificates'}
 ];
 
 const loader = new THREE.TextureLoader();

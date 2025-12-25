@@ -52,7 +52,7 @@ let projectData = [];
 async function loadProjects() {
     try {
         //Fetches the JSON file that contains the listed projects.
-        const response = await fetch('/PORTFOLIO/data/projects.json');
+        const response = await fetch('/data/projects.json');
         //Turns the response into a JavaScript object.
         const data = await response.json();
         //Stores the projects data into a variable.
@@ -72,7 +72,7 @@ let random = Math.floor(Math.random() * texturepaths.length);
 let cooltexture = texturepaths[random];
 
 const video = document.createElement('video'); //Creates a video element in the PHP.
-video.src = `/PORTFOLIO/assets/thumbnails/switchtextures/${cooltexture}`;
+video.src = `/assets/thumbnails/switchtextures/${cooltexture}`;
 video.loop = true;
 video.muted = true; //REQUIRED TO ADD THE TEXT WITHOUT HAVING CONSOLE ERRORS.
 video.play();
@@ -409,7 +409,7 @@ function updateProjectInfo(project) {
         if (project.githubUrl) {
             const urls = project.githubUrl.split(","); //Splits the URLs by commas in case there are multiple.
             projectLink.innerHTML = urls.map(url =>
-                `<a href="${url.trim()}" target="_blank"><img src="/PORTFOLIO/assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO" style="width: 110px; height: 110px;"></a>`).join("<br>"); //Removes the commas/whitespaces and makes each URL a clickable link whilst putting it on a new line.
+                `<a href="${url.trim()}" target="_blank"><img src="/assets/thumbnails/socialsicons/github.jpg" alt="GITHUB LOGO" style="width: 110px; height: 110px;"></a>`).join("<br>"); //Removes the commas/whitespaces and makes each URL a clickable link whilst putting it on a new line.
         } else {
             projectLink.innerHTML = ""; //If there is no URL then just clear the link element.
         }
@@ -476,10 +476,10 @@ function onMouseClick(event) {
 
             //Update URL
             if (project.slugUrl) {
-                const newUrl = `/PORTFOLIO/projects/${project.slugUrl}`;
+                const newUrl = `/projects/${project.slugUrl}`;
                 window.history.pushState({project: project}, project.name, newUrl);
             } else {
-                window.history.pushState({}, '', '/PORTFOLIO/projects');
+                window.history.pushState({}, '', '/projects');
             }
         }
     }
@@ -508,8 +508,9 @@ async function init() {
         description: "Please select a port to view its details."
     };
 
-    const pathParts = window.location.pathname.split('/');
-    const projectSlug = pathParts[3];
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const projectsIndex = pathParts.indexOf('projects');
+    const projectSlug = projectsIndex !== -1 ? pathParts[projectsIndex + 1] : null;
 
     if (projectSlug) {
         const matching = projectData.find(p => p.slugUrl === projectSlug);
