@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /data/
+Disallow: /includes/
+Disallow: /js/
+Disallow: /pages/
+Disallow: /css/
+Disallow: /scss/
+Disallow: /DESIGN_1.pdf
+Disallow: /favicon.png
