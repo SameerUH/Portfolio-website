@@ -9,7 +9,7 @@
 
 <div class="video-background">
     <video autoplay muted loop playsinline id = "myVideo">
-        <source src="/assets/thumbnails/PotentialBackground4.mp4" type="video/mp4">
+        <!--<source src="/assets/thumbnails/MainBackground4.gif" type="video/mp4">-->
     </video>
     <div class="video-overlay"></div>
 </div>

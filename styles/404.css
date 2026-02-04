@@ -189,6 +189,7 @@ body {
   background-color: #1b1b1b;
   color: #ffffff;
   margin: 0;
+  background-image: url("../assets/thumbnails/MainBackground4.gif");
   min-height: 100vh; /*Full height of the viewport.*/
   position: relative;
   z-index: 0; /*Sets the stacking order for the body.*/

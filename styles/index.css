@@ -190,6 +190,7 @@ body {
   margin: 0;
   min-height: 100vh; /*Full height of the viewport.*/
   position: relative;
+  background-image: url("../assets/thumbnails/MainBackground4.gif");
   z-index: 0; /*Sets the stacking order for the body.*/
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
