@@ -491,7 +491,7 @@ async function init() {
     createPorts(); //Create the clickable ports and add them to the switch.
 
     //Add cables to the switch and connect them to the ports.
-    for (let i=0; i<7; i++){
+    for (let i=0; i<9; i++){
         createCable(clickablePorts[i], 0, 5, false);
     };
 

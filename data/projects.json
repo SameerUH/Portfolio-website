@@ -164,6 +164,51 @@
       ],
       "githubUrl": "https://github.com/SameerUH/Portfolio-website",
       "slugUrl": "portfolio"
+    },
+    {
+      "id": 8,
+      "name": "Northumbria Game Jam 2026",
+      "date": "3rd Year",
+      "fullDescription": "I took part in the Northumbria Global Game Jam 2026 with the theme “Masks,” and I wanted to make a game that was simple, fun to play, and visually engaging without spending too long on complex mechanics. I decided to build a 2D PyGame project, because that's the only game relevant programming I really know and am confident with, where the player has to click falling masks before they hit the ground, with each type of mask affecting the score in a different way. The original idea was simple, but I wanted it to feel polished enough to be enjoyable in a short game jam setting, so I focused on the gameplay loop, visual variety, and player feedback. I built the game around the concept of a score-based reaction challenge, where masquerade masks are enemies, COVID masks are life/score savers, and face masks are the victims that you are trying to save. It was a good choice because it let me focus on making the game feel satisfying while still fitting within a weekend timeframe and it gives a simple to understand gameplay mechanic.\n\nOne of the biggest parts of the project was creating the falling object system and making sure the masks felt dynamic. I used different asset folders for each category and randomly generated masks with rotation and movement so the gameplay never felt too static. This meant I had to think carefully about how each object would spawn, move, and reset after being clicked, while also making sure the scoring logic felt fair and readable. I also included a start screen, pause screen, restart system, and score tracking so the game felt more complete even though it was a short jam project. The challenge was not just building the game itself, but making sure it was fun enough to play repeatedly and easy enough to understand quickly when someone first opened it.\n\nOverall, I'm happy with how the project turned out because it really shows the value of making a simple idea feel strong through polish and interaction. The game works as a clean, compact jam entry and it gave me the chance to explore PyGame further, and game-loop design in a practical setting. It was also a good reminder that you do not always need a huge, complicated project to make something that feels fun and memorable. If I were to go back and improve it, I'd probably add sound effects, stronger visual polish, and a bit more variety in the gameplay, but as a first game jam experience I'm proud of what I created.",
+      "languages": [
+        "Python",
+        "PyGame"
+      ],
+      "features": [
+        "Start screen with instructions and pause screen",
+        "OOP classes to create multiple mask categories (Masquerade, COVID, Faces)",
+        "Falling, rotating mask sprites that randomly change",
+        "Pause/resume with ESC, start with SPACE, basic high-score tracking"
+      ],
+      "images": [
+        "../assets/thumbnails/projectspictures/gamejam2026-1.png",
+        "../assets/thumbnails/projectspictures/gamejam2026-2.png"
+      ],
+      "githubUrl": "https://github.com/SameerUH/GameJam2026",
+      "slugUrl": "game-jam"
+    },
+    {
+      "id": 9,
+      "name": "To-do list app (React)",
+      "date": "4th Year (2026)",
+      "fullDescription": "I built this to-do list app to refresh my React skills and explore building a small, practical productivity tool with a few extra features I found useful. The app is a React project that organises tasks by date and lets you quickly add, edit, and delete todos. I focused on creating a simple input flow, useful filtering (overdue, today, future), and small UX touches like rotating inspirational quotes and coloured category markers so the list is scannable at a glance. One of the things I wanted to try implement was a focus timer for users like students/employees to help prioritize tasks in a limited time, so I added a Pomodoro page with a progress bar and the ability to mark tasks as completed directly from the timer view.\n\nFrom a technical perspective I split functionality into small components (TaskEntry, TaskOutput, EditCard, pomodoro, settings) to keep state local and predictable and to make the UI easy to extend. The settings page implements import/export (JSON and CSV) so users can back up or restore tasks stored in SQL, and there are edit flows for task details (description, priority, due date, category). Styling uses utility-style classes for fast layout and I added basic validation and an error card for missing required fields so the add flow feels robust for quick entry during the day. I wanted to try and implement a Google Calendar integration where the user can create tasks and it'll sync with their Google Calendar but after doing further research I would have had to set up accounts and auths in the SQL database which in the end felt out of scope for this project.\n\nOverall I treated this as a practical learning project and not just to re-learn React basics, but to experiment with component composition, small feature additions (exports, Pomodoro), and a clean, readable UI. If I revisit it I'd add persistent storage (or sync with a backend), keyboard accessibility improvements, and more polish around mobile/responsive layout and animations, but for now it's a compact, useful app that demonstrates React component design and feature-focused thinking.",
+      "languages": [
+        "React.js",
+        "Tailwind CSS",
+        "SQLite"
+      ],
+      "features": [
+        "Add, edit, and delete todos with title, description, category, priority, and due date",
+        "Pomodoro timer with progress bar integrated with task selection",
+        "Import and export tasks as JSON and CSV from the Settings page",
+        "Background and font colour changer in settings page."
+      ],
+      "images": [
+        "../assets/thumbnails/projectspictures/todolist-1.png",
+        "../assets/thumbnails/projectspictures/todolist-2.png"
+      ],
+      "githubUrl": "https://github.com/SameerUH/To-do-list-React",
+      "slugUrl": "to-do-list-react"
     }
   ]
 }
